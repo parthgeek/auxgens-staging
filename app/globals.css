@@ -219,7 +219,7 @@ strong { font-weight: 600; }
 .ticker {
   --ticker-gap: 3rem;
   overflow: hidden; border-bottom: 1px solid var(--rule);
-  padding: .8rem 0;
+  padding: 1.6rem 0;
   background: linear-gradient(90deg, var(--paper-2) 0%, #f0f7ea 50%, var(--paper-2) 100%);
 }
 .ticker-track {
@@ -240,23 +240,25 @@ strong { font-weight: 600; }
   font-size: .7rem; font-weight: 500; letter-spacing: .16em;
   text-transform: uppercase; color: var(--t4);
   flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
-  min-width: 15.5rem; height: 3.2rem; position: relative; outline: none;
+  min-width: 15.5rem; height: 3.2rem; position: relative; outline: none; z-index: 0;
 }
+.ticker-item:hover { z-index: 2; }
 .ticker-label {
   transition: opacity .2s ease, transform .2s ease, color .2s ease;
 }
 .ticker-logo {
   position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -45%) scale(.92);
+  transform: translate(-50%, -45%) scale(.88);
   opacity: 0; pointer-events: none;
-  min-width: 11rem; height: 2.55rem; padding: .45rem .85rem;
+  min-width: 14rem; height: auto; padding: 1rem 2rem;
   display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
-  background: rgba(246,250,243,.97);
-  border: 1px solid rgba(90,125,95,.22);
-  border-radius: var(--r);
-  box-shadow: 0 14px 30px rgba(13,36,16,.12);
+  background: rgba(246,250,243,.98);
+  border: 1px solid rgba(90,125,95,.25);
+  border-radius: 6px;
+  box-shadow: 0 18px 40px rgba(13,36,16,.18), 0 4px 12px rgba(13,36,16,.1);
   color: var(--t1);
-  transition: opacity .2s ease, transform .2s ease;
+  transition: opacity .22s ease, transform .22s ease;
+  z-index: 10;
 }
 .ticker-item:hover .ticker-label,
 .ticker-item:focus-visible .ticker-label {
@@ -280,36 +282,36 @@ strong { font-weight: 600; }
   display: flex; flex-direction: column; gap: .12rem;
   font-size: .56rem; font-weight: 800; letter-spacing: .12em; line-height: 1;
 }
-.brand-logo-dell-mark {
-  width: 2.95rem; height: 1.55rem;
-  display: inline-flex; align-items: center; justify-content: center;
-  border: 1px solid #5b7fa2; border-radius: 999px;
-  color: #3f668d; font-size: .58rem; font-weight: 800; letter-spacing: .1em; line-height: 1;
+.brand-logo-img {
+  display: block;
+  width: auto;
+  max-width: 12rem;
+  max-height: 3.2rem;
+  object-fit: contain;
 }
-.brand-logo-pan-mark {
-  width: 1.45rem; height: 1.45rem; border-radius: 5px;
-  background: linear-gradient(135deg, #ef3f35 0 52%, #111f2f 52% 100%);
-  transform: rotate(45deg);
+.ticker-logo-rsa .brand-logo-img {
+  max-width: 11rem;
+  max-height: 3rem;
 }
-.brand-logo-fortinet-mark {
-  display: grid; grid-template-columns: repeat(2, .38rem); gap: .16rem;
+.ticker-logo-ssrvm .brand-logo-img {
+  max-height: 3.6rem;
 }
-.brand-logo-fortinet-mark span {
-  width: .38rem; height: .38rem; background: #d71920;
+.ticker-logo-ibsfintech .brand-logo-img {
+  max-width: 11rem;
+  max-height: 3rem;
 }
-.brand-logo-ms-mark {
-  display: grid; grid-template-columns: repeat(2, .48rem); gap: .08rem;
+.ticker-logo-ibsfintech,
+.ticker-logo-seceon {
+  background: rgba(12, 18, 36, 0.96);
+  border-color: rgba(255,255,255,.12);
+  box-shadow: 0 18px 40px rgba(0,0,0,.28), 0 4px 12px rgba(0,0,0,.18);
 }
-.brand-logo-ms-mark span { width: .48rem; height: .48rem; }
-.brand-logo-ms-mark span:nth-child(1) { background: #f25022; }
-.brand-logo-ms-mark span:nth-child(2) { background: #7fba00; }
-.brand-logo-ms-mark span:nth-child(3) { background: #00a4ef; }
-.brand-logo-ms-mark span:nth-child(4) { background: #ffb900; }
-.ticker-logo-rsa .brand-logo-main {
-  color: #cf2e2e;
+.ticker-logo-seceon .brand-logo-img {
+  max-width: 10.5rem;
+  max-height: 3rem;
 }
-.ticker-logo-fortinet .brand-logo-main {
-  color: #d71920;
+.ticker-logo-bank-of-india .brand-logo-img {
+  max-height: 3.2rem;
 }
 @keyframes ticker {
   from { transform: translate3d(0,0,0); }

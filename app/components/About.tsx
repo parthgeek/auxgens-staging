@@ -16,7 +16,7 @@ const checks = [
   },
   {
     title: "Vendor-agnostic approach",
-    body: "Best-of-breed tooling from RSA, Dell, Fortinet — no lock-in.",
+    body: "Best-of-breed tooling and partnerships across RSA, Dell, Seceon, and IBSFINtech — no lock-in.",
   },
 ];
 

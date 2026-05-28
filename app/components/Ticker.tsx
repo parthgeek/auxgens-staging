@@ -1,80 +1,55 @@
 const brands = {
-  rsa: {
-    id: "rsa",
-    name: "RSA Security",
-    logo: (
-      <>
-        <span className="brand-logo-main">RSA</span>
-        <span className="brand-logo-sub">SECURITY</span>
-      </>
-    ),
-  },
   dell: {
     id: "dell",
-    name: "Dell Technologies",
+    name: "Dell",
     logo: (
-      <>
-        <span className="brand-logo-dell-mark">DELL</span>
-        <span className="brand-logo-sub">TECHNOLOGIES</span>
-      </>
+      <img className="brand-logo-img" src="/dell.svg" alt="" loading="lazy" />
     ),
   },
-  paloAlto: {
-    id: "palo-alto",
-    name: "Palo Alto Networks",
+  rsa: {
+    id: "rsa",
+    name: "RSA",
     logo: (
-      <>
-        <span className="brand-logo-pan-mark" />
-        <span className="brand-logo-stack">
-          <span>PALO ALTO</span>
-          <span>NETWORKS</span>
-        </span>
-      </>
+      <img className="brand-logo-img" src="/rsa.png" alt="" loading="lazy" />
     ),
   },
-  fortinet: {
-    id: "fortinet",
-    name: "Fortinet",
+  ssrvm: {
+    id: "ssrvm",
+    name: "SSRVM",
     logo: (
-      <>
-        <span className="brand-logo-fortinet-mark">
-          <span />
-          <span />
-          <span />
-          <span />
-        </span>
-        <span className="brand-logo-main">FORTINET</span>
-      </>
+      <img className="brand-logo-img" src="/ssrvm.png" alt="" loading="lazy" />
     ),
   },
-  microsoft: {
-    id: "microsoft",
-    name: "Microsoft Security",
+  ibsfintech: {
+    id: "ibsfintech",
+    name: "IBSFINtech",
     logo: (
-      <>
-        <span className="brand-logo-ms-mark">
-          <span />
-          <span />
-          <span />
-          <span />
-        </span>
-        <span className="brand-logo-stack">
-          <span>MICROSOFT</span>
-          <span>SECURITY</span>
-        </span>
-      </>
+      <img className="brand-logo-img" src="/ibsfintech.png" alt="" loading="lazy" />
+    ),
+  },
+  seceon: {
+    id: "seceon",
+    name: "Seceon",
+    logo: (
+      <img className="brand-logo-img" src="/seceon.png" alt="" loading="lazy" />
+    ),
+  },
+  bankOfIndia: {
+    id: "bank-of-india",
+    name: "Bank Of India",
+    logo: (
+      <img className="brand-logo-img" src="/bank%20of%20india.png" alt="" loading="lazy" />
     ),
   },
 };
 
 const items = [
-  brands.rsa,
   brands.dell,
   brands.rsa,
-  brands.microsoft,
-  brands.paloAlto,
-  brands.fortinet,
-  brands.microsoft,
+  brands.ssrvm,
+  brands.ibsfintech,
+  brands.seceon,
+  brands.bankOfIndia,
 ];
 
 export default function Ticker() {
