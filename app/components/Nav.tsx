@@ -1,8 +1,13 @@
+import Image from "next/image";
+import logo from "../../Auxgens_newLogo.png";
+
 export default function Nav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a href="#" className="nav-brand">Auxgens</a>
+        <a href="#" className="nav-brand" aria-label="Auxgens home">
+          <Image src={logo} alt="Auxgens" className="nav-logo" priority />
+        </a>
         <nav>
           <ul className="nav-links">
             <li><a href="#home">Home</a></li>

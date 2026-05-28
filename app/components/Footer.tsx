@@ -1,3 +1,6 @@
+import Image from "next/image";
+import logo from "../../Auxgens_newLogo.png";
+
 const cols = [
   {
     title: "Services",
@@ -13,14 +16,9 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <strong style={{
-              fontSize: ".9rem",
-              color: "rgba(237,247,230,.8)",
-              letterSpacing: ".15em",
-              textTransform: "uppercase",
-            }}>
-              Auxgens
-            </strong>
+            <a href="#" className="foot-logo" aria-label="Auxgens home">
+              <Image src={logo} alt="Auxgens" className="foot-logo-img" />
+            </a>
             <p>
               Managed cyber &amp; information security across Asia, EMEA, and North America — protecting what matters most to your business.
             </p>
