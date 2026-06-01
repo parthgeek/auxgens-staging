@@ -2,6 +2,7 @@ const brands = {
   dell: {
     id: "dell",
     name: "Dell",
+    url: "https://www.dell.com/",
     logo: (
       <img className="brand-logo-img" src="/dell.png" alt="" loading="lazy" />
     ),
@@ -9,6 +10,7 @@ const brands = {
   rsa: {
     id: "rsa",
     name: "RSA",
+    url: "https://www.rsa.com/",
     logo: (
       <img className="brand-logo-img" src="/rsa.png" alt="" loading="lazy" />
     ),
@@ -16,13 +18,15 @@ const brands = {
   ssrvm: {
     id: "ssrvm",
     name: "SSRVM",
+    url: "https://ssrvm.org/",
     logo: (
-      <img className="brand-logo-img" src="/ssrvm.png" alt="" loading="lazy" />
+      <img className="brand-logo-img" src="/ssrvm.avif" alt="" loading="lazy" />
     ),
   },
   ibsfintech: {
     id: "ibsfintech",
     name: "IBSFINtech",
+    url: "https://www.ibsfintech.com/",
     logo: (
       <img className="brand-logo-img" src="/ibsfintech.png" alt="" loading="lazy" />
     ),
@@ -30,6 +34,7 @@ const brands = {
   seceon: {
     id: "seceon",
     name: "Seceon",
+    url: "https://seceon.com/",
     logo: (
       <img className="brand-logo-img" src="/seceon.png" alt="" loading="lazy" />
     ),
@@ -37,6 +42,7 @@ const brands = {
   bankOfIndia: {
     id: "bank-of-india",
     name: "Bank Of India",
+    url: "https://bankofindia.bank.in/",
     logo: (
       <img className="brand-logo-img" src="/bank%20of%20india.png" alt="" loading="lazy" />
     ),
@@ -63,16 +69,20 @@ export default function Ticker() {
             aria-hidden={groupIndex === 1 ? true : undefined}
           >
             {items.map((brand, i) => (
-              <span
+              <a
                 key={`${brand.name}-${groupIndex}-${i}`}
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="ticker-item"
                 tabIndex={groupIndex === 1 ? -1 : 0}
+                aria-label={`Visit ${brand.name}`}
               >
                 <span className="ticker-label">{brand.name}</span>
                 <span className={`ticker-logo ticker-logo-${brand.id}`} aria-hidden="true">
                   {brand.logo}
                 </span>
-              </span>
+              </a>
             ))}
           </div>
         ))}

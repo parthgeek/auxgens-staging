@@ -96,8 +96,20 @@ strong { font-weight: 600; }
   border-bottom: 1px solid var(--accent-bdr);
   text-align: center; padding: .6rem 1rem;
   font-size: .8rem; color: var(--forest); font-weight: 400;
+  overflow: hidden;
 }
 .announce a { font-weight: 600; color: var(--accent); }
+.announce-slide { display: inline-block; }
+@keyframes announce-slide-out {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-120%); opacity: 0; }
+}
+@keyframes announce-slide-in {
+  from { transform: translateY(120%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.announce-exit { animation: announce-slide-out 0.35s ease forwards; }
+.announce-enter { animation: announce-slide-in 0.35s ease forwards; }
 
 /* ── HERO ── */
 .hero {
@@ -235,7 +247,7 @@ strong { font-weight: 600; }
 .ticker {
   --ticker-gap: 3rem;
   overflow: hidden; border-bottom: 1px solid var(--rule);
-  padding: 1.6rem 0;
+  padding: 2.5rem 0;
   background: linear-gradient(90deg, var(--paper-2) 0%, #f0f7ea 50%, var(--paper-2) 100%);
 }
 .ticker-track {
@@ -257,6 +269,7 @@ strong { font-weight: 600; }
   text-transform: uppercase; color: var(--t4);
   flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center;
   min-width: 15.5rem; height: 3.2rem; position: relative; outline: none; z-index: 0;
+  cursor: pointer;
 }
 .ticker-item:hover { z-index: 2; }
 .ticker-label {
@@ -266,7 +279,7 @@ strong { font-weight: 600; }
   position: absolute; left: 50%; top: 50%;
   transform: translate(-50%, -45%) scale(.88);
   opacity: 0; pointer-events: none;
-  min-width: 14rem; height: auto; padding: 1rem 2rem;
+  width: max-content; min-width: 0; min-height: 5.8rem; padding: .55rem .75rem;
   display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
   background: rgba(246,250,243,.98);
   border: 1px solid rgba(90,125,95,.25);
@@ -301,20 +314,22 @@ strong { font-weight: 600; }
 .brand-logo-img {
   display: block;
   width: auto;
-  max-width: 12rem;
-  max-height: 3.2rem;
+  max-width: 15rem;
+  max-height: 5rem;
   object-fit: contain;
 }
 .ticker-logo-rsa .brand-logo-img {
-  max-width: 11rem;
-  max-height: 3rem;
+  max-width: 13rem;
+  max-height: 4.4rem;
 }
 .ticker-logo-ssrvm .brand-logo-img {
-  max-height: 3.6rem;
+  width: 8.6rem;
+  max-width: none;
+  max-height: none;
 }
 .ticker-logo-ibsfintech .brand-logo-img {
-  max-width: 11rem;
-  max-height: 3rem;
+  max-width: 14rem;
+  max-height: 4rem;
 }
 .ticker-logo-ibsfintech,
 .ticker-logo-seceon {
@@ -323,11 +338,11 @@ strong { font-weight: 600; }
   box-shadow: 0 18px 40px rgba(0,0,0,.28), 0 4px 12px rgba(0,0,0,.18);
 }
 .ticker-logo-seceon .brand-logo-img {
-  max-width: 10.5rem;
-  max-height: 3rem;
+  max-width: 13rem;
+  max-height: 4rem;
 }
 .ticker-logo-bank-of-india .brand-logo-img {
-  max-height: 3.2rem;
+  max-height: 4.6rem;
 }
 @keyframes ticker {
   from { transform: translate3d(0,0,0); }
@@ -889,7 +904,7 @@ strong { font-weight: 600; }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--deep); border-top: 1px solid rgba(255,255,255,.06);
+  background: #fff; border-top: 1px solid var(--rule);
   padding: 4rem 0 2rem; position: relative;
 }
 footer::before {
@@ -899,7 +914,7 @@ footer::before {
 .foot-grid {
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 4rem; padding-bottom: 3.2rem;
-  border-bottom: 1px solid rgba(255,255,255,.07);
+  border-bottom: 1px solid var(--rule);
 }
 .foot-logo {
   display: inline-flex; align-items: center; justify-content: center;
@@ -909,15 +924,15 @@ footer::before {
   width: 132px; height: 132px; object-fit: contain; display: block;
   border-radius: 10px;
 }
-.foot-brand p { font-size: .82rem; color: rgba(237,247,230,.35); line-height: 1.75; max-width: 230px; }
-.foot-tag { margin-top: 1rem; font-size: .67rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(237,247,230,.18); }
-.foot-col h4 { font-size: .67rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; color: rgba(237,247,230,.28); margin-bottom: 1.2rem; }
+.foot-brand p { font-size: .82rem; color: var(--t3); line-height: 1.75; max-width: 230px; }
+.foot-tag { margin-top: 1rem; font-size: .67rem; letter-spacing: .12em; text-transform: uppercase; color: var(--t4); }
+.foot-col h4 { font-size: .67rem; font-weight: 600; letter-spacing: .17em; text-transform: uppercase; color: var(--forest); margin-bottom: 1.2rem; }
 .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
-.foot-col ul a { font-size: .85rem; color: rgba(237,247,230,.42); transition: color .2s; }
-.foot-col ul a:hover { color: rgba(237,247,230,.9); }
+.foot-col ul a { font-size: .85rem; color: var(--t3); transition: color .2s; }
+.foot-col ul a:hover { color: var(--forest); }
 .foot-bottom {
   padding-top: 2rem; display: flex; align-items: center;
-  justify-content: space-between; font-size: .75rem; color: rgba(237,247,230,.2);
+  justify-content: space-between; font-size: .75rem; color: var(--t4);
 }
 
 /* ── ANIMATIONS ── */
