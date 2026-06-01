@@ -350,6 +350,11 @@ strong { font-weight: 600; }
     url('/section-cyber-texture.png') center / cover no-repeat,
     var(--paper-2);
 }
+.section#about {
+  background:
+    linear-gradient(180deg, rgba(238,246,232,.98), rgba(238,246,232,.94)),
+    var(--paper-2);
+}
 .section::before {
   content: '';
   position: absolute; inset: 0;
@@ -839,6 +844,11 @@ strong { font-weight: 600; }
     var(--grad-forest);
   border: none;
   position: relative; overflow: hidden;
+}
+.cta#contact {
+  background:
+    linear-gradient(90deg, rgba(14,42,18,.98), rgba(14,42,18,.9) 46%, rgba(14,42,18,.82) 100%),
+    var(--grad-forest);
 }
 .cta::before {
   content: ''; position: absolute; inset: 0;
