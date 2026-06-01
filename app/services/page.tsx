@@ -5,12 +5,12 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import ScrollFade from "../components/ScrollFade";
 import Stats from "../components/Stats";
-import { servicePageServices } from "../data/services";
+import { detailedServices } from "../data/services";
 
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens cybersecurity, compliance, data protection, security culture, documentation, and secure web and app development services.",
+    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, GDPR, and CCPA.",
 };
 
 export default function ServicesPage() {
@@ -19,6 +19,7 @@ export default function ServicesPage() {
       <Nav />
       <Announce />
       <main>
+        {/* ── HERO ── */}
         <section className="hero service-hero">
           <div className="wrap hero-grid">
             <div>
@@ -27,55 +28,113 @@ export default function ServicesPage() {
                 <span className="eyebrow">Auxgens services</span>
               </div>
               <h1>
-                Services built<br />for every <em>layer.</em>
+                Protection at<br />every <em>layer.</em>
               </h1>
               <div className="hero-metrics">
-                <div className="metric"><strong>7</strong><span>Service pillars</span></div>
+                <div className="metric">
+                  <strong>6</strong>
+                  <span>Service pillars</span>
+                </div>
                 <div className="metric-sep"></div>
-                <div className="metric"><strong>24/7</strong><span>SOC coverage</span></div>
+                <div className="metric">
+                  <strong>24/7</strong>
+                  <span>SOC coverage</span>
+                </div>
                 <div className="metric-sep"></div>
-                <div className="metric"><strong>3</strong><span>Global regions</span></div>
+                <div className="metric">
+                  <strong>3</strong>
+                  <span>Global regions</span>
+                </div>
               </div>
             </div>
             <div className="hero-right">
               <p className="hero-tagline">Securing Your Digital Future.</p>
               <p className="hero-desc">
-                Auxgens helps organisations protect data, systems, and trust — from security strategy and operations to secure web and app development.
+                From governance and risk frameworks to 24/7 security operations
+                and data privacy compliance — Auxgens covers every aspect of
+                your security posture.
               </p>
               <div className="hero-btns">
-                <a href="#services-list" className="btn-lime">View Services</a>
-                <a href="#contact" className="btn-border">Contact Us</a>
+                <a href="#grc" className="btn-lime">
+                  Explore Services
+                </a>
+                <a href="#contact" className="btn-border">
+                  Contact Us
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section" id="services-list">
+        {/* ── SERVICE NAV ── */}
+        <nav className="svc-index">
           <div className="wrap">
-            <div className="sec-hdr">
-              <div>
-                <p className="eyebrow" style={{ marginBottom: ".8rem" }}>Comprehensive Coverage</p>
-                <div className="h-display">
-                  What we deliver.<br />
-                  End-to-end <em style={{ fontStyle: "italic", color: "var(--lime-2)" }}>protection.</em>
+            <ul className="svc-index-list">
+              {detailedServices.map((s) => (
+                <li key={s.id}>
+                  <a href={`#${s.id}`} className="svc-index-link">
+                    <span className="svc-index-eyebrow">{s.eyebrow}</span>
+                    <span className="svc-index-title">{s.title}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+
+        {/* ── SERVICE SECTIONS ── */}
+        {detailedServices.map((service, idx) => (
+          <section
+            key={service.id}
+            id={service.id}
+            className={`svc-section section${idx % 2 === 1 ? " section-alt" : ""}`}
+          >
+            <div className="wrap">
+              {/* Header */}
+              <div className="svc-header anim">
+                <p className="eyebrow" style={{ marginBottom: ".7rem" }}>
+                  {service.eyebrow}
+                </p>
+                <h2 className="svc-title">{service.title}</h2>
+                <p className="svc-desc">{service.description}</p>
+              </div>
+
+              {/* Body: challenges + offerings */}
+              <div className="svc-body anim">
+                {service.challenges.length > 0 && (
+                  <div className="svc-challenges">
+                    <p className="svc-col-label">Key Challenges</p>
+                    <ul className="svc-challenges-list">
+                      {service.challenges.map((c) => (
+                        <li key={c}>
+                          <span className="svc-challenge-dot" />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                <div className="svc-offerings">
+                  <p className="svc-col-label">Our Services</p>
+                  <div className="svc-offerings-grid">
+                    {service.offerings.map((offering) => (
+                      <div key={offering.name} className="svc-offering-group">
+                        <h4 className="svc-offering-name">{offering.name}</h4>
+                        <ul className="svc-offering-list">
+                          {offering.items.map((item) => (
+                            <li key={item}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <p className="sec-note">
-                Seven service pillars covering every aspect of your security posture, including secure web and app development.
-              </p>
             </div>
-            <div className="services-grid services-page-grid anim">
-              {servicePageServices.map((service) => (
-                <div key={service.title} className="service-box">
-                  <h4>{service.title}</h4>
-                  <ul className="service-list">
-                    {service.items.map((item) => <li key={item}>{item}</li>)}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        ))}
+
         <Stats />
         <CTA />
       </main>

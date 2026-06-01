@@ -1,10 +1,6 @@
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      <div className="hero-float-1">🔐</div>
-      <div className="hero-float-2">🛡️</div>
-      <div className="hero-float-3">⚔️</div>
-      <div className="hero-float-4">🔑</div>
       <div className="wrap hero-grid">
         <div>
           <div className="hero-badge">
