@@ -1,5 +1,4 @@
 import Image from "next/image";
-import logo from "../../Auxgens_newLogo.png";
 
 const cols = [
   {
@@ -17,7 +16,14 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <a href="#" className="foot-logo" aria-label="Auxgens home">
-              <Image src={logo} alt="Auxgens" className="foot-logo-img" />
+              <Image
+                src="/logo_3d.gif"
+                alt="Auxgens"
+                width={360}
+                height={360}
+                className="foot-logo-img"
+                unoptimized
+              />
             </a>
             <p>
               Managed cyber &amp; information security across Asia, EMEA, and North America — protecting what matters most to your business.

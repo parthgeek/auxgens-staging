@@ -3,7 +3,7 @@ const brands = {
     id: "dell",
     name: "Dell",
     logo: (
-      <img className="brand-logo-img" src="/dell.svg" alt="" loading="lazy" />
+      <img className="brand-logo-img" src="/dell.png" alt="" loading="lazy" />
     ),
   },
   rsa: {
