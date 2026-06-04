@@ -78,6 +78,9 @@ export default function Ticker() {
                 tabIndex={groupIndex === 1 ? -1 : 0}
                 aria-label={`Visit ${brand.name}`}
               >
+                <span className={`ticker-inline-logo ticker-inline-logo-${brand.id}`} aria-hidden="true">
+                  {brand.logo}
+                </span>
                 <span className="ticker-label">{brand.name}</span>
                 <span className={`ticker-logo ticker-logo-${brand.id}`} aria-hidden="true">
                   {brand.logo}

@@ -30,13 +30,13 @@ export default function Hero() {
         <div>
           <div className="hero-badge">
             <div className="badge-dot"></div>
-            <span className="eyebrow">Trusted by 150+ enterprises globally</span>
+            <span className="eyebrow">Trusted across regulated industries globally</span>
           </div>
           <h1>
             Secure Your<br />Every <em>Click.</em><br />Every Layer.
           </h1>
           <div className="hero-metrics">
-            <div className="metric"><strong>150+</strong><span>Enterprise clients</span></div>
+            <div className="metric"><strong>5+</strong><span>Years of field experience</span></div>
             <div className="metric-sep"></div>
             <div className="metric"><strong>24/7</strong><span>SOC coverage</span></div>
             <div className="metric-sep"></div>
