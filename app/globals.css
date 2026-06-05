@@ -120,7 +120,7 @@ strong { font-weight: 600; }
 /* ── ANNOUNCE ── */
 .announce {
   margin-top: 104px;
-  background: linear-gradient(90deg, rgba(219,233,251,.88) 0%, rgba(234,245,226,.94) 52%, rgba(243,231,184,.34) 100%);
+  background: linear-gradient(90deg, rgba(246,250,243,.9) 0%, rgba(234,245,226,.94) 52%, rgba(243,231,184,.34) 100%);
   border-bottom: 1px solid var(--accent-bdr);
   text-align: center; padding: .6rem 1rem;
   font-size: .8rem; color: var(--forest); font-weight: 400;
@@ -144,8 +144,8 @@ strong { font-weight: 600; }
   padding: 9rem 0 7rem;
   border-bottom: 1px solid var(--rule);
   background:
-    linear-gradient(90deg, rgba(247,251,255,.98) 0%, rgba(219,233,251,.82) 26%, rgba(217,241,239,.62) 62%, rgba(238,246,232,.28) 100%),
-    url('/hero-cyber-security-bg.png') center right / cover no-repeat,
+    linear-gradient(90deg, rgba(247,251,255,.98) 0%, rgba(238,246,232,.84) 34%, rgba(234,245,226,.58) 66%, rgba(238,246,232,.28) 100%),
+    url('/security-story-bg.png') center right / cover no-repeat,
     var(--grad-paper);
   position: relative; overflow: hidden;
 }
@@ -165,7 +165,7 @@ strong { font-weight: 600; }
 .hero::after {
   content: ''; position: absolute;
   inset: 0; background:
-    radial-gradient(ellipse 50% 36% at 22% 70%, rgba(47,111,179,.08), transparent 74%),
+    radial-gradient(ellipse 50% 36% at 22% 70%, rgba(114,193,53,.07), transparent 74%),
     radial-gradient(ellipse 56% 40% at 16% 18%, rgba(196,154,44,.12), transparent 72%),
     var(--grad-hero);
   pointer-events: none;
@@ -1461,8 +1461,8 @@ footer::before {
 @media (max-width: 860px) {
   .hero {
     background:
-      linear-gradient(180deg, rgba(246,250,243,.98) 0%, rgba(246,250,243,.9) 58%, rgba(238,246,232,.8) 100%),
-      url('/hero-cyber-security-bg.png') 62% top / cover no-repeat,
+      linear-gradient(180deg, rgba(246,250,243,.98) 0%, rgba(238,246,232,.88) 58%, rgba(234,245,226,.78) 100%),
+      url('/security-story-bg.png') 62% top / cover no-repeat,
       var(--grad-paper);
   }
   .service-hero {
