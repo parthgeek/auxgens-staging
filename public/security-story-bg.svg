@@ -1,0 +1,118 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1200" fill="#F6FBFF"/>
+  <rect width="1600" height="1200" fill="url(#base)"/>
+  <g opacity="0.72">
+    <path d="M0 0H1600V1200H0V0Z" fill="url(#softWash)"/>
+  </g>
+  <g opacity="0.65">
+    <path d="M72 1038C195 948 314 862 459 766C631 652 808 558 994 450C1118 378 1264 295 1441 174" stroke="url(#beamA)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-18 1110C133 994 274 910 430 814C631 690 835 580 1032 480C1208 390 1370 303 1549 164" stroke="url(#beamB)" stroke-width="8" stroke-linecap="round"/>
+    <path d="M205 1186C342 1084 470 995 619 902C803 790 1005 665 1190 546C1315 464 1429 387 1546 282" stroke="url(#beamC)" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.52">
+    <path d="M243 196L328 272V492C328 584 286 654 243 710C200 654 158 584 158 492V272L243 196Z" fill="url(#shieldFill)"/>
+    <path d="M243 196L328 272V492C328 584 286 654 243 710C200 654 158 584 158 492V272L243 196Z" stroke="url(#shieldStroke)" stroke-width="3"/>
+    <path d="M243 244L292 289V475C292 537 265 588 243 621C221 588 194 537 194 475V289L243 244Z" stroke="url(#shieldStrokeSoft)" stroke-width="2"/>
+    <path d="M122 335H386" stroke="url(#lineGlow)" stroke-width="1"/>
+    <path d="M122 463H360" stroke="url(#lineGlow)" stroke-width="1"/>
+    <path d="M122 591H330" stroke="url(#lineGlow)" stroke-width="1"/>
+  </g>
+  <g opacity="0.44">
+    <path d="M1141 412C1259 412 1355 513 1355 636C1355 759 1259 860 1141 860C1023 860 927 759 927 636C927 513 1023 412 1141 412Z" stroke="url(#globeStroke)" stroke-width="2"/>
+    <path d="M927 636H1355" stroke="url(#globeLine)" stroke-width="1"/>
+    <path d="M1141 412V860" stroke="url(#globeLine)" stroke-width="1"/>
+    <path d="M985 526C1037 563 1089 590 1141 590C1193 590 1245 563 1297 526" stroke="url(#globeLine)" stroke-width="1"/>
+    <path d="M985 745C1037 708 1089 681 1141 681C1193 681 1245 708 1297 745" stroke="url(#globeLine)" stroke-width="1"/>
+    <path d="M1063 436C1036 516 1020 584 1020 636C1020 688 1036 756 1063 836" stroke="url(#globeLine)" stroke-width="1"/>
+    <path d="M1219 436C1246 516 1262 584 1262 636C1262 688 1246 756 1219 836" stroke="url(#globeLine)" stroke-width="1"/>
+  </g>
+  <g opacity="0.3">
+    <path d="M1010 282H1540" stroke="url(#hLine)" stroke-width="1"/>
+    <path d="M980 525H1600" stroke="url(#hLine)" stroke-width="1"/>
+    <path d="M900 802H1528" stroke="url(#hLine)" stroke-width="1"/>
+  </g>
+  <g opacity="0.4">
+    <path d="M960 926L1070 870V1200H960V926Z" fill="#D8F8F0"/>
+    <path d="M1105 846L1215 792V1200H1105V846Z" fill="#D6ECFF"/>
+    <path d="M1250 903L1360 847V1200H1250V903Z" fill="#E5F8E1"/>
+    <path d="M1395 820L1505 760V1200H1395V820Z" fill="#DDF9F2"/>
+  </g>
+  <g opacity="0.54">
+    <circle cx="132" cy="166" r="180" fill="url(#orbA)"/>
+    <circle cx="1360" cy="205" r="210" fill="url(#orbB)"/>
+    <circle cx="822" cy="1040" r="240" fill="url(#orbC)"/>
+  </g>
+  <defs>
+    <radialGradient id="base" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(800 600) rotate(90) scale(760 980)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EFF8F1"/>
+    </radialGradient>
+    <linearGradient id="softWash" x1="0" y1="0" x2="1600" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.44" stop-color="#EAF7FF" stop-opacity="0.54"/>
+      <stop offset="1" stop-color="#E5F5EA" stop-opacity="0.64"/>
+    </linearGradient>
+    <linearGradient id="beamA" x1="72" y1="1038" x2="1441" y2="174" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EBDF2" stop-opacity="0"/>
+      <stop offset="0.34" stop-color="#69B9F0" stop-opacity="0.72"/>
+      <stop offset="0.66" stop-color="#7DD8C4" stop-opacity="0.78"/>
+      <stop offset="1" stop-color="#A7E889" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beamB" x1="-18" y1="1110" x2="1549" y2="164" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#93D7FF" stop-opacity="0"/>
+      <stop offset="0.44" stop-color="#8FD8FD" stop-opacity="0.52"/>
+      <stop offset="0.72" stop-color="#95E3CC" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#AEE6A7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beamC" x1="205" y1="1186" x2="1546" y2="282" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.38" stop-color="#BDE7FF" stop-opacity="0.46"/>
+      <stop offset="0.66" stop-color="#C5F0E2" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#E4F8E0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shieldFill" x1="158" y1="196" x2="328" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FDFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#DFF6EE" stop-opacity="0.56"/>
+    </linearGradient>
+    <linearGradient id="shieldStroke" x1="158" y1="196" x2="328" y2="710" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7FC8EC"/>
+      <stop offset="1" stop-color="#8BD0A6"/>
+    </linearGradient>
+    <linearGradient id="shieldStrokeSoft" x1="194" y1="244" x2="292" y2="621" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A8DFFF"/>
+      <stop offset="1" stop-color="#AEE3C3"/>
+    </linearGradient>
+    <linearGradient id="lineGlow" x1="122" y1="335" x2="386" y2="335" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A3D9F7" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#A3D9F7" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#A3D9F7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="globeStroke" x1="927" y1="412" x2="1355" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A5D6F5"/>
+      <stop offset="0.54" stop-color="#8EDBC6"/>
+      <stop offset="1" stop-color="#BCE7AE"/>
+    </linearGradient>
+    <linearGradient id="globeLine" x1="927" y1="412" x2="1355" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#AEDAF6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#AEDAF6" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#AEDAF6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="hLine" x1="900" y1="282" x2="1600" y2="282" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B4DEF7" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#B4DEF7" stop-opacity="0.66"/>
+      <stop offset="1" stop-color="#B4DEF7" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="orbA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(132 166) rotate(90) scale(180)">
+      <stop stop-color="#CDEBFF"/>
+      <stop offset="1" stop-color="#CDEBFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1360 205) rotate(90) scale(210)">
+      <stop stop-color="#D7F6E4"/>
+      <stop offset="1" stop-color="#D7F6E4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbC" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(822 1040) rotate(90) scale(240)">
+      <stop stop-color="#E2F5FF"/>
+      <stop offset="1" stop-color="#E2F5FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -2,9 +2,7 @@ import Nav from "./components/Nav";
 import Announce from "./components/Announce";
 import Hero from "./components/Hero";
 import Ticker from "./components/Ticker";
-import CIATriad from "./components/CIATriad";
-import Pillars from "./components/Pillars";
-import Services from "./components/Services";
+import SecurityScrollSections from "./components/SecurityScrollSections";
 import Stats from "./components/Stats";
 import About from "./components/About";
 import CTA from "./components/CTA";
@@ -18,9 +16,7 @@ export default function Page() {
       <Announce />
       <Hero />
       <Ticker />
-      <CIATriad />
-      <Pillars />
-      <Services />
+      <SecurityScrollSections />
       <Stats />
       <About />
       <CTA />

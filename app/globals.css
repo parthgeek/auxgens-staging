@@ -78,7 +78,8 @@ strong { font-weight: 600; }
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
-  height: 104px; width: 90%; max-width: var(--w); margin: 0 auto;
+  height: 104px; width: 100%; margin: 0;
+  padding: 0 1.5rem 0 1rem;
 }
 .nav-brand {
   display: inline-flex; align-items: center; justify-content: center;
@@ -620,6 +621,38 @@ strong { font-weight: 600; }
 }
 .section > .wrap {
   position: relative; z-index: 1;
+}
+
+.story-flow {
+  position: relative;
+  background:
+    linear-gradient(90deg, rgba(247,251,255,.46) 0%, rgba(219,233,251,.24) 24%, rgba(217,241,239,.16) 58%, rgba(238,246,232,.1) 100%),
+    url('/security-story-bg.png') center center / cover fixed no-repeat,
+    var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.story-flow .section,
+.story-flow .section-alt {
+  background:
+    linear-gradient(180deg, rgba(247,251,255,.78), rgba(246,250,243,.74)),
+    transparent;
+}
+.story-flow .section-alt {
+  background:
+    linear-gradient(180deg, rgba(238,246,232,.68), rgba(247,251,255,.76)),
+    transparent;
+}
+.story-flow .section::before {
+  opacity: .62;
+}
+.story-flow .section#services::after {
+  background-image:
+    linear-gradient(90deg, rgba(247,251,255,.66) 0%, rgba(247,251,255,.26) 38%, rgba(247,251,255,.04) 72%),
+    url('/services-cyber-bg.png');
+  opacity: .16;
+}
+.story-flow .section + .section {
+  border-top: 1px solid rgba(197,220,186,.72);
 }
 
 .sec-hdr {
@@ -1443,6 +1476,12 @@ footer::before {
   .hero-triad { margin: 0 0 2rem; }
   .sec-hdr { flex-direction: column; gap: 1.2rem; }
   .cia-grid, .pillars-grid, .services-grid { grid-template-columns: 1fr; }
+  .story-flow {
+    background:
+      linear-gradient(180deg, rgba(247,251,255,.52), rgba(238,246,232,.38)),
+      url('/security-story-bg.png') 62% top / cover no-repeat,
+      var(--paper);
+  }
   .cia-box, .pillar-item, .service-box { border-right: none; border-bottom: 1px solid var(--rule); }
   .services-page-grid .service-box:nth-child(7) { grid-column: auto; }
   .services-page-grid .service-box:nth-child(7) .service-list { columns: 1; }
