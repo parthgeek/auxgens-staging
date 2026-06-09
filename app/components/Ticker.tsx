@@ -28,7 +28,7 @@ const brands = {
     name: "IBSFINtech",
     url: "https://www.ibsfintech.com/",
     logo: (
-      <img className="brand-logo-img" src="/ibsfintech.png" alt="" loading="lazy" />
+      <img className="brand-logo-img" src="/ibs-new.png" alt="" loading="lazy" />
     ),
   },
   seceon: {
@@ -61,6 +61,7 @@ const items = [
 export default function Ticker() {
   return (
     <div className="ticker">
+      <p className="ticker-headline">Trusted by Frontier Labs and Industry Leaders</p>
       <div className="ticker-track">
         {[0, 1].map((groupIndex) => (
           <div

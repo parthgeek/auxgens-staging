@@ -408,12 +408,25 @@ strong { font-weight: 600; }
 .btn-ghost-light:hover { border-color: rgba(255,255,255,.5); color: #fff; }
 
 /* ── TICKER ── */
+.ticker-headline {
+  text-align: center;
+  font-family: var(--fn-b);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--t4);
+  margin-bottom: 1.75rem;
+  padding: 0 1rem;
+}
 .ticker {
-  --ticker-gap: 3rem;
+  --ticker-gap: 5rem;
   overflow: hidden; border-bottom: 1px solid var(--rule);
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 3rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
   background:
-    linear-gradient(90deg, rgba(219,233,251,.42) 0%, rgba(246,250,243,.92) 28%, rgba(217,241,239,.3) 62%, rgba(243,231,184,.2) 100%);
+    linear-gradient(90deg, transparent 0%, rgba(246,250,243,.95) 18%, rgba(217,241,239,.95) 50%, rgba(246,250,243,.95) 82%, transparent 100%);
   position: relative;
 }
 .ticker::before {
@@ -421,8 +434,10 @@ strong { font-weight: 600; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(47,111,179,.06), transparent 28%, rgba(46,159,154,.06) 62%, rgba(196,154,44,.05)),
+    linear-gradient(90deg, transparent 0%, rgba(47,111,179,.06) 18%, rgba(46,159,154,.06) 50%, rgba(196,154,44,.05) 82%, transparent 100%),
     url('/section-cyber-texture.png') center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 82%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 82%, transparent 100%);
   opacity: .55;
   pointer-events: none;
   animation: background-pan 20s linear infinite;
@@ -433,10 +448,6 @@ strong { font-weight: 600; }
   transform: translate3d(0,0,0);
   will-change: transform;
 }
-.ticker-track:hover,
-.ticker-track:focus-within {
-  animation-play-state: paused;
-}
 .ticker-group {
   display: flex; align-items: center; gap: var(--ticker-gap);
   flex-shrink: 0; padding-right: var(--ticker-gap);
@@ -446,51 +457,28 @@ strong { font-weight: 600; }
   text-transform: uppercase; color: var(--t4);
   flex-shrink: 0; display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
   gap: .35rem;
-  min-width: 15.5rem; min-height: 4.9rem; position: relative; outline: none; z-index: 0;
+  min-width: 20rem; min-height: 7rem; position: relative; outline: none; z-index: 0;
   cursor: pointer;
 }
-.ticker-item:hover { z-index: 2; }
 .ticker-inline-logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 1.45rem;
+  min-height: 4.35rem;
   pointer-events: none;
 }
 .ticker-inline-logo .brand-logo-img {
   width: auto;
-  max-width: 5.8rem;
-  max-height: 1.5rem;
+  max-width: 17.4rem;
+  max-height: 4.5rem;
   object-fit: contain;
 }
 .ticker-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .2s ease, transform .2s ease, color .2s ease;
+  display: none;
 }
 .ticker-logo {
-  position: absolute; left: 50%; top: 50%;
-  transform: translate(-50%, -45%) scale(.88);
-  opacity: 0; pointer-events: none;
-  width: max-content; min-width: 0; min-height: 5.8rem; padding: .55rem .75rem;
-  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
-  background: rgba(246,250,243,.98);
-  border: 1px solid rgba(90,125,95,.25);
-  border-radius: 6px;
-  box-shadow: 0 18px 40px rgba(13,36,16,.18), 0 4px 12px rgba(13,36,16,.1);
-  color: var(--t1);
-  transition: opacity .22s ease, transform .22s ease;
-  z-index: 10;
-}
-.ticker-item:hover .ticker-label,
-.ticker-item:focus-visible .ticker-label {
-  opacity: 0; transform: translateY(6px); color: var(--t2);
-}
-.ticker-item:hover .ticker-logo,
-.ticker-item:focus-visible .ticker-logo {
-  opacity: 1; transform: translate(-50%, -50%) scale(1);
+  display: none;
 }
 .ticker-item::after {
   content: '·'; position: absolute; right: -1.9rem; top: 50%;
@@ -518,8 +506,8 @@ strong { font-weight: 600; }
   max-height: 4.4rem;
 }
 .ticker-inline-logo-rsa .brand-logo-img {
-  max-width: 4.6rem;
-  max-height: 1.3rem;
+  max-width: 13.8rem;
+  max-height: 3.9rem;
 }
 .ticker-logo-ssrvm .brand-logo-img {
   width: 8.6rem;
@@ -528,16 +516,17 @@ strong { font-weight: 600; }
 }
 .ticker-inline-logo-ssrvm .brand-logo-img {
   width: auto;
-  max-width: 3.1rem;
-  max-height: 1.55rem;
+  max-width: 14rem;
+  max-height: 7rem;
 }
 .ticker-logo-ibsfintech .brand-logo-img {
   max-width: 14rem;
   max-height: 4rem;
 }
 .ticker-inline-logo-ibsfintech .brand-logo-img {
-  max-width: 5.4rem;
-  max-height: 1.2rem;
+  width: 15rem;
+  max-width: none;
+  max-height: none;
 }
 .ticker-logo-ibsfintech,
 .ticker-logo-seceon {
@@ -550,15 +539,16 @@ strong { font-weight: 600; }
   max-height: 4rem;
 }
 .ticker-inline-logo-seceon .brand-logo-img {
-  max-width: 4.9rem;
-  max-height: 1.15rem;
+  max-width: 14.7rem;
+  max-height: 3.45rem;
+  filter: invert(1);
 }
 .ticker-logo-bank-of-india .brand-logo-img {
   max-height: 4.6rem;
 }
 .ticker-inline-logo-bank-of-india .brand-logo-img {
-  max-width: 5rem;
-  max-height: 1.3rem;
+  max-width: 15rem;
+  max-height: 3.9rem;
 }
 @keyframes ticker {
   from { transform: translate3d(0,0,0); }
