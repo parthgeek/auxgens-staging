@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
+import LogoLockup from "./LogoLockup";
 
 const navItems = [
   { label: "Home", href: "/#home" },
@@ -43,17 +43,12 @@ export default function Nav() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a href="/" className="nav-brand" aria-label="Auxgens home">
-          <Image
-            src="/logo_3d.gif"
-            alt="Auxgens"
-            width={360}
-            height={360}
-            className="nav-logo"
-            priority
-            unoptimized
-          />
-        </a>
+        <LogoLockup
+          href="/"
+          className="nav-brand"
+          logoClassName="nav-logo"
+          taglineClassName="nav-tagline"
+        />
         <nav>
           <ul className="nav-links">
             {navItems.map((item) => (

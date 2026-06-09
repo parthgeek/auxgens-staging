@@ -1,4 +1,4 @@
-import Image from "next/image";
+import LogoLockup from "./LogoLockup";
 
 const cols = [
   {
@@ -15,20 +15,15 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <a href="#" className="foot-logo" aria-label="Auxgens home">
-              <Image
-                src="/logo_3d.gif"
-                alt="Auxgens"
-                width={360}
-                height={360}
-                className="foot-logo-img"
-                unoptimized
-              />
-            </a>
+            <LogoLockup
+              href="#"
+              className="foot-logo"
+              logoClassName="foot-logo-img"
+              taglineClassName="foot-logo-tagline"
+            />
             <p>
               Managed cyber &amp; information security across Asia, EMEA, and North America — protecting what matters most to your business.
             </p>
-            <p className="foot-tag">Securing today for a better tomorrow</p>
           </div>
           {cols.map((c) => (
             <div key={c.title} className="foot-col">
