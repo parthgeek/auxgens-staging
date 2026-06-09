@@ -44,7 +44,6 @@ export const detailedServices: DetailedService[] = [
           "Managed GRC",
           "BCP/DR Consulting",
           "SOX – 404",
-          "SSAE 18 SOC2",
           "Third-Party Assessment",
         ],
       },
