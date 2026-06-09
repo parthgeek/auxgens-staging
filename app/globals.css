@@ -416,14 +416,14 @@ strong { font-weight: 600; }
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--t4);
-  margin-bottom: 1.75rem;
+  margin-bottom: 0.2rem;
   padding: 0 1rem;
 }
 .ticker {
   --ticker-gap: 5rem;
   overflow: hidden; border-bottom: 1px solid var(--rule);
-  padding: 2.5rem 0 3rem;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  padding: 1.5rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
   mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
   background:
     linear-gradient(90deg, transparent 0%, rgba(246,250,243,.95) 18%, rgba(217,241,239,.95) 50%, rgba(246,250,243,.95) 82%, transparent 100%);
@@ -457,7 +457,7 @@ strong { font-weight: 600; }
   text-transform: uppercase; color: var(--t4);
   flex-shrink: 0; display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
   gap: .35rem;
-  min-width: 20rem; min-height: 7rem; position: relative; outline: none; z-index: 0;
+  min-width: 20rem; min-height: 4.5rem; position: relative; outline: none; z-index: 0;
   cursor: pointer;
 }
 .ticker-inline-logo {

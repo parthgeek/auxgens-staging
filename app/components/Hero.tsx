@@ -36,7 +36,7 @@ export default function Hero() {
             Secure Your<br />Every <em>Click.</em><br />Every Layer.
           </h1>
           <div className="hero-metrics">
-            <div className="metric"><strong>5+</strong><span>Years of field experience</span></div>
+            <div className="metric"><strong>25+</strong><span>Years of field experience</span></div>
             <div className="metric-sep"></div>
             <div className="metric"><strong>24/7</strong><span>SOC coverage</span></div>
             <div className="metric-sep"></div>
