@@ -1,29 +1,22 @@
-import type { IconType } from "react-icons";
-import {
-  PiFingerprintDuotone,
-  PiLockKeyDuotone,
-  PiPulseDuotone,
-} from "react-icons/pi";
-
-const heroPrinciples = [
-  {
-    icon: PiLockKeyDuotone,
-    title: "Confidentiality",
-    body: "Private by design",
-  },
-  {
-    icon: PiFingerprintDuotone,
-    title: "Integrity",
-    body: "Tamper-aware controls",
-  },
-  {
-    icon: PiPulseDuotone,
-    title: "Availability",
-    body: "Always-on response",
-  },
-] satisfies Array<{ icon: IconType; title: string; body: string }>;
-
 export default function Hero() {
+  const heroPrinciples = [
+    {
+      gifSrc: "/fingerprint.gif",
+      title: "Detect & Analyze",
+      body: "Threat hunting & real-time alerts",
+    },
+    {
+      gifSrc: "/shield.gif",
+      title: "Defend & Isolate",
+      body: "Active defense & containment",
+    },
+    {
+      gifSrc: "/loading.gif",
+      title: "Recover & Respond",
+      body: "Rapid response & business resilience",
+    },
+  ];
+
   return (
     <section className="hero" id="home">
       <div className="wrap hero-grid">
@@ -44,20 +37,26 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-right">
-          <div className="hero-triad" aria-label="Cybersecurity assurance model">
-            {heroPrinciples.map((principle) => {
-              const Icon = principle.icon;
-
-              return (
-                <div key={principle.title} className="hero-triad-item">
-                  <div className="hero-triad-icon">
-                    <Icon aria-hidden="true" focusable="false" />
-                  </div>
-                  <strong>{principle.title}</strong>
-                  <span>{principle.body}</span>
+          <div className="hero-triad" aria-label="Cybersecurity detection and response framework">
+            {heroPrinciples.map((principle) => (
+              <div key={principle.title} className="hero-triad-item">
+                <div className="hero-triad-icon">
+                  <img
+                    src={principle.gifSrc}
+                    alt={`${principle.title} icon`}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      border: "none",
+                      background: "transparent",
+                    }}
+                  />
                 </div>
-              );
-            })}
+                <strong>{principle.title}</strong>
+                <span>{principle.body}</span>
+              </div>
+            ))}
           </div>
           <p className="hero-tagline">Securing Your Digital Future.</p>
           <p className="hero-desc">
