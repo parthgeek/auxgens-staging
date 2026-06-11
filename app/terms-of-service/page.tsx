@@ -98,14 +98,7 @@ export default function TermsOfServicePage() {
                 potential security, compliance, privacy, and development work.
               </p>
             </div>
-            <aside className="legal-summary" aria-label="Terms summary">
-              <span>Last updated</span>
-              <strong>June 11, 2026</strong>
-              <p>
-                Project-specific obligations are handled through the relevant
-                proposal, statement of work, or written client agreement.
-              </p>
-            </aside>
+           
           </div>
         </section>
 

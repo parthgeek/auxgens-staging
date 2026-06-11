@@ -84,15 +84,7 @@ export default function PrivacyPolicyPage() {
                 enquiries, proposals, and security consulting engagements.
               </p>
             </div>
-            <aside className="legal-summary" aria-label="Policy summary">
-              <span>Last updated</span>
-              <strong>June 11, 2026</strong>
-              <p>
-                Applies to Auxgens website visitors, business contacts, and
-                prospective or active clients unless a separate written
-                agreement states otherwise.
-              </p>
-            </aside>
+           
           </div>
         </section>
 

@@ -16,7 +16,13 @@ const cols: Array<{ title: string; links: FooterLink[] }> = [
     title: "Services",
     links: serviceLinks,
   },
-  { title: "Company", links: [{ label: "About Us", href: "/#about" }] },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "/#about" },
+      { label: "Contact Us", href: "/contact-us" },
+    ],
+  },
   {
     title: "Legal",
     links: [

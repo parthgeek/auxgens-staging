@@ -64,7 +64,7 @@ export default function Hero() {
             <strong>experienced professionals</strong> across Asia, EMEA, and North America.
           </p>
           <div className="hero-btns">
-            <a href="#contact" className="btn-lime">Connect With Us</a>
+            <a href="/contact-us" className="btn-lime">Connect With Us</a>
             <a href="#services" className="btn-border">Our Services</a>
           </div>
         </div>

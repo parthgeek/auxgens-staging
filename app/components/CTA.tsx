@@ -14,8 +14,8 @@ export default function CTA() {
             Let&rsquo;s talk about where your exposure is — and how Auxgens closes the gap before adversaries find it. Our team responds within one business day.
           </p>
           <div className="cta-btns">
-            <a href="mailto:sales@auxgens.net" className="btn-lime">Email Us Now</a>
-            <a href="tel:+1-425-555-0123" className="btn-ghost-light">Call Us</a>
+            <a href="/contact-us#contact-form" className="btn-lime">Send Enquiry</a>
+            <a href="mailto:sales@auxgens.net" className="btn-ghost-light">Email Us Now</a>
           </div>
           <div className="cta-meta">
             <span>sales@auxgens.net</span>

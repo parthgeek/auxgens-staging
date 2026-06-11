@@ -103,9 +103,7 @@ export default function ServicesPage() {
                 <a href="#grc" className="btn-lime">
                   Explore Services
                 </a>
-                <a href="#contact" className="btn-border">
-                  Contact Us
-                </a>
+                
               </div>
             </div>
           </div>

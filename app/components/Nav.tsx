@@ -8,7 +8,6 @@ const navItems = [
   { label: "Home", href: "/#home" },
   { label: "Our Services", href: "/services" },
   { label: "About Us", href: "/#about" },
-  { label: "Contact Us", href: "/#contact" },
 ];
 
 export default function Nav() {
@@ -63,7 +62,7 @@ export default function Nav() {
             ))}
           </ul>
         </nav>
-        <a href="/#contact" className="nav-cta">Contact Us</a>
+        <a href="/contact-us" className="nav-cta">Contact Us</a>
       </div>
     </header>
   );
