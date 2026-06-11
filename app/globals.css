@@ -1646,6 +1646,10 @@ strong { font-weight: 600; }
   border-color: rgba(168,212,146,.96);
   transform: translateY(-2px);
 }
+.contact-email-card:focus-visible {
+  outline: 2px solid rgba(114,193,53,.48);
+  outline-offset: 3px;
+}
 .contact-card-icon {
   width: 3rem;
   height: 3rem;
@@ -2051,6 +2055,59 @@ footer::before {
 .foot-bottom {
   padding-top: 2rem; display: flex; align-items: center;
   justify-content: space-between; font-size: .86rem; color: var(--t4);
+}
+.foot-locations,
+.foot-location {
+  display: inline-flex;
+  align-items: center;
+}
+.foot-locations {
+  gap: .55rem;
+}
+.foot-location {
+  gap: .42rem;
+}
+.foot-location-sep {
+  color: rgba(90,125,95,.7);
+}
+.flag-mark {
+  position: relative;
+  display: inline-block;
+  width: 1.35rem;
+  height: .9rem;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 1px solid rgba(90,125,95,.22);
+  box-shadow: 0 1px 3px rgba(14,42,18,.08);
+}
+.flag-mark-in {
+  background:
+    linear-gradient(180deg, #ff9933 0 33.33%, #fff 33.33% 66.66%, #138808 66.66% 100%);
+}
+.flag-mark-in::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: .24rem;
+  height: .24rem;
+  border: 1px solid #1a4f9f;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.flag-mark-us {
+  background:
+    linear-gradient(180deg, #b22234 0 7.69%, #fff 7.69% 15.38%, #b22234 15.38% 23.07%, #fff 23.07% 30.76%, #b22234 30.76% 38.45%, #fff 38.45% 46.14%, #b22234 46.14% 53.83%, #fff 53.83% 61.52%, #b22234 61.52% 69.21%, #fff 69.21% 76.9%, #b22234 76.9% 84.59%, #fff 84.59% 92.28%, #b22234 92.28% 100%);
+}
+.flag-mark-us::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 43%;
+  height: 54%;
+  background: #3c3b6e;
 }
 
 /* ── ANIMATIONS ── */

@@ -63,7 +63,17 @@ export default function Footer() {
         </div>
         <div className="foot-bottom">
           <span>&copy; 2026 Auxgens. All rights reserved.</span>
-          <span>Bengaluru · Bothell </span>
+          <span className="foot-locations">
+            <span className="foot-location">
+              <span className="flag-mark flag-mark-in" aria-label="India" role="img"></span>
+              Bengaluru
+            </span>
+            <span className="foot-location-sep" aria-hidden="true">·</span>
+            <span className="foot-location">
+              <span className="flag-mark flag-mark-us" aria-label="United States" role="img"></span>
+              Bothell
+            </span>
+          </span>
         </div>
       </div>
     </footer>

@@ -134,7 +134,7 @@ export default function ContactUsPage() {
                   </span>
                   <span>
                     <small>LinkedIn</small>
-                    <strong>linkedin.com/company/auxgen</strong>
+                    <strong>Auxgens on LinkedIn</strong>
                   </span>
                 </a>
               </div>
