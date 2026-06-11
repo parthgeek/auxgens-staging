@@ -19,12 +19,13 @@ export default function ScrollToTop() {
       style={{
         position: "fixed",
         bottom: "2rem",
-        right: "2rem",
+        left: "50%",
         zIndex: 999,
         width: "2.75rem",
         height: "2.75rem",
         borderRadius: "50%",
         border: "2px solid var(--lime)",
+        padding: 0,
         background: "var(--deep)",
         color: "var(--lime)",
         display: "flex",
@@ -33,12 +34,22 @@ export default function ScrollToTop() {
         cursor: "pointer",
         opacity: visible ? 1 : 0,
         pointerEvents: visible ? "auto" : "none",
-        transform: visible ? "translateY(0)" : "translateY(1rem)",
+        transform: visible ? "translate(-50%, 0)" : "translate(-50%, 1rem)",
         transition: "opacity 0.3s, transform 0.3s",
         boxShadow: "0 4px 16px rgba(0,0,0,0.25)",
       }}
     >
-      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{ display: "block" }}
+      >
         <polyline points="3,12 9,6 15,12" />
       </svg>
     </button>

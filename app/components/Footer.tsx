@@ -1,12 +1,29 @@
 import LogoLockup from "./LogoLockup";
+import { detailedServices } from "../data/services";
 
-const cols = [
+type FooterLink = {
+  label: string;
+  href: string;
+};
+
+const serviceLinks: FooterLink[] = detailedServices.map((service) => ({
+  label: service.title,
+  href: `/services#${service.id}`,
+}));
+
+const cols: Array<{ title: string; links: FooterLink[] }> = [
   {
     title: "Services",
-    links: ["GRC Consulting", "Cyber Security", "Information Security", "Penetration Testing", "SOC as a Service"],
+    links: serviceLinks,
   },
-  { title: "Company", links: ["About Us", "Careers", "Partners", "Blog"] },
-  { title: "Legal", links: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Security"] },
+  { title: "Company", links: [{ label: "About Us", href: "/#about" }] },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+    ],
+  },
 ];
 
 export default function Footer() {
@@ -16,7 +33,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <LogoLockup
-              href="#"
+              href="/"
               className="foot-logo"
               logoClassName="foot-logo-img"
               taglineClassName="foot-logo-tagline"
@@ -29,8 +46,10 @@ export default function Footer() {
             <div key={c.title} className="foot-col">
               <h4>{c.title}</h4>
               <ul>
-                {c.links.map((l) => (
-                  <li key={l}><a href="#">{l}</a></li>
+                {c.links.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
                 ))}
               </ul>
             </div>
