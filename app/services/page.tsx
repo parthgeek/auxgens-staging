@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import ScrollFade from "../components/ScrollFade";
 import Stats from "../components/Stats";
+import SvcSidebar from "../components/SvcSidebar";
 import { detailedServices } from "../data/services";
 
 type ServiceInsight = {
@@ -109,21 +110,8 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* ── SERVICE NAV ── */}
-        <nav className="svc-index anim">
-          <div className="wrap">
-            <ul className="svc-index-list">
-              {detailedServices.map((s) => (
-                <li key={s.id}>
-                  <a href={`#${s.id}`} className="svc-index-link">
-                    <span className="svc-index-eyebrow">{s.eyebrow}</span>
-                    <span className="svc-index-title">{s.title}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
+        {/* ── SERVICE SIDEBAR ── */}
+        <SvcSidebar />
 
         {/* ── SERVICE SECTIONS ── */}
         {detailedServices.map((service, idx) => {

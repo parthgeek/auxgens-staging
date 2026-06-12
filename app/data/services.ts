@@ -192,7 +192,7 @@ export const detailedServices: DetailedService[] = [
   {
     id: "app-dev",
     eyebrow: "Development Services",
-    title: "Secure Application Development",
+    title: "Application Development",
     description:
       "Auxgens builds web and mobile applications with security embedded from the ground up. Our secure SDLC approach means security is not bolted on at the end — it is woven into every sprint, code review, and deployment pipeline, reducing vulnerabilities before they reach production.",
     challenges: [
