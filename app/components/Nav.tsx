@@ -7,7 +7,7 @@ import LogoLockup from "./LogoLockup";
 const navItems = [
   { label: "Home", href: "/#home" },
   { label: "Our Services", href: "/services" },
-  { label: "About Us", href: "/#about" },
+  { label: "About Us", href: "/about-us" },
 ];
 
 export default function Nav() {
@@ -24,8 +24,8 @@ export default function Nav() {
   }, []);
 
   const isActive = (href: string) => {
-    if (href === "/services") {
-      return pathname === "/services";
+    if (href.startsWith("/") && !href.includes("#")) {
+      return pathname === href;
     }
 
     if (pathname !== "/") {
