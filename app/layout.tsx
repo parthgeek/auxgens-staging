@@ -21,7 +21,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Auxgens — Securing Your Digital Future",
   description:
-    "Auxgens is a global cybersecurity partner helping organisations protect data, systems, and trust across Asia, EMEA, and North America.",
+    "Auxgens is a global cybersecurity partner helping organisations protect data, systems, and trust across Asia, EMEA, and United States of America.",
 };
 
 export default function RootLayout({

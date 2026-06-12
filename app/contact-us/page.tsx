@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import type { IconType } from "react-icons";
+import Image from "next/image";
 import {
-  PiBuildingsDuotone,
   PiClockCountdownDuotone,
   PiEnvelopeSimpleDuotone,
-  PiLinkedinLogoDuotone,
-  PiMapPinLineDuotone,
   PiShieldCheckDuotone,
 } from "react-icons/pi";
 import Announce from "../components/Announce";
@@ -18,7 +15,8 @@ type Office = {
   city: string;
   label: string;
   address: string[];
-  icon: IconType;
+  country: "in" | "us";
+  countryName: string;
 };
 
 const offices: Office[] = [
@@ -26,20 +24,22 @@ const offices: Office[] = [
     city: "Bengaluru",
     label: "India operations",
     address: ["C3834, Brigade Meadows", "Udayapura, Bengaluru 560082"],
-    icon: PiBuildingsDuotone,
+    country: "in",
+    countryName: "India",
   },
   {
     city: "Bothell",
-    label: "North America operations",
+    label: "United States of America operations",
     address: ["17710, 35th Dr Se", "Bothell, WA 98012"],
-    icon: PiMapPinLineDuotone,
+    country: "us",
+    countryName: "United States",
   },
 ];
 
 const responseNotes = [
-  { label: "Primary inbox", value: "sales@auxgens.net" },
+  { label: "Primary inbox", value: "contact@auxgens.net" },
   { label: "Response window", value: "1 business day" },
-  { label: "Coverage", value: "Asia, EMEA, North America" },
+  { label: "Coverage", value: "Asia, EMEA, United States of America" },
 ];
 
 const linkedInUrl = "https://www.linkedin.com/company/auxgen";
@@ -71,7 +71,7 @@ export default function ContactUsPage() {
                 CISO, and secure application development enquiries.
               </p>
               <div className="contact-hero-actions">
-                <a href="mailto:sales@auxgens.net" className="btn-lime btn-icon">
+                <a href="mailto:contact@auxgens.net" className="btn-lime btn-icon">
                   <PiEnvelopeSimpleDuotone aria-hidden="true" focusable="false" />
                   <span>Email sales</span>
                 </a>
@@ -87,8 +87,8 @@ export default function ContactUsPage() {
                 <span>Primary contact</span>
                 <PiClockCountdownDuotone aria-hidden="true" focusable="false" />
               </div>
-              <a className="contact-email-large" href="mailto:sales@auxgens.net">
-                sales@auxgens.net
+              <a className="contact-email-large" href="mailto:contact@auxgens.net">
+                contact@auxgens.net
               </a>
               <div className="contact-signal-list">
                 {responseNotes.map((note) => (
@@ -113,13 +113,19 @@ export default function ContactUsPage() {
               </p>
 
               <div className="contact-channel-list">
-                <a className="contact-email-card" href="mailto:sales@auxgens.net">
+                <a className="contact-email-card" href="mailto:contact@auxgens.net">
                   <span className="contact-card-icon">
-                    <PiEnvelopeSimpleDuotone aria-hidden="true" focusable="false" />
+                    <Image
+                      className="contact-channel-image"
+                      src="/gmail-removebg-preview.png"
+                      alt=""
+                      width={40}
+                      height={40}
+                    />
                   </span>
                   <span>
                     <small>Email</small>
-                    <strong>sales@auxgens.net</strong>
+                    <strong>contact@auxgens.net</strong>
                   </span>
                 </a>
 
@@ -130,7 +136,13 @@ export default function ContactUsPage() {
                   rel="noreferrer"
                 >
                   <span className="contact-card-icon">
-                    <PiLinkedinLogoDuotone aria-hidden="true" focusable="false" />
+                    <Image
+                      className="contact-channel-image"
+                      src="/linkedin-removebg-preview.png"
+                      alt=""
+                      width={40}
+                      height={40}
+                    />
                   </span>
                   <span>
                     <small>LinkedIn</small>
@@ -140,26 +152,26 @@ export default function ContactUsPage() {
               </div>
 
               <div className="contact-office-grid">
-                {offices.map((office) => {
-                  const Icon = office.icon;
-
-                  return (
-                    <article key={office.city} className="contact-office-card">
-                      <span className="contact-card-icon">
-                        <Icon aria-hidden="true" focusable="false" />
-                      </span>
-                      <div>
-                        <small>{office.label}</small>
-                        <h3>{office.city}</h3>
-                        <address>
-                          {office.address.map((line) => (
-                            <span key={line}>{line}</span>
-                          ))}
-                        </address>
-                      </div>
-                    </article>
-                  );
-                })}
+                {offices.map((office) => (
+                  <article key={office.city} className="contact-office-card">
+                    <span className="contact-card-icon">
+                      <span
+                        className={`flag-mark flag-mark-${office.country} contact-flag`}
+                        aria-label={`${office.countryName} flag`}
+                        role="img"
+                      />
+                    </span>
+                    <div>
+                      <small>{office.label}</small>
+                      <h3>{office.city}</h3>
+                      <address>
+                        {office.address.map((line) => (
+                          <span key={line}>{line}</span>
+                        ))}
+                      </address>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
 

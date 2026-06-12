@@ -37,7 +37,7 @@ const sections = [
   {
     title: "International Handling",
     body: [
-      "Auxgens works across Asia, EMEA, and North America. Information may be processed in countries where Auxgens, clients, partners, or service providers operate. We apply reasonable safeguards for cross-border handling where required by applicable law or contract.",
+      "Auxgens works across Asia, EMEA, and United States of America. Information may be processed in countries where Auxgens, clients, partners, or service providers operate. We apply reasonable safeguards for cross-border handling where required by applicable law or contract.",
     ],
   },
   {
@@ -51,7 +51,7 @@ const sections = [
     title: "Your Choices And Rights",
     body: [
       "Depending on your location and applicable law, you may have rights to request access, correction, deletion, portability, objection, restriction, or opt-out of certain processing. We will respond to valid requests as required by applicable law.",
-      "To make a privacy request, contact us at sales@auxgens.net with enough detail for us to identify the relevant information and verify the request.",
+      "To make a privacy request, contact us at contact@auxgens.net with enough detail for us to identify the relevant information and verify the request.",
     ],
   },
   {
@@ -83,6 +83,7 @@ export default function PrivacyPolicyPage() {
                 How Auxgens handles information shared through our website,
                 enquiries, proposals, and security consulting engagements.
               </p>
+              <p className="legal-updated">Last updated: June 2026</p>
             </div>
            
           </div>

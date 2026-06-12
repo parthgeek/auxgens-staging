@@ -45,7 +45,7 @@ export default function Footer() {
               taglineClassName="foot-logo-tagline"
             />
             <p>
-              Managed cyber &amp; information security across Asia, EMEA, and North America — protecting what matters most to your business.
+              Managed cyber &amp; information security across Asia, EMEA, and United States of America — protecting what matters most to your business.
             </p>
           </div>
           {cols.map((c) => (

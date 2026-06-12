@@ -33,11 +33,23 @@ const serviceInsights: Record<string, ServiceInsight> = {
       "Threat monitoring, investigation, and compliance reporting stay connected so security teams can act faster and explain decisions clearly.",
     steps: ["Detect events", "Investigate risk", "Report posture"],
   },
+  "soc-as-a-service": {
+    title: "Continuous monitoring with accountable escalation",
+    copy:
+      "Managed SOC coverage keeps alert triage, investigation, and response coordination moving through defined runbooks and reporting cadences.",
+    steps: ["Monitor signals", "Escalate incidents", "Review posture"],
+  },
   gdpr: {
     title: "Privacy evidence that can stand up to review",
     copy:
       "Personal data discovery, process alignment, and breach readiness are organised into a maintained compliance programme.",
     steps: ["Discover data", "Align process", "Maintain records"],
+  },
+  ferpa: {
+    title: "Student record protection made operational",
+    copy:
+      "Education data flows, access controls, vendor risk, and staff handling practices are translated into a maintainable FERPA programme.",
+    steps: ["Map records", "Control access", "Maintain evidence"],
   },
   "app-dev": {
     title: "Security built into delivery",
@@ -56,7 +68,7 @@ const serviceInsights: Record<string, ServiceInsight> = {
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, GDPR, and CCPA.",
+    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, and CCPA.",
 };
 
 export default function ServicesPage() {
@@ -78,7 +90,7 @@ export default function ServicesPage() {
               </h1>
               <div className="hero-metrics">
                 <div className="metric">
-                  <strong>6</strong>
+                  <strong>{detailedServices.length}</strong>
                   <span>Service pillars</span>
                 </div>
                 <div className="metric-sep"></div>
@@ -88,8 +100,8 @@ export default function ServicesPage() {
                 </div>
                 <div className="metric-sep"></div>
                 <div className="metric">
-                  <strong>3</strong>
-                  <span>Global regions</span>
+                  <strong>Global</strong>
+                  <span>Delivery Model</span>
                 </div>
               </div>
             </div>

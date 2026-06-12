@@ -27,7 +27,9 @@ const services = [
   "Governance, Risk & Compliance",
   "Virtual CISO",
   "Cyber Security",
+  "SOC as a Service",
   "GDPR / Privacy",
+  "FERPA",
   "Application Development",
   "CCPA",
   "General enquiry",
@@ -35,7 +37,7 @@ const services = [
 
 const regions = [
   "India / Asia",
-  "North America",
+  "United States of America",
   "EMEA",
   "Global engagement",
 ];
@@ -65,26 +67,11 @@ function validate(values: FormValues) {
   return errors;
 }
 
-function buildMailto(values: FormValues) {
-  const subject = `Auxgens enquiry from ${values.name.trim()}`;
-  const body = [
-    `Name: ${values.name.trim()}`,
-    `Email: ${values.email.trim()}`,
-    `Company: ${values.company.trim() || "Not provided"}`,
-    `Service interest: ${values.service || "Not provided"}`,
-    `Region: ${values.region || "Not provided"}`,
-    "",
-    "Message:",
-    values.message.trim(),
-  ].join("\n");
-
-  return `mailto:sales@auxgens.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
 export default function ContactForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>,
@@ -98,10 +85,11 @@ export default function ContactForm() {
 
     if (status !== "idle") {
       setStatus("idle");
+      setSubmitError("");
     }
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const nextErrors = validate(values);
@@ -109,22 +97,47 @@ export default function ContactForm() {
 
     if (Object.keys(nextErrors).length > 0) {
       setStatus("error");
+      setSubmitError("Please review the highlighted fields before sending.");
       return;
     }
 
     setStatus("loading");
+    setSubmitError("");
 
-    window.setTimeout(() => {
-      window.location.href = buildMailto(values);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      const result = (await response.json()) as {
+        success?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "We could not send your enquiry.");
+      }
+
+      setValues(initialValues);
       setStatus("success");
-    }, 450);
+    } catch (error) {
+      setStatus("error");
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "We could not send your enquiry. Please try again.",
+      );
+    }
   };
 
   const statusMessage = {
     idle: "Fields marked with an asterisk are required.",
-    loading: "Preparing your enquiry for sales@auxgens.net.",
-    success: "Your email client should open with the enquiry details filled in.",
-    error: "Please review the highlighted fields before sending.",
+    loading: "Sending your enquiry securely...",
+    success: "Thank you. Your enquiry has been sent and a confirmation email is on its way.",
+    error: submitError,
   }[status];
 
   return (
@@ -245,7 +258,7 @@ export default function ContactForm() {
       <div className="contact-form-actions">
         <button className="contact-submit" type="submit" disabled={status === "loading"}>
           <PiPaperPlaneTiltDuotone aria-hidden="true" focusable="false" />
-          <span>{status === "loading" ? "Preparing..." : "Send enquiry"}</span>
+          <span>{status === "loading" ? "Sending..." : "Send enquiry"}</span>
         </button>
         <p className={`contact-form-status contact-form-status-${status}`} aria-live="polite">
           {statusMessage}

@@ -124,16 +124,54 @@ export const detailedServices: DetailedService[] = [
           "Annual compliance audit and quarterly management reports",
         ],
       },
+    ],
+  },
+  {
+    id: "soc-as-a-service",
+    eyebrow: "Managed Security Operations",
+    title: "SOC as a Service",
+    description:
+      "Cybersecurity threats are moving faster than traditional SOC teams can manually detect, analyse, and respond. Auxgens delivers SOC as a Service with automation-led monitoring, AI/ML-assisted threat detection, alert correlation, SOAR-style response workflows, and analyst oversight to reduce noise, accelerate response, and improve security posture without expanding headcount.",
+    challenges: [
+      "Alert fatigue from high-volume false positives",
+      "Manual processes that slow down investigation and containment",
+      "Disjointed security tools and fragmented telemetry",
+      "Sophisticated multi-stage attacks across hybrid environments",
+      "Shortage of skilled analysts for continuous operations",
+      "Compliance and audit pressure without reliable reporting evidence",
+    ],
+    offerings: [
       {
-        name: "SOC as a Service",
+        name: "SOC Automation & Triage",
         items: [
-          "Network monitoring and log management",
-          "Threat detection and intelligence",
-          "Incident investigation and response",
-          "Risk and compliance reporting",
-          "Scalable 24/7 coverage",
-          "Enhanced maturity at lower cost than on-premise SOC",
-          "Resource optimisation and staffing shortage mitigation",
+          "AI/ML-assisted threat detection across user, network, endpoint, and cloud activity",
+          "Automated alert triage, risk scoring, and prioritisation",
+          "Correlation of related events into meaningful incidents",
+          "Context enrichment for faster analyst decisions",
+          "Noise reduction to minimise false positives and alert fatigue",
+          "Continuous detection tuning for emerging attack patterns",
+        ],
+      },
+      {
+        name: "Orchestrated Response",
+        items: [
+          "SOAR-style playbooks for consistent incident workflows",
+          "Automated containment guidance for compromised devices, accounts, and indicators",
+          "Custom escalation paths aligned to client policies and SLAs",
+          "Incident investigation support with evidence capture",
+          "Response actions for ransomware, phishing, insider threat, and policy violations",
+          "Post-incident recommendations to strengthen controls",
+        ],
+      },
+      {
+        name: "Unified Visibility & Reporting",
+        items: [
+          "Centralised telemetry from firewalls, endpoints, cloud workloads, identity providers, and applications",
+          "Real-time dashboards for active threats, system health, MTTD, and MTTR",
+          "Compliance-ready reporting for frameworks including HIPAA, PCI-DSS, GDPR, and NIST",
+          "Threat hunting support and proactive posture reviews",
+          "Scalable 24/7 coverage at lower cost than an on-premise SOC",
+          "Operational reporting for leadership, audit, and security teams",
         ],
       },
     ],
@@ -185,6 +223,56 @@ export const detailedServices: DetailedService[] = [
           "Data Security Management",
           "Training & Awareness",
           "GDPR Programme Management",
+        ],
+      },
+    ],
+  },
+  {
+    id: "ferpa",
+    eyebrow: "Education Privacy",
+    title: "FERPA Compliance",
+    description:
+      "FERPA protects the privacy of student education records for US educational institutions and their technology partners. Auxgens helps schools, universities, and edtech providers assess data handling practices, implement privacy controls, and maintain audit-ready evidence for student record protection.",
+    challenges: [
+      "Identifying student education records across SIS, LMS, cloud, and collaboration platforms",
+      "Applying role-based access to sensitive student data",
+      "Managing disclosure, consent, and legitimate educational interest workflows",
+      "Overseeing third-party edtech and service provider access",
+      "Maintaining defensible retention, transfer, and disposal practices",
+      "Training staff on secure student record handling",
+    ],
+    offerings: [
+      {
+        name: "FERPA Readiness Assessment",
+        items: [
+          "Student data inventory and record flow mapping",
+          "Current-state policy and procedure review",
+          "Access control and retention practice assessment",
+          "Third-party processor and edtech risk review",
+          "Gap report with prioritised remediation roadmap",
+          "Leadership-ready compliance briefing",
+        ],
+      },
+      {
+        name: "Controls & Documentation",
+        items: [
+          "FERPA-aligned policies and procedures",
+          "Role-based access model and approval workflows",
+          "Secure record sharing and transfer standards",
+          "Vendor data protection and contract guidance",
+          "Incident response and escalation playbooks",
+          "Staff awareness and handling guidance",
+        ],
+      },
+      {
+        name: "Operational Support",
+        items: [
+          "Periodic FERPA compliance reviews",
+          "Audit evidence collection and maintenance",
+          "Student record request workflow support",
+          "Vendor risk tracking and renewal reviews",
+          "Control monitoring and remediation follow-up",
+          "Training refreshers for faculty and operations teams",
         ],
       },
     ],
@@ -311,8 +399,8 @@ export const homepageServices: Service[] = [
   {
     title: "Infrastructure Security",
     items: [
-      "SOC-as-a-Service (24/7)",
       "SIEM & monitoring",
+      "Log management",
       "Incident response",
       "Endpoint solutions",
       "Threat intelligence",
@@ -320,14 +408,37 @@ export const homepageServices: Service[] = [
     ],
   },
   {
+    title: "SOC as a Service",
+    items: [
+      "AI/ML threat detection",
+      "Automated alert triage",
+      "SOAR-style playbooks",
+      "Unified telemetry",
+      "Real-time dashboards",
+      "Compliance reporting",
+    ],
+  },
+  {
     title: "Governance & Compliance",
     items: [
       "ISO 27001 implementation",
       "GDPR & privacy compliance",
+      "FERPA compliance",
       "PCI-DSS & SOX audits",
       "Cloud security assessment",
       "BCP/DR consulting",
       "CISO-as-a-Service",
+    ],
+  },
+  {
+    title: "FERPA Compliance",
+    items: [
+      "Student data mapping",
+      "Access control reviews",
+      "Disclosure workflows",
+      "Vendor risk oversight",
+      "Policy documentation",
+      "Awareness training",
     ],
   },
   {

@@ -33,7 +33,7 @@ export default function Hero() {
             <div className="metric-sep"></div>
             <div className="metric"><strong>24/7</strong><span>SOC coverage</span></div>
             <div className="metric-sep"></div>
-            <div className="metric"><strong>3</strong><span>Global regions</span></div>
+            <div className="metric"><strong>Global</strong><span>Delivery Model</span></div>
           </div>
         </div>
         <div className="hero-right">
@@ -61,7 +61,7 @@ export default function Hero() {
           <p className="hero-tagline">Securing Your Digital Future.</p>
           <p className="hero-desc">
             Auxgens is a global cybersecurity partner helping organisations protect data, systems, and trust — with{" "}
-            <strong>experienced professionals</strong> across Asia, EMEA, and North America.
+            <strong>experienced professionals</strong> across Asia, EMEA, and United States of America.
           </p>
           <div className="hero-btns">
             <a href="/contact-us" className="btn-lime">Connect With Us</a>

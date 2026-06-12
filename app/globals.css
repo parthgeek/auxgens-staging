@@ -239,6 +239,11 @@ strong { font-weight: 600; }
   border-top: 1px solid var(--rule);
   animation: fadeUp .7s .15s ease both;
 }
+.hero-metrics .metric {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
 .metric strong {
   display: block; font-family: var(--fn-d); font-size: 2rem;
   font-weight: 600; line-height: 1; color: var(--forest);
@@ -860,7 +865,7 @@ strong { font-weight: 600; }
 /* ── SERVICES GRID ── */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5px;
   border: 1px solid var(--rule);
   border-radius: 6px;
@@ -902,7 +907,7 @@ strong { font-weight: 600; }
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M 100 30 L 140 60 L 140 150 Q 100 170 60 150 L 60 60 Z" fill="none" stroke="%231b4d22" stroke-width="2.5"/><circle cx="100" cy="90" r="15" fill="none" stroke="%2372c135" stroke-width="2"/><path d="M 94 90 L 98 94 L 106 86" fill="none" stroke="%2372c135" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="100" y1="70" x2="100" y2="110" stroke="%231b4d22" stroke-width="1" opacity="0.3"/></svg>');
 }
 .service-box-content { position: relative; z-index: 2; }
-.service-box:nth-child(3n) { border-right: none; }
+.service-box:nth-child(4n) { border-right: none; }
 .service-box:hover { background: linear-gradient(180deg, rgba(219,233,251,.18), rgba(238,246,232,.94)); transform: translateY(-2px); }
 .service-box h4 {
   font-family: var(--fn-d);
@@ -932,6 +937,18 @@ strong { font-weight: 600; }
 .services-page-grid .service-box:nth-child(7) .service-list {
   columns: 3;
   column-gap: 2.5rem;
+}
+
+@media (max-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-box:nth-child(4n) {
+    border-right: 1px solid var(--rule);
+  }
+  .service-box:nth-child(2n) {
+    border-right: none;
+  }
 }
 
 /* ── SERVICE INDEX NAV ── */
@@ -1297,10 +1314,19 @@ strong { font-weight: 600; }
   border-top: 1px solid rgba(168,212,146,.78);
 }
 .svc-insight-step {
+  position: relative;
   padding: .9rem .85rem 0 0;
-  border-right: 1px solid rgba(168,212,146,.55);
 }
-.svc-insight-step:last-child { border-right: none; }
+.svc-insight-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1.9rem;
+  background: rgba(168,212,146,.62);
+  transform: translateX(-1px);
+}
 .svc-insight-step span {
   display: block;
   font-size: .72rem;
@@ -1911,17 +1937,27 @@ strong { font-weight: 600; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(168,212,146,.82);
-  border-radius: 8px;
   color: var(--forest);
-  background:
-    radial-gradient(circle at 28% 20%, rgba(255,255,255,.92), transparent 42%),
-    linear-gradient(145deg, rgba(47,111,179,.13), rgba(114,193,53,.16), rgba(238,246,232,.72));
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.76);
 }
 .contact-card-icon svg {
   width: 1.65rem;
   height: 1.65rem;
+}
+.contact-card-icon .contact-channel-image {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+.contact-card-icon .contact-flag {
+  width: 2rem;
+  height: 1.34rem;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(14,42,18,.13);
+}
+.contact-card-icon .contact-flag.flag-mark-in::after {
+  width: .32rem;
+  height: .32rem;
 }
 .contact-email-card small,
 .contact-office-card small {
@@ -2166,6 +2202,14 @@ strong { font-weight: 600; }
   font-size: 1.06rem;
   line-height: 1.8;
   color: var(--t2);
+}
+.legal-updated {
+  margin-top: .95rem;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--forest);
 }
 .legal-summary {
   padding: 1.45rem;
@@ -2523,9 +2567,13 @@ footer::before {
   .svc-insight-wide { grid-column: auto; }
   .svc-insight-steps { grid-template-columns: 1fr; }
   .svc-insight-step {
+    position: static;
     padding: .85rem 0;
     border-right: none;
     border-bottom: 1px solid rgba(168,212,146,.55);
+  }
+  .svc-insight-step::before {
+    display: none;
   }
   .svc-insight-step:last-child {
     padding-bottom: 0;

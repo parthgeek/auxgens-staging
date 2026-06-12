@@ -22,7 +22,7 @@ const checks = [
   },
   {
     title: "Global reach, local expertise",
-    body: "Teams embedded across Asia, EMEA, and North America.",
+    body: "Teams embedded across Asia, EMEA, and United States of America.",
   },
   {
     title: "Certified practitioners",
@@ -40,7 +40,7 @@ const certs = [
   { icon: PiLockSimpleDuotone, title: "CCPA", sub: "California Privacy Act" },
   { icon: PiCreditCardDuotone, title: "PCI-DSS", sub: "Payment Card Security" },
   { icon: PiScalesDuotone, title: "SOX 404", sub: "Financial Compliance" },
-  { icon: PiSealCheckDuotone, title: "SSAE 18", sub: "Service Audits" },
+  { icon: PiSealCheckDuotone, title: "FERPA", sub: "Student Privacy" },
   { icon: PiHeartbeatDuotone, title: "HIPAA", sub: "Healthcare Privacy" },
   { icon: PiShieldCheckDuotone, title: "NIST CSF", sub: "Cybersecurity Framework" },
   { icon: PiChartDonutDuotone, title: "SOC 2 Type II", sub: "Audited Controls" },
@@ -65,7 +65,7 @@ export default function About() {
         <div className="value-grid">
           <div className="anim">
             <p className="value-body">
-              Auxgens is a managed cybersecurity partner operating across Asia, EMEA, and North America. We deploy senior practitioners from banking, healthcare, government, and technology sectors — combining deep regulatory expertise with hands-on threat response capability.
+              Auxgens is a managed cybersecurity partner operating across Asia, EMEA, and United States of America. We deploy senior practitioners from banking, healthcare, government, and technology sectors — combining deep regulatory expertise with hands-on threat response capability.
             </p>
             <div className="checklist">
               {checks.map((c) => (

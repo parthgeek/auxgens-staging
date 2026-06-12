@@ -26,7 +26,7 @@ import Stats from "../components/Stats";
 export const metadata: Metadata = {
   title: "About Us | Auxgens",
   description:
-    "Auxgens is a managed cybersecurity partner operating across Asia, EMEA, and North America — senior practitioners, measurable outcomes, no lock-in.",
+    "Auxgens is a managed cybersecurity partner operating across Asia, EMEA, and United States of America — senior practitioners, measurable outcomes, no lock-in.",
 };
 
 const values = [
@@ -48,7 +48,7 @@ const values = [
   {
     icon: PiShieldCheckDuotone,
     title: "Zero-trust by default",
-    body: "Every engagement operates on need-to-know access, encrypted channels, and strict NDA controls. ISO 27001 throughout.",
+    body: "Every engagement is governed by a strict need-to-know access model, end-to-end encrypted communications, comprehensive NDA protections, and adherence to industry-recognized security standards.",
   },
 ];
 
@@ -58,7 +58,7 @@ const certs: Array<{ icon: IconType; title: string; sub: string }> = [
   { icon: PiLockSimpleDuotone, title: "CCPA", sub: "California Privacy Act" },
   { icon: PiCreditCardDuotone, title: "PCI-DSS", sub: "Payment Card Security" },
   { icon: PiScalesDuotone, title: "SOX 404", sub: "Financial Compliance" },
-  { icon: PiSealCheckDuotone, title: "SSAE 18", sub: "Service Audits" },
+  { icon: PiSealCheckDuotone, title: "FERPA", sub: "Student Privacy" },
   { icon: PiHeartbeatDuotone, title: "HIPAA", sub: "Healthcare Privacy" },
   { icon: PiShieldCheckDuotone, title: "NIST CSF", sub: "Cybersecurity Framework" },
   { icon: PiChartDonutDuotone, title: "SOC 2 Type II", sub: "Audited Controls" },
@@ -66,10 +66,10 @@ const certs: Array<{ icon: IconType; title: string; sub: string }> = [
 ];
 
 const differentiators = [
-  "Deep regulatory expertise across 10+ compliance frameworks",
-  "Global delivery from Bengaluru, Bothell, and EMEA hubs",
-  "Embedded practitioners — not offshore ticket queues",
-  "Rapid onboarding — operational within 72 hours",
+  "Deep regulatory expertise across 10+ compliance standards regulations and frameworks.",
+  "Global delivery from Bothell, and EMEA hubs",
+  "Consultants are available on demand, based on project requirements",
+  "Experienced practitioners with deep expertise in technology, compliance, and regulatory frameworks",
 ];
 
 export default function AboutPage() {
@@ -90,7 +90,7 @@ export default function AboutPage() {
             <div className="about-hero-meta">
               <span>Est. 2018</span>
               <span className="about-meta-sep" />
-              <span>Asia · EMEA · North America</span>
+              <span>Asia · EMEA · United States of America</span>
               <span className="about-meta-sep" />
               <span>25+ years combined field experience</span>
             </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <div className="about-story-body anim d1">
               <p className="eyebrow" style={{ marginBottom: ".9rem" }}>Our story</p>
               <p>
-                Auxgens was founded by practitioners who spent decades inside the organisations they now help protect — banks, hospitals, government agencies, and software companies operating under real regulatory scrutiny.
+              Auxgens is led by senior practitioners and industry professionals with extensive experience delivering complex projects across diverse sectors, ensuring customer requirements are driven by deep domain expertise and proven execution capabilities.
               </p>
               <p style={{ marginTop: "1.2rem" }}>
                 That experience revealed a consistent pattern: security programmes built around audit checkboxes leave exploitable gaps. We built Auxgens to close those gaps — with senior talent, vendor-independent advice, and engagements measured by outcomes.

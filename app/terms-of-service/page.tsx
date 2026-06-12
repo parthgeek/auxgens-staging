@@ -97,6 +97,7 @@ export default function TermsOfServicePage() {
                 The baseline terms for using the Auxgens website and discussing
                 potential security, compliance, privacy, and development work.
               </p>
+              <p className="legal-updated">Last updated: June 2026</p>
             </div>
            
           </div>

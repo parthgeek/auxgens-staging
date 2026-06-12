@@ -15,10 +15,10 @@ export default function CTA() {
           </p>
           <div className="cta-btns">
             <a href="/contact-us#contact-form" className="btn-lime">Send Enquiry</a>
-            <a href="mailto:sales@auxgens.net" className="btn-ghost-light">Email Us Now</a>
+            <a href="mailto:contact@auxgens.net" className="btn-ghost-light">Email Us Now</a>
           </div>
           <div className="cta-meta">
-            <span>sales@auxgens.net</span>
+            <span>contact@auxgens.net</span>
             <span>Bengaluru, India</span>
             <span>Bothell, WA 98012</span>
           </div>
