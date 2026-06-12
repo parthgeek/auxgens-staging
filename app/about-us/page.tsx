@@ -83,9 +83,9 @@ export default function AboutPage() {
         <section className="about-hero">
           <div className="wrap about-hero-inner anim">
             <h1 className="about-hero-h1">
-              Security built on<br />
-              conviction, not<br />
-              compliance <em>theater.</em>
+              Built by<br />
+              practitioners.<br />
+              For <em>practitioners.</em>
             </h1>
             <div className="about-hero-meta">
               <span>Est. 2018</span>
@@ -104,7 +104,7 @@ export default function AboutPage() {
               <blockquote className="about-quote">
                 &ldquo;The gap between compliance paperwork and actual security posture is where organisations get breached.&rdquo;
               </blockquote>
-              <p className="about-quote-attr">— Auxgens founding principle</p>
+              
             </div>
             <div className="about-story-body anim d1">
               <p className="eyebrow" style={{ marginBottom: ".9rem" }}>Our story</p>
