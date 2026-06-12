@@ -12,7 +12,7 @@ import ScrollFade from "../components/ScrollFade";
 import ContactForm from "./ContactForm";
 
 type Office = {
-  city: string;
+  
   label: string;
   address: string[];
   country: "in" | "us";
@@ -21,14 +21,14 @@ type Office = {
 
 const offices: Office[] = [
   {
-    city: "Bengaluru",
+  
     label: "India operations",
     address: ["C3834, Brigade Meadows", "Udayapura, Bengaluru 560082"],
     country: "in",
     countryName: "India",
   },
   {
-    city: "Bothell",
+  
     label: "United States of America operations",
     address: ["17710, 35th Dr Se", "Bothell, WA 98012"],
     country: "us",
