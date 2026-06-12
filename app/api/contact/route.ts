@@ -18,6 +18,9 @@ type SmtpError = Error & {
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const websiteUrl = "https://auxgens.net";
+const signatureImageUrl =
+  "https://cdn.postimage.me/2026/06/12/WhatsApp-Image-2026-06-13-at-01.23.46.jpeg";
 
 function escapeHtml(value: string) {
   return value.replace(
@@ -204,15 +207,25 @@ export async function POST(request: Request) {
         `Service interest: ${payload.service}`,
         "",
         "Regards,",
-        "Auxgens",
+        "Team Auxgens",
         contactAddress,
+        "+91 9972037907",
+        websiteUrl,
       ].join("\n"),
       html: `
         <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;color:#101828;line-height:1.6">
           <p>Hello ${escapeHtml(payload.name)},</p>
           <p>Thank you for contacting Auxgens. We have received your enquiry and our team will respond within one business day.</p>
           <p><strong>Service interest:</strong> ${escapeHtml(payload.service)}</p>
-          <p style="margin-top:28px">Regards,<br><strong>Auxgens</strong><br><a href="mailto:${escapeHtml(contactAddress)}">${escapeHtml(contactAddress)}</a></p>
+          <p style="margin:28px 0 12px">Regards,</p>
+          <a href="${websiteUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;max-width:560px;text-decoration:none">
+            <img
+              src="${signatureImageUrl}"
+              alt="Team Auxgens - visit auxgens.net"
+              width="560"
+              style="display:block;width:100%;max-width:560px;height:auto;border:0"
+            />
+          </a>
         </div>
       `,
     });

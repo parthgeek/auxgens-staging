@@ -153,7 +153,7 @@ export default function ContactUsPage() {
 
               <div className="contact-office-grid">
                 {offices.map((office) => (
-                  <article key={office.city} className="contact-office-card">
+                  <article key={office.country} className="contact-office-card">
                     <span className="contact-card-icon">
                       <span
                         className={`flag-mark flag-mark-${office.country} contact-flag`}
@@ -163,7 +163,7 @@ export default function ContactUsPage() {
                     </span>
                     <div>
                       <small>{office.label}</small>
-                      <h3>{office.city}</h3>
+                      <h3>{office.countryName}</h3>
                       <address>
                         {office.address.map((line) => (
                           <span key={line}>{line}</span>
