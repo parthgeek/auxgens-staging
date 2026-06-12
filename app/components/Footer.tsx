@@ -66,12 +66,12 @@ export default function Footer() {
           <span className="foot-locations">
             <span className="foot-location">
               <span className="flag-mark flag-mark-in" aria-label="India" role="img"></span>
-              Bengaluru
+              India
             </span>
             <span className="foot-location-sep" aria-hidden="true">·</span>
             <span className="foot-location">
               <span className="flag-mark flag-mark-us" aria-label="United States" role="img"></span>
-              Bothell
+              US
             </span>
           </span>
         </div>
