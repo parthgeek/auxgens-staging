@@ -115,6 +115,7 @@ export default function About() {
               Every engagement is governed by strict NDA and ISO 27001 data handling controls. We operate on a need-to-know access model with encrypted channels throughout.
             </div>
           </div>
+          
         </div>
       </div>
     </section>
