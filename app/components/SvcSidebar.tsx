@@ -43,7 +43,11 @@ export default function SvcSidebar() {
     .join(" ");
 
   return (
-    <aside className={cls} aria-label="Service navigation">
+    <aside 
+      className={cls} 
+      style={{ backgroundColor: 'white', backdropFilter: 'none' }}
+      aria-label="Service navigation"
+    >
       {mode === "side" && (
         <button
           className="svc-snav-toggle"

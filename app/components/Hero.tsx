@@ -58,14 +58,16 @@ export default function Hero() {
               </div>
             ))}
           </div>
-          <p className="hero-tagline">Securing Your Digital Future.</p>
-          <p className="hero-desc">
-            Auxgens is a global cybersecurity partner helping organisations protect data, systems, and trust — with{" "}
-            <strong>experienced professionals</strong> across Asia, EMEA, and United States of America.
-          </p>
-          <div className="hero-btns">
-            <a href="/contact-us" className="btn-lime">Connect With Us</a>
-            <a href="#services" className="btn-border">Our Services</a>
+          <div className="hero-copy-panel">
+            <p className="hero-tagline">Securing Your Digital Future.</p>
+            <p className="hero-desc">
+              Auxgens is a global cybersecurity partner helping organisations protect data, systems, and trust — with{" "}
+              <strong>experienced professionals</strong> across Asia, EMEA, and United States of America.
+            </p>
+            <div className="hero-btns">
+              <a href="/contact-us" className="btn-lime">Connect With Us</a>
+              <a href="#services" className="btn-border">Our Services</a>
+            </div>
           </div>
         </div>
       </div>

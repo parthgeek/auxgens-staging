@@ -1,19 +1,8 @@
 "use client";
 import { useState } from "react";
-import type { IconType } from "react-icons";
-import {
-  PiChartDonutDuotone,
-  PiCheckCircleDuotone,
-  PiClipboardTextDuotone,
-  PiCreditCardDuotone,
-  PiFingerprintSimpleDuotone,
-  PiGlobeSimpleDuotone,
-  PiHeartbeatDuotone,
-  PiLockSimpleDuotone,
-  PiScalesDuotone,
-  PiSealCheckDuotone,
-  PiShieldCheckDuotone,
-} from "react-icons/pi";
+import { PiCheckCircleDuotone } from "react-icons/pi";
+import ComplianceMark from "./ComplianceMark";
+import { complianceStandards } from "../data/complianceStandards";
 
 const checks = [
   {
@@ -33,19 +22,6 @@ const checks = [
     body: "Best-of-breed tooling and partnerships across RSA, Dell, Seceon, and IBSFINtech — no lock-in.",
   },
 ];
-
-const certs = [
-  { icon: PiClipboardTextDuotone, title: "ISO 27001", sub: "Info Security Management" },
-  { icon: PiGlobeSimpleDuotone, title: "GDPR", sub: "Data Protection (EU)" },
-  { icon: PiLockSimpleDuotone, title: "CCPA", sub: "California Privacy Act" },
-  { icon: PiCreditCardDuotone, title: "PCI-DSS", sub: "Payment Card Security" },
-  { icon: PiScalesDuotone, title: "SOX 404", sub: "Financial Compliance" },
-  { icon: PiSealCheckDuotone, title: "FERPA", sub: "Student Privacy" },
-  { icon: PiHeartbeatDuotone, title: "HIPAA", sub: "Healthcare Privacy" },
-  { icon: PiShieldCheckDuotone, title: "NIST CSF", sub: "Cybersecurity Framework" },
-  { icon: PiChartDonutDuotone, title: "SOC 2 Type II", sub: "Audited Controls" },
-  { icon: PiFingerprintSimpleDuotone, title: "DPDP Act", sub: "India Privacy Law" },
-] satisfies Array<{ icon: IconType; title: string; sub: string }>;
 
 export default function About() {
   const [expanded, setExpanded] = useState(false);
@@ -84,31 +60,25 @@ export default function About() {
           <div className="anim d1">
             <div className="certs-box">
               <div className="certs-head">
-                <p className="eyebrow">Compliance &amp; Certifications</p>
+                <p className="eyebrow">Compliance Frameworks</p>
                 <p>Frameworks and standards we implement:</p>
               </div>
               <div className={`certs-grid${expanded ? " expanded" : ""}`}>
-                {certs.map((c) => {
-                  const Icon = c.icon;
-
-                  return (
-                    <div key={c.title} className="cert-item">
-                      <div className="cert-ico">
-                        <Icon aria-hidden="true" focusable="false" />
-                      </div>
-                      <div>
-                        <strong>{c.title}</strong>
-                        <span>{c.sub}</span>
-                      </div>
+                {complianceStandards.map((standard) => (
+                  <div key={standard.title} className="cert-item">
+                    <ComplianceMark {...standard} compact />
+                    <div>
+                      <strong>{standard.title}</strong>
+                      <span>{standard.sub}</span>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
               <button
                 className="view-more-btn"
                 onClick={() => setExpanded((v) => !v)}
               >
-                {expanded ? "View Less" : "View More Certifications"}
+                {expanded ? "View Less" : "View More Frameworks"}
               </button>
             </div>
             <div className="trust-banner">
