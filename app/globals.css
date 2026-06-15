@@ -167,7 +167,7 @@ strong { font-weight: 600; }
 
 /* ── HERO ── */
 .hero {
-  padding: 7rem 0 5.5rem;
+  padding: 4.75rem 0 5rem;
   border-bottom: 1px solid var(--rule);
   background:
     linear-gradient(90deg, rgba(247,251,255,.98) 0%, rgba(238,246,232,.84) 34%, rgba(234,245,226,.58) 66%, rgba(238,246,232,.28) 100%),
@@ -216,7 +216,7 @@ strong { font-weight: 600; }
 
 .hero-grid {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: end; position: relative; z-index: 2;
+  gap: 5rem; align-items: center; position: relative; z-index: 2;
 }
 .hero h1 {
   font-family: var(--fn-d); font-weight: 300;
@@ -252,7 +252,12 @@ strong { font-weight: 600; }
   display: block; font-family: var(--fn-d); font-size: 2rem;
   font-weight: 600; line-height: 1; color: var(--forest);
 }
-.metric span { font-size: .86rem; color: var(--t4); letter-spacing: .04em; }
+.metric span {
+  font-size: .86rem;
+  color: var(--t4);
+  letter-spacing: .04em;
+  line-height: 1.35;
+}
 .metric-sep {
   width: 1px; height: 36px; background: var(--rule);
   flex-shrink: 0; align-self: center;
