@@ -114,13 +114,14 @@ export default function ContactUsPage() {
 
               <div className="contact-channel-list">
                 <a className="contact-email-card" href="mailto:contact@auxgens.net">
-                  <span className="contact-card-icon">
+                  <span className="contact-card-icon" style={{ width: 'auto', height: 'auto' }}>
                     <Image
                       className="contact-channel-image"
                       src="/gmail-removebg-preview.png"
                       alt=""
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
+                      style={{ width: '45px', height: '45px', objectFit: 'contain' }}
                     />
                   </span>
                   <span>
@@ -135,13 +136,14 @@ export default function ContactUsPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="contact-card-icon">
+                  <span className="contact-card-icon" style={{ width: 'auto', height: 'auto' }}>
                     <Image
                       className="contact-channel-image"
                       src="/linkedin-removebg-preview.png"
                       alt=""
                       width={40}
                       height={40}
+                      style={{ width: '40px', height: '40px', objectFit: 'contain' }}
                     />
                   </span>
                   <span>
