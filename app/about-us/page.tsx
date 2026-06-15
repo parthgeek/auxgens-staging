@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
 import {
   PiCheckCircleDuotone,
+  PiChartDonutDuotone,
+  PiClipboardTextDuotone,
+  PiCreditCardDuotone,
+  PiFingerprintSimpleDuotone,
   PiGlobeSimpleDuotone,
+  PiHeartbeatDuotone,
+  PiLockSimpleDuotone,
+  PiScalesDuotone,
+  PiSealCheckDuotone,
   PiShieldCheckDuotone,
   PiTargetDuotone,
   PiUsersThreeDuotone,
   PiArrowRightDuotone,
 } from "react-icons/pi";
+import type { IconType } from "react-icons";
 import Announce from "../components/Announce";
-import ComplianceMark from "../components/ComplianceMark";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import ScrollFade from "../components/ScrollFade";
 import Stats from "../components/Stats";
-import { complianceStandards } from "../data/complianceStandards";
 
 export const metadata: Metadata = {
   title: "About Us | Auxgens",
@@ -43,6 +50,19 @@ const values = [
     title: "Zero-trust by default",
     body: "Every engagement is governed by a strict need-to-know access model, end-to-end encrypted communications, comprehensive NDA protections, and adherence to industry-recognized security standards.",
   },
+];
+
+const certs: Array<{ icon: IconType; title: string; sub: string }> = [
+  { icon: PiClipboardTextDuotone, title: "ISO 27001", sub: "Info Security Management" },
+  { icon: PiGlobeSimpleDuotone, title: "GDPR", sub: "Data Protection (EU)" },
+  { icon: PiLockSimpleDuotone, title: "CCPA", sub: "California Privacy Act" },
+  { icon: PiCreditCardDuotone, title: "PCI-DSS", sub: "Payment Card Security" },
+  { icon: PiScalesDuotone, title: "SOX 404", sub: "Financial Compliance" },
+  { icon: PiSealCheckDuotone, title: "FERPA", sub: "Student Privacy" },
+  { icon: PiHeartbeatDuotone, title: "HIPAA", sub: "Healthcare Privacy" },
+  { icon: PiShieldCheckDuotone, title: "NIST CSF", sub: "Cybersecurity Framework" },
+  { icon: PiChartDonutDuotone, title: "SOC 2 Type II", sub: "Audited Controls" },
+  { icon: PiFingerprintSimpleDuotone, title: "DPDP Act", sub: "India Privacy Law" },
 ];
 
 const differentiators = [
@@ -158,13 +178,18 @@ export default function AboutPage() {
               </h2>
             </div>
             <div className="about-certs-grid anim d1">
-              {complianceStandards.map((standard) => (
-                <div key={standard.title} className="about-cert-item">
-                  <ComplianceMark {...standard} />
-                  <strong>{standard.title}</strong>
-                  <span>{standard.sub}</span>
-                </div>
-              ))}
+              {certs.map((c) => {
+                const Icon = c.icon;
+                return (
+                  <div key={c.title} className="about-cert-item">
+                    <div className="about-cert-ico">
+                      <Icon aria-hidden="true" focusable="false" />
+                    </div>
+                    <strong>{c.title}</strong>
+                    <span>{c.sub}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
