@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "Auxgens — Securing Your Digital Future",
   description:
     "Auxgens is a global cybersecurity partner helping organisations protect data, systems, and trust across Asia, EMEA, and United States of America.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
