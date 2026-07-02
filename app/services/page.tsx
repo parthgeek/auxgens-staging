@@ -57,6 +57,12 @@ const serviceInsights: Record<string, ServiceInsight> = {
       "Application teams get secure patterns, review gates, and testing practices that reduce exposure before code reaches production.",
     steps: ["Design controls", "Test releases", "Harden APIs"],
   },
+  "staff-aug": {
+    title: "The right people, delivering on plan",
+    copy:
+      "Vetted specialists integrate with your teams while dedicated project management keeps scope, schedule, and budget visible from kickoff to closure.",
+    steps: ["Match talent", "Plan delivery", "Track outcomes"],
+  },
   ccpa: {
     title: "Consumer rights handled with clear ownership",
     copy:
@@ -68,7 +74,7 @@ const serviceInsights: Record<string, ServiceInsight> = {
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, and CCPA.",
+    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, CCPA, Application Development, and Staff Augmentation/Project Management.",
 };
 
 export default function ServicesPage() {

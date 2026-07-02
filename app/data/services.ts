@@ -21,7 +21,7 @@ export const detailedServices: DetailedService[] = [
   {
     id: "grc",
     eyebrow: "GRC Services",
-    title: "Governance, Risk & Compliance",
+    title: "Governance Risk & Compliance",
     description:
       "In a dynamically changing business environment, risk management and information security play a critical role in the overall growth and reputation of an organisation. Auxgens has the experience and expertise to help customers build, operate and manage an information risk office with a unique risk assessment framework covering implementation, remediation and measurement of security controls aligned to industry best standards.",
     challenges: [
@@ -328,6 +328,45 @@ export const detailedServices: DetailedService[] = [
     ],
   },
   {
+    id: "staff-aug",
+    eyebrow: "Talent & Delivery",
+    title: "Staff Augmentation/Project Management",
+    description:
+      "Auxgens provides skilled cybersecurity, compliance, and technology professionals on demand — alongside experienced project managers who keep engagements on scope, on schedule, and on budget. Scale your team quickly without long hiring cycles, backed by proven security domain expertise.",
+    challenges: [
+      "Shortage of skilled cybersecurity and compliance professionals",
+      "Long hiring cycles delaying critical projects",
+      "Fluctuating workloads that do not justify permanent headcount",
+      "Projects slipping on scope, schedule, and budget",
+      "Limited internal project management and delivery capacity",
+      "Knowledge gaps when specialists leave mid-engagement",
+    ],
+    offerings: [
+      {
+        name: "Staff Augmentation",
+        items: [
+          "Security analysts, engineers, and GRC consultants on demand",
+          "Short-term and long-term staffing models",
+          "Compliance and privacy specialists (GDPR, CCPA, FERPA)",
+          "Application developers with secure SDLC experience",
+          "Rapid onboarding with vetted, engagement-ready professionals",
+          "Flexible scaling as project needs change",
+        ],
+      },
+      {
+        name: "Project Management",
+        items: [
+          "Dedicated project managers for security and technology programmes",
+          "Project planning, scheduling, and milestone tracking",
+          "PMO setup and governance support",
+          "Risk, issue, and dependency management",
+          "Stakeholder communication and status reporting",
+          "Delivery oversight across vendors and internal teams",
+        ],
+      },
+    ],
+  },
+  {
     id: "ccpa",
     eyebrow: "Data Privacy",
     title: "CCPA Compliance",
@@ -419,7 +458,7 @@ export const homepageServices: Service[] = [
     ],
   },
   {
-    title: "Governance & Compliance",
+    title: "Governance Risk & Compliance",
     items: [
       "ISO 27001 implementation",
       "GDPR & privacy compliance",
@@ -461,6 +500,28 @@ export const homepageServices: Service[] = [
       "Phishing simulations",
       "Compliance education",
       "Leadership workshops",
+    ],
+  },
+  {
+    title: "Application Development",
+    items: [
+      "Secure web application development",
+      "Mobile app development",
+      "Secure SDLC & DevSecOps",
+      "API & backend hardening",
+      "Authentication & access control",
+      "OWASP Top 10 remediation",
+    ],
+  },
+  {
+    title: "Staff Augmentation/Project Management",
+    items: [
+      "Skilled security professionals on demand",
+      "Short & long-term staffing",
+      "Dedicated project managers",
+      "Project planning & delivery",
+      "PMO governance support",
+      "Flexible engagement models",
     ],
   },
   {
