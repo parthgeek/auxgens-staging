@@ -2,7 +2,7 @@ export default function Pillars() {
   const pillars = [
     {
       gifSrc: "/checklist.gif",
-      title: "Governance & Compliance",
+      title: "Governance, Risk & Compliance",
       body: "Frameworks, policies, and oversight that align security to business risk and regulatory requirements. GRC ensures everyone moves in sync.",
     },
     {

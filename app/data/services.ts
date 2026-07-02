@@ -382,6 +382,56 @@ export const detailedServices: DetailedService[] = [
       },
     ],
   },
+  {
+    id: "staff-augmentation",
+    eyebrow: "Talent Services",
+    title: "Staff Augmentation",
+    description:
+      "Auxgens helps organisations scale cybersecurity, compliance, privacy, and application teams with vetted professionals who can plug into existing delivery models. We provide skilled resources for short-term projects, managed extensions, and long-running programmes where specialist capability is needed without the delay of permanent hiring.",
+    challenges: [
+      "Shortage of skilled cybersecurity and compliance professionals",
+      "Delayed projects due to hiring cycles and resource constraints",
+      "Need for specialist expertise across security, privacy, audit, and development",
+      "Difficulty scaling teams for audits, remediation, and product delivery",
+      "Maintaining delivery continuity during peak workloads or transitions",
+      "Balancing specialist staffing needs with budget and timeline pressure",
+    ],
+    offerings: [
+      {
+        name: "Cybersecurity & GRC Resources",
+        items: [
+          "Security analysts and incident response specialists",
+          "GRC consultants and compliance analysts",
+          "Risk assessment and audit support professionals",
+          "Data privacy and DPO support resources",
+          "Cloud and infrastructure security specialists",
+          "SOC operations and monitoring support",
+        ],
+      },
+      {
+        name: "Application & DevSecOps Talent",
+        items: [
+          "Full-stack web application developers",
+          "Mobile application developers",
+          "API and backend engineers",
+          "DevSecOps and CI/CD engineers",
+          "Application security testers",
+          "Secure SDLC implementation support",
+        ],
+      },
+      {
+        name: "Flexible Engagement Models",
+        items: [
+          "Short-term project staffing",
+          "Dedicated resource augmentation",
+          "Managed team extensions",
+          "On-demand specialist support",
+          "Remote and hybrid delivery models",
+          "Resource continuity and transition planning",
+        ],
+      },
+    ],
+  },
 ];
 
 export const homepageServices: Service[] = [
@@ -419,7 +469,7 @@ export const homepageServices: Service[] = [
     ],
   },
   {
-    title: "Governance & Compliance",
+    title: "Governance, Risk & Compliance",
     items: [
       "ISO 27001 implementation",
       "GDPR & privacy compliance",
@@ -474,19 +524,30 @@ export const homepageServices: Service[] = [
       "DPO-as-a-Service",
     ],
   },
+  {
+    title: "Application Development",
+    items: [
+      "Secure web application development",
+      "Mobile app development",
+      "API & backend hardening",
+      "Authentication & access control",
+      "Secure SDLC implementation",
+      "DevSecOps integration",
+    ],
+  },
+  {
+    title: "Staff Augmentation",
+    items: [
+      "Cybersecurity specialists",
+      "GRC and compliance analysts",
+      "Application developers",
+      "DevSecOps engineers",
+      "SOC operations support",
+      "Flexible resource models",
+    ],
+  },
 ];
 
 export const servicePageServices: Service[] = [
   ...homepageServices,
-  {
-    title: "Web & App Development with Security",
-    items: [
-      "Secure web application development",
-      "Mobile app development",
-      "Secure SDLC implementation",
-      "API & backend hardening",
-      "Authentication & access control",
-      "DevSecOps integration",
-    ],
-  },
 ];

@@ -63,12 +63,18 @@ const serviceInsights: Record<string, ServiceInsight> = {
       "Data inventories, request workflows, and processor oversight are kept visible so privacy obligations do not drift between teams.",
     steps: ["Map data use", "Handle requests", "Review processors"],
   },
+  "staff-augmentation": {
+    title: "Specialist capacity without hiring delays",
+    copy:
+      "Cybersecurity, compliance, development, and DevSecOps professionals can extend existing teams while keeping ownership and delivery cadence clear.",
+    steps: ["Define skills", "Deploy talent", "Maintain cadence"],
+  },
 };
 
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, and CCPA.",
+    "Explore Auxgens cybersecurity, compliance, data protection, application development, and staff augmentation services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, and CCPA.",
 };
 
 export default function ServicesPage() {
@@ -108,9 +114,9 @@ export default function ServicesPage() {
             <div className="hero-right">
               <p className="hero-tagline">Securing Your Digital Future.</p>
               <p className="hero-desc">
-                From governance and risk frameworks to 24/7 security operations
-                and data privacy compliance — Auxgens covers every aspect of
-                your security posture.
+                From governance, risk and compliance frameworks to 24/7 security
+                operations, secure application development, and specialist team
+                augmentation — Auxgens covers every aspect of your security posture.
               </p>
               <div className="hero-btns">
                 <a href="#grc" className="btn-lime">
