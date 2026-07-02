@@ -21,7 +21,7 @@ export const detailedServices: DetailedService[] = [
   {
     id: "grc",
     eyebrow: "GRC Services",
-    title: "Governance, Risk & Compliance",
+    title: "Governance Risk & Compliance",
     description:
       "In a dynamically changing business environment, risk management and information security play a critical role in the overall growth and reputation of an organisation. Auxgens has the experience and expertise to help customers build, operate and manage an information risk office with a unique risk assessment framework covering implementation, remediation and measurement of security controls aligned to industry best standards.",
     challenges: [
@@ -385,7 +385,7 @@ export const detailedServices: DetailedService[] = [
   {
     id: "staff-augmentation",
     eyebrow: "Talent Services",
-    title: "Staff Augmentation",
+    title: "Staff Augmentation/Project Management",
     description:
       "Auxgens helps organisations scale cybersecurity, compliance, privacy, and application teams with vetted professionals who can plug into existing delivery models. We provide skilled resources for short-term projects, managed extensions, and long-running programmes where specialist capability is needed without the delay of permanent hiring.",
     challenges: [
@@ -469,7 +469,7 @@ export const homepageServices: Service[] = [
     ],
   },
   {
-    title: "Governance, Risk & Compliance",
+    title: "Governance Risk & Compliance",
     items: [
       "ISO 27001 implementation",
       "GDPR & privacy compliance",
@@ -536,7 +536,7 @@ export const homepageServices: Service[] = [
     ],
   },
   {
-    title: "Staff Augmentation",
+    title: "Staff Augmentation/Project Management",
     items: [
       "Cybersecurity specialists",
       "GRC and compliance analysts",

@@ -3,7 +3,6 @@ import Image from "next/image";
 import {
   PiClockCountdownDuotone,
   PiEnvelopeSimpleDuotone,
-  PiShieldCheckDuotone,
 } from "react-icons/pi";
 import Announce from "../components/Announce";
 import Footer from "../components/Footer";
@@ -57,30 +56,8 @@ export default function ContactUsPage() {
       <Announce />
       <main className="contact-page">
         <section className="contact-hero">
-          <div className="wrap contact-hero-grid">
-            <div className="contact-hero-copy anim">
-              <div className="hero-badge">
-                <div className="badge-dot"></div>
-                <span className="eyebrow">Contact Auxgens</span>
-              </div>
-              <h1>
-                Let&apos;s talk before risk becomes a <em>headline.</em>
-              </h1>
-              <p className="contact-hero-intro">
-                Reach our team for cybersecurity, compliance, privacy, Virtual
-                CISO, and secure application development enquiries.
-              </p>
-              <div className="contact-hero-actions">
-                <a href="mailto:contact@auxgens.net" className="btn-lime btn-icon">
-                  <PiEnvelopeSimpleDuotone aria-hidden="true" focusable="false" />
-                  <span>Email sales</span>
-                </a>
-                <a href="#contact-form" className="btn-border btn-icon">
-                  <PiShieldCheckDuotone aria-hidden="true" focusable="false" />
-                  <span>Send enquiry</span>
-                </a>
-              </div>
-            </div>
+          <div className="wrap contact-hero-grid contact-hero-form-grid">
+            <ContactForm />
 
             <aside className="contact-command anim d1" aria-label="Contact summary">
               <div className="contact-command-top">
@@ -98,13 +75,17 @@ export default function ContactUsPage() {
                   </div>
                 ))}
               </div>
+              <a href="mailto:contact@auxgens.net" className="btn-lime btn-icon contact-email-action">
+                <PiEnvelopeSimpleDuotone aria-hidden="true" focusable="false" />
+                <span>Email sales</span>
+              </a>
             </aside>
           </div>
         </section>
 
         <section className="contact-content">
-          <div className="wrap contact-content-grid">
-            <div className="contact-details anim">
+          <div className="wrap">
+            <div className="contact-details contact-details-panel anim">
               <p className="eyebrow">Contact</p>
               <h2>Direct lines and office addresses.</h2>
               <p className="contact-details-copy">
@@ -176,8 +157,6 @@ export default function ContactUsPage() {
                 ))}
               </div>
             </div>
-
-            <ContactForm />
           </div>
         </section>
       </main>
