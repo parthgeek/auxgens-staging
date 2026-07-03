@@ -170,7 +170,8 @@ strong { font-weight: 600; }
   padding: 4.75rem 0 5rem;
   border-bottom: 1px solid var(--rule);
   background:
-    url('/HERO2.png') center center / cover no-repeat,
+    linear-gradient(90deg, rgba(247,251,255,.98) 0%, rgba(238,246,232,.84) 34%, rgba(234,245,226,.58) 66%, rgba(238,246,232,.28) 100%),
+    url('/security-story-bg.png') center right / cover no-repeat,
     var(--grad-paper);
   position: relative; overflow: hidden;
 }
@@ -195,10 +196,6 @@ strong { font-weight: 600; }
     var(--grad-hero);
   pointer-events: none;
   animation: ambient-drift 20s ease-in-out infinite alternate;
-}
-.hero:not(.service-hero)::before,
-.hero:not(.service-hero)::after {
-  content: none;
 }
 .service-hero {
   background:
@@ -2580,7 +2577,8 @@ footer::before {
   }
   .hero {
     background:
-      url('/HERO2.png') 62% top / cover no-repeat,
+      linear-gradient(180deg, rgba(246,250,243,.98) 0%, rgba(238,246,232,.88) 58%, rgba(234,245,226,.78) 100%),
+      url('/security-story-bg.png') 62% top / cover no-repeat,
       var(--grad-paper);
   }
   .service-hero {
