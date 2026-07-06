@@ -16,6 +16,7 @@ type Office = {
   address: string[];
   country: "in" | "us";
   countryName: string;
+  phone?: string;
 };
 
 const offices: Office[] = [
@@ -32,6 +33,7 @@ const offices: Office[] = [
     address: ["Office number 242", "1205 BMC Drive", "Cedar Park, TX 78613"],
     country: "us",
     countryName: "United States",
+    phone: "+1 360 875 2205",
   },
 ];
 
@@ -151,6 +153,11 @@ export default function ContactUsPage() {
                         {office.address.map((line) => (
                           <span key={line}>{line}</span>
                         ))}
+                        {office.phone && (
+                          <a href={`tel:${office.phone.replace(/\s/g, "")}`}>
+                            {office.phone}
+                          </a>
+                        )}
                       </address>
                     </div>
                   </article>
