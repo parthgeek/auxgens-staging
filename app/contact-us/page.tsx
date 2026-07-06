@@ -29,7 +29,7 @@ const offices: Office[] = [
   {
   
     label: "United States of America operations",
-    address: ["17710, 35th Dr Se", "Bothell, WA 98012"],
+    address: ["Office number 242", "1205 BMC Drive", "Cedar Park, TX 78613"],
     country: "us",
     countryName: "United States",
   },

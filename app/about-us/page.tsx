@@ -67,7 +67,7 @@ const certs: Array<{ icon: IconType; title: string; sub: string }> = [
 
 const differentiators = [
   "Deep regulatory expertise across 10+ compliance standards regulations and frameworks.",
-  "Global delivery from Bothell, and EMEA hubs",
+  "Global delivery from Cedar Park, TX, and EMEA hubs",
   "Consultants are available on demand, based on project requirements",
   "Experienced practitioners with deep expertise in technology, compliance, and regulatory frameworks",
 ];
