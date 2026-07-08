@@ -64,10 +64,10 @@ const serviceInsights: Record<string, ServiceInsight> = {
     steps: ["Match talent", "Plan delivery", "Track outcomes"],
   },
   "forward-deployed-engineering": {
-    title: "Embedded engineers from discovery to launch",
+    title: "AI embedded into existing business workflows",
     copy:
-      "Client-facing engineers translate business needs into custom enterprise implementations, then stay close through integration, rollout, and adoption.",
-    steps: ["Shape solution", "Integrate systems", "Launch outcomes"],
+      "Embedded AI engineers map real business work, connect models to approved data and systems, then launch copilots, agents, and automations with measurable adoption.",
+    steps: ["Map AI use cases", "Integrate systems", "Measure outcomes"],
   },
   ccpa: {
     title: "Consumer rights handled with clear ownership",
@@ -80,7 +80,7 @@ const serviceInsights: Record<string, ServiceInsight> = {
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, CCPA, Application Development, Forward Deployed Engineering, and Staff Augmentation/Project Management.",
+    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, CCPA, Application Development, Forward Deployed AI Engineering, and Staff Augmentation/Project Management.",
 };
 
 export default function ServicesPage() {
