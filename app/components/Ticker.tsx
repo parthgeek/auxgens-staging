@@ -39,6 +39,22 @@ const brands = {
       <img className="brand-logo-img" src="/seceon.png" alt="" loading="lazy" />
     ),
   },
+  docq: {
+    id: "docq",
+    name: "DocQ",
+    url: "https://docq.com/",
+    logo: (
+      <img className="brand-logo-img" src="/docq2.png" alt="" loading="lazy" />
+    ),
+  },
+  virtusa: {
+    id: "virtusa",
+    name: "Virtusa",
+    url: "https://www.virtusa.com/",
+    logo: (
+      <img className="brand-logo-img" src="/virtusa.png" alt="" loading="lazy" />
+    ),
+  },
   bankOfIndia: {
     id: "bank-of-india",
     name: "Bank Of India",
@@ -55,6 +71,8 @@ const items = [
   brands.ssrvm,
   brands.ibsfintech,
   brands.seceon,
+  brands.docq,
+  brands.virtusa,
   brands.bankOfIndia,
 ];
 
