@@ -367,6 +367,56 @@ export const detailedServices: DetailedService[] = [
     ],
   },
   {
+    id: "forward-deployed-engineering",
+    eyebrow: "Embedded Engineering",
+    title: "Forward Deployed Engineering",
+    description:
+      "Forward Deployed Engineers act as the bridge between technology and business, working directly with client teams to design, customise, integrate, and deploy enterprise solutions. Auxgens brings this capability into complex delivery environments where requirements need to be translated into scalable, production-ready implementations with measurable business impact.",
+    challenges: [
+      "Complex business requirements that need rapid technical translation",
+      "Enterprise systems with integration, workflow, and data constraints",
+      "Gaps between product teams, business owners, and implementation teams",
+      "Need for client-specific customisation without weakening scalability",
+      "Slow handoffs from discovery to delivery and production rollout",
+      "Limited internal capacity for embedded solution engineering",
+    ],
+    offerings: [
+      {
+        name: "Client-Embedded Solution Design",
+        items: [
+          "Direct collaboration with business and technology stakeholders",
+          "Discovery workshops to convert requirements into delivery plans",
+          "Workflow, architecture, and integration blueprinting",
+          "Rapid prototyping for validation with real users",
+          "Technical feasibility assessment and implementation planning",
+          "Clear acceptance criteria tied to measurable business outcomes",
+        ],
+      },
+      {
+        name: "Customisation & Integration",
+        items: [
+          "Enterprise application configuration and custom development",
+          "API, data pipeline, and third-party platform integrations",
+          "Secure implementation patterns aligned to client environments",
+          "Automation of manual operational workflows",
+          "Production readiness reviews before deployment",
+          "Documentation and enablement for client teams",
+        ],
+      },
+      {
+        name: "Deployment & Adoption Support",
+        items: [
+          "Hands-on deployment coordination across client and vendor teams",
+          "Issue triage and iteration during rollout",
+          "User feedback loops for continuous improvement",
+          "Operational handover and support model design",
+          "Post-launch optimisation against adoption and performance metrics",
+          "Ongoing engineering support for evolving business needs",
+        ],
+      },
+    ],
+  },
+  {
     id: "ccpa",
     eyebrow: "Data Privacy",
     title: "CCPA Compliance",
@@ -522,6 +572,17 @@ export const homepageServices: Service[] = [
       "Project planning & delivery",
       "PMO governance support",
       "Flexible engagement models",
+    ],
+  },
+  {
+    title: "Forward Deployed Engineering",
+    items: [
+      "Embedded client-facing engineers",
+      "Requirement-to-solution translation",
+      "Enterprise customisation",
+      "API and workflow integration",
+      "Production deployment support",
+      "Adoption and optimisation loops",
     ],
   },
   {

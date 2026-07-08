@@ -32,6 +32,7 @@ const services = [
   "FERPA",
   "Application Development",
   "Staff Augmentation/Project Management",
+  "Forward Deployed Engineering",
   "CCPA",
   "General enquiry",
 ];
