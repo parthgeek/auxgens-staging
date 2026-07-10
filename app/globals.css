@@ -572,6 +572,10 @@ strong { font-weight: 600; }
   max-width: 13.8rem;
   max-height: 3.9rem;
 }
+.ticker-inline-logo-versa .brand-logo-img {
+  max-width: 15.8rem;
+  max-height: 3.65rem;
+}
 .ticker-logo-ssrvm .brand-logo-img {
   width: 8.6rem;
   max-width: none;

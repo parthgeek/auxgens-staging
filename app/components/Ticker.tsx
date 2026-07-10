@@ -15,6 +15,14 @@ const brands = {
       <img className="brand-logo-img" src="/rsa.png" alt="" loading="lazy" />
     ),
   },
+  versa: {
+    id: "versa",
+    name: "Versa",
+    url: "https://versa-networks.com/",
+    logo: (
+      <img className="brand-logo-img" src="/versa-logo-color.svg" alt="" loading="lazy" />
+    ),
+  },
   ssrvm: {
     id: "ssrvm",
     name: "SSRVM",
@@ -68,6 +76,7 @@ const brands = {
 const items = [
   brands.dell,
   brands.rsa,
+  brands.versa,
   brands.ssrvm,
   brands.ibsfintech,
   brands.seceon,
