@@ -390,7 +390,7 @@ export default function QuestionnaireClient({
                 <strong>Assessment Report</strong>
               </div>
             </div>
-            <a href="/questioner" className="questionnaire-back-link">
+            <a href="/questionnaire" className="questionnaire-back-link">
               <PiArrowLeftDuotone aria-hidden="true" focusable="false" />
               All questionnaires
             </a>
@@ -488,7 +488,7 @@ export default function QuestionnaireClient({
     <section className="questionnaire-shell">
       <div className="wrap">
         <div className="questionnaire-topbar">
-          <a href="/questioner" className="questionnaire-back-link">
+          <a href="/questionnaire" className="questionnaire-back-link">
             <PiArrowLeftDuotone aria-hidden="true" focusable="false" />
             All questionnaires
           </a>

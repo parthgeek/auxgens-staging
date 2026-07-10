@@ -2913,7 +2913,7 @@ footer::before {
 }
 
 /* ── QUESTIONNAIRE MODULE ── */
-.questioner-hero {
+.questionnaire-hero {
   padding: 5rem 0 4.2rem;
   border-bottom: 1px solid var(--rule);
   background:
@@ -2923,7 +2923,7 @@ footer::before {
   position: relative;
   overflow: hidden;
 }
-.questioner-hero::before {
+.questionnaire-hero::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -2933,7 +2933,7 @@ footer::before {
   pointer-events: none;
   animation: aurora-float 18s ease-in-out infinite alternate;
 }
-.questioner-hero-grid {
+.questionnaire-hero-grid {
   position: relative;
   z-index: 1;
   display: grid;
@@ -2941,7 +2941,7 @@ footer::before {
   gap: 4rem;
   align-items: end;
 }
-.questioner-title {
+.questionnaire-title {
   max-width: 790px;
   font-family: var(--fn-d);
   font-size: clamp(2.5rem, 4.8vw, 4.8rem);
@@ -2950,14 +2950,14 @@ footer::before {
   letter-spacing: -.015em;
   color: var(--t1);
 }
-.questioner-lede {
+.questionnaire-lede {
   max-width: 620px;
   margin-top: 1.4rem;
   font-size: 1.03rem;
   line-height: 1.85;
   color: var(--t2);
 }
-.questioner-hero-panel {
+.questionnaire-hero-panel {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1px;
@@ -2967,7 +2967,7 @@ footer::before {
   background: rgba(197,220,186,.9);
   box-shadow: 0 22px 48px rgba(13,36,16,.12);
 }
-.questioner-hero-panel > div {
+.questionnaire-hero-panel > div {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2975,7 +2975,7 @@ footer::before {
   padding: 1.1rem 1.25rem;
   background: rgba(255,255,255,.84);
 }
-.questioner-panel-kicker {
+.questionnaire-panel-kicker {
   display: block;
   font-size: .75rem;
   font-weight: 700;
@@ -2983,20 +2983,20 @@ footer::before {
   text-transform: uppercase;
   color: var(--t4);
 }
-.questioner-hero-panel strong {
+.questionnaire-hero-panel strong {
   font-family: var(--fn-d);
   font-size: 2rem;
   line-height: 1;
   color: var(--forest);
 }
-.questioner-library {
+.questionnaire-library {
   padding-top: 4.4rem;
 }
-.questioner-section-head {
+.questionnaire-section-head {
   max-width: 760px;
   margin-bottom: 2rem;
 }
-.questioner-section-head h2 {
+.questionnaire-section-head h2 {
   margin-top: .7rem;
   font-family: var(--fn-d);
   font-size: clamp(2rem, 3.6vw, 3.4rem);
@@ -3004,13 +3004,13 @@ footer::before {
   line-height: 1.08;
   color: var(--t1);
 }
-.questioner-framework-grid {
+.questionnaire-framework-grid {
   display: grid;
   grid-template-columns: 1.08fr .92fr;
   gap: 1rem;
   align-items: stretch;
 }
-.questioner-framework-card {
+.questionnaire-framework-card {
   display: flex;
   min-height: 25rem;
   flex-direction: column;
@@ -3023,25 +3023,25 @@ footer::before {
   box-shadow: 0 16px 34px rgba(13,36,16,.07);
   transition: transform .25s cubic-bezier(.16, 1, .3, 1), border-color .25s, background .25s;
 }
-.questioner-framework-card:nth-child(2),
-.questioner-framework-card:nth-child(3) {
+.questionnaire-framework-card:nth-child(2),
+.questionnaire-framework-card:nth-child(3) {
   min-height: 22rem;
 }
-.questioner-framework-card:hover {
+.questionnaire-framework-card:hover {
   transform: translateY(-3px);
   border-color: rgba(168,212,146,.96);
   background:
     linear-gradient(180deg, rgba(255,255,255,.92), rgba(238,246,232,.96)),
     var(--paper-2);
 }
-.questioner-card-top {
+.questionnaire-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.4rem;
 }
-.questioner-card-icon {
+.questionnaire-card-icon {
   display: inline-flex;
   width: 3.35rem;
   height: 3.35rem;
@@ -3054,11 +3054,11 @@ footer::before {
     radial-gradient(circle at 34% 26%, rgba(255,255,255,.96), transparent 42%),
     linear-gradient(145deg, rgba(234,245,226,.92), rgba(219,233,251,.62));
 }
-.questioner-card-icon svg {
+.questionnaire-card-icon svg {
   width: 1.75rem;
   height: 1.75rem;
 }
-.questioner-difficulty {
+.questionnaire-difficulty {
   display: inline-flex;
   align-items: center;
   min-height: 2rem;
@@ -3072,26 +3072,26 @@ footer::before {
   letter-spacing: .13em;
   text-transform: uppercase;
 }
-.questioner-framework-card h3 {
+.questionnaire-framework-card h3 {
   font-family: var(--fn-d);
   font-size: clamp(1.7rem, 3vw, 2.6rem);
   font-weight: 400;
   line-height: 1.06;
   color: var(--t1);
 }
-.questioner-framework-card p {
+.questionnaire-framework-card p {
   margin-top: .9rem;
   color: var(--t2);
   font-size: .98rem;
   line-height: 1.75;
 }
-.questioner-card-meta {
+.questionnaire-card-meta {
   display: flex;
   flex-wrap: wrap;
   gap: .65rem;
   margin-top: 1.3rem;
 }
-.questioner-card-meta span {
+.questionnaire-card-meta span {
   display: inline-flex;
   align-items: center;
   gap: .35rem;
@@ -3104,25 +3104,25 @@ footer::before {
   font-size: .84rem;
   font-weight: 600;
 }
-.questioner-card-meta svg {
+.questionnaire-card-meta svg {
   width: 1rem;
   height: 1rem;
   color: var(--aqua-2);
 }
-.questioner-card-cats {
+.questionnaire-card-cats {
   display: flex;
   flex-wrap: wrap;
   gap: .45rem;
   margin-top: 1.15rem;
 }
-.questioner-card-cats span {
+.questionnaire-card-cats span {
   padding: .22rem .5rem;
   border-radius: 4px;
   background: rgba(217,241,239,.6);
   color: var(--t3);
   font-size: .77rem;
 }
-.questioner-start {
+.questionnaire-start {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -3131,7 +3131,7 @@ footer::before {
   margin-top: auto;
   text-align: center;
 }
-.questioner-start svg {
+.questionnaire-start svg {
   width: 1rem;
   height: 1rem;
 }
@@ -3726,24 +3726,24 @@ footer::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .questioner-hero::before {
+  .questionnaire-hero::before {
     animation: none;
   }
 }
 
 @media (max-width: 1000px) {
-  .questioner-hero-grid,
+  .questionnaire-hero-grid,
   .questionnaire-header,
   .questionnaire-layout,
   .questionnaire-results-grid {
     grid-template-columns: 1fr;
   }
-  .questioner-framework-grid {
+  .questionnaire-framework-grid {
     grid-template-columns: 1fr;
   }
-  .questioner-framework-card,
-  .questioner-framework-card:nth-child(2),
-  .questioner-framework-card:nth-child(3) {
+  .questionnaire-framework-card,
+  .questionnaire-framework-card:nth-child(2),
+  .questionnaire-framework-card:nth-child(3) {
     min-height: auto;
   }
   .questionnaire-sidebar {
@@ -3753,11 +3753,11 @@ footer::before {
 }
 
 @media (max-width: 700px) {
-  .questioner-hero,
+  .questionnaire-hero,
   .questionnaire-shell {
     padding-top: 3rem;
   }
-  .questioner-hero-grid {
+  .questionnaire-hero-grid {
     gap: 2rem;
   }
   .questionnaire-topbar,

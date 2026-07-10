@@ -28,35 +28,35 @@ const iconMap: Record<string, IconType> = {
   target: PiTargetDuotone,
 };
 
-export default function QuestionerPage() {
+export default function QuestionnairePage() {
   return (
     <>
       <Nav />
       <Announce />
       <main>
-        <section className="questioner-hero">
-          <div className="wrap questioner-hero-grid">
-            <div className="questioner-hero-copy anim">
+        <section className="questionnaire-hero">
+          <div className="wrap questionnaire-hero-grid">
+            <div className="questionnaire-hero-copy anim">
               <div className="hero-badge">
                 <div className="badge-dot"></div>
                 <span className="eyebrow">Compliance questionnaire</span>
               </div>
-              <h1 className="questioner-title">
+              <h1 className="questionnaire-title">
                 Readiness checks for practical security teams.
               </h1>
-              <p className="questioner-lede">
+              <p className="questionnaire-lede">
                 Complete a focused 15-20 question assessment, save progress in
                 the browser, and receive category scores with prioritized next
                 steps.
               </p>
             </div>
-            <div className="questioner-hero-panel anim d1" aria-label="Questionnaire summary">
+            <div className="questionnaire-hero-panel anim d1" aria-label="Questionnaire summary">
               <div>
-                <span className="questioner-panel-kicker">Included frameworks</span>
+                <span className="questionnaire-panel-kicker">Included frameworks</span>
                 <strong>{frameworkSummaries.length}</strong>
               </div>
               <div>
-                <span className="questioner-panel-kicker">Total questions</span>
+                <span className="questionnaire-panel-kicker">Total questions</span>
                 <strong>
                   {frameworkSummaries.reduce(
                     (total, framework) => total + framework.questionCount,
@@ -65,51 +65,51 @@ export default function QuestionerPage() {
                 </strong>
               </div>
               <div>
-                <span className="questioner-panel-kicker">Scoring</span>
+                <span className="questionnaire-panel-kicker">Scoring</span>
                 <strong>Auto</strong>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section questioner-library">
+        <section className="section questionnaire-library">
           <div className="wrap">
-            <div className="questioner-section-head anim">
+            <div className="questionnaire-section-head anim">
               <p className="eyebrow">Choose an assessment</p>
               <h2>Four focused tracks, built from audit-ready control themes.</h2>
             </div>
-            <div className="questioner-framework-grid">
+            <div className="questionnaire-framework-grid">
               {frameworkSummaries.map((framework, index) => {
                 const Icon = iconMap[framework.icon] ?? PiShieldCheckDuotone;
 
                 return (
                   <article
                     key={framework.slug}
-                    className={`questioner-framework-card anim d${index}`}
+                    className={`questionnaire-framework-card anim d${index}`}
                   >
-                    <div className="questioner-card-top">
-                      <div className="questioner-card-icon">
+                    <div className="questionnaire-card-top">
+                      <div className="questionnaire-card-icon">
                         <Icon aria-hidden="true" focusable="false" />
                       </div>
-                      <span className="questioner-difficulty">
+                      <span className="questionnaire-difficulty">
                         {framework.difficulty}
                       </span>
                     </div>
                     <h3>{framework.framework}</h3>
                     <p>{framework.description}</p>
-                    <div className="questioner-card-meta">
+                    <div className="questionnaire-card-meta">
                       <span>{framework.questionCount} questions</span>
                       <span>
                         <PiClockDuotone aria-hidden="true" focusable="false" />
                         {framework.estimatedTime}
                       </span>
                     </div>
-                    <div className="questioner-card-cats" aria-label="Categories">
+                    <div className="questionnaire-card-cats" aria-label="Categories">
                       {framework.categories.slice(0, 4).map((category) => (
                         <span key={category}>{category}</span>
                       ))}
                     </div>
-                    <Link href={`/questioner/${framework.slug}`} className="btn-lime questioner-start">
+                    <Link href={`/questionnaire/${framework.slug}`} className="btn-lime questionnaire-start">
                       Start Assessment
                       <PiArrowRightDuotone aria-hidden="true" focusable="false" />
                     </Link>
