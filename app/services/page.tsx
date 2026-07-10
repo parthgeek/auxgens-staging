@@ -64,10 +64,10 @@ const serviceInsights: Record<string, ServiceInsight> = {
     steps: ["Match talent", "Plan delivery", "Track outcomes"],
   },
   "forward-deployed-engineering": {
-    title: "AI embedded into existing business workflows",
+    title: "AI embedded into real business workflows",
     copy:
-      "Embedded AI engineers map real business work, connect models to approved data and systems, then launch copilots, agents, and automations with measurable adoption.",
-    steps: ["Map AI use cases", "Integrate systems", "Measure outcomes"],
+      "A Forward Deployed AI Engineer works inside the client context, turns priority workflows into copilots, agents, and automations, and measures adoption after launch.",
+    steps: ["Find use cases", "Build in workflow", "Measure adoption"],
   },
   ccpa: {
     title: "Consumer rights handled with clear ownership",
@@ -80,7 +80,7 @@ const serviceInsights: Record<string, ServiceInsight> = {
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens cybersecurity, compliance, data protection, and security services — GRC, Virtual CISO, Cyber Security, SOC as a Service, GDPR, FERPA, CCPA, Application Development, Forward Deployed AI Engineering, and Staff Augmentation/Project Management.",
+    "Explore Auxgens AI as a Service, cybersecurity, security operations, governance, compliance, privacy, application development, and staff augmentation services.",
 };
 
 export default function ServicesPage() {
@@ -120,12 +120,13 @@ export default function ServicesPage() {
             <div className="hero-right">
               <p className="hero-tagline">Securing Your Digital Future.</p>
               <p className="hero-desc">
-                From governance and risk frameworks to 24/7 security operations
-                and data privacy compliance — Auxgens covers every aspect of
-                your security posture.
+                From Forward Deployed AI Engineers to 24/7 security operations,
+                governance, and data privacy compliance — Auxgens helps teams
+                turn risk, automation, and protection goals into working
+                outcomes.
               </p>
               <div className="hero-btns">
-                <a href="#grc" className="btn-lime">
+                <a href="#forward-deployed-engineering" className="btn-lime">
                   Explore Services
                 </a>
                 

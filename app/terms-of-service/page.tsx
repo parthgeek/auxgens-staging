@@ -9,14 +9,14 @@ const sections = [
   {
     title: "Using This Website",
     body: [
-      "You may use this website to learn about Auxgens, review our cybersecurity, compliance, privacy, and secure application development services, and contact us for business enquiries.",
+      "You may use this website to learn about Auxgens, review our AI, cybersecurity, compliance, privacy, and secure application development services, and contact us for business enquiries.",
       "You agree not to misuse the website, interfere with its operation, attempt unauthorised access, submit harmful code, scrape content at unreasonable volume, or use the site in a way that violates applicable law.",
     ],
   },
   {
     title: "Services And Engagements",
     body: [
-      "Information on this website describes Auxgens capabilities and does not create a consulting, managed services, SOC, Virtual CISO, compliance, privacy, or development engagement by itself.",
+      "Information on this website describes Auxgens capabilities and does not create an AI, consulting, managed services, SOC, Virtual CISO, compliance, privacy, or development engagement by itself.",
       "Any client work will be governed by the applicable proposal, statement of work, order form, master services agreement, data processing terms, or other written agreement signed or accepted by the parties.",
     ],
   },
@@ -79,7 +79,7 @@ const sections = [
 export const metadata: Metadata = {
   title: "Terms of Service | Auxgens",
   description:
-    "Review the Auxgens Terms of Service for website use, enquiries, and cybersecurity, compliance, privacy, and secure development engagement boundaries.",
+    "Review the Auxgens Terms of Service for website use, enquiries, and AI, cybersecurity, compliance, privacy, and secure development engagement boundaries.",
 };
 
 export default function TermsOfServicePage() {
@@ -95,7 +95,7 @@ export default function TermsOfServicePage() {
               <h1>Terms of Service</h1>
               <p className="legal-intro">
                 The baseline terms for using the Auxgens website and discussing
-                potential security, compliance, privacy, and development work.
+                potential AI, security, compliance, privacy, and development work.
               </p>
               <p className="legal-updated">Last updated: June 2026</p>
             </div>

@@ -48,7 +48,7 @@ const linkedInUrl = "https://www.linkedin.com/company/auxgen";
 export const metadata: Metadata = {
   title: "Contact Us | Auxgens",
   description:
-    "Contact Auxgens for cybersecurity, GRC, Virtual CISO, GDPR, CCPA, and secure application development enquiries.",
+    "Contact Auxgens for Forward Deployed AI Engineer, SOC, cybersecurity, GRC, privacy, compliance, and secure application development enquiries.",
 };
 
 export default function ContactUsPage() {

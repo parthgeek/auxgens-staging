@@ -9,7 +9,7 @@ const sections = [
   {
     title: "Information We Collect",
     body: [
-      "We collect business contact details you provide when you contact Auxgens, request a proposal, subscribe to updates, or discuss a security, compliance, privacy, or application development engagement.",
+      "We collect business contact details you provide when you contact Auxgens, request a proposal, subscribe to updates, or discuss an AI, security, compliance, privacy, or application development engagement.",
       "This may include your name, work email, phone number, company, role, country, message content, engagement requirements, and any documents or technical context you choose to share with us.",
       "We may also collect basic website usage information such as pages viewed, browser type, approximate location, referral source, and device information to understand site performance and protect our systems.",
     ],
@@ -18,7 +18,7 @@ const sections = [
     title: "How We Use Information",
     body: [
       "We use information to respond to enquiries, assess engagement fit, prepare proposals, deliver contracted services, manage client relationships, improve the website, secure our infrastructure, and meet legal or regulatory obligations.",
-      "Where Auxgens supports cybersecurity, governance, privacy, SOC, Virtual CISO, GDPR, CCPA, or secure application development work, project data is used only for the agreed business purpose and handled according to the applicable statement of work or client agreement.",
+      "Where Auxgens supports AI, cybersecurity, governance, privacy, SOC, Virtual CISO, GDPR, CCPA, or secure application development work, project data is used only for the agreed business purpose and handled according to the applicable statement of work or client agreement.",
     ],
   },
   {
@@ -65,7 +65,7 @@ const sections = [
 export const metadata: Metadata = {
   title: "Privacy Policy | Auxgens",
   description:
-    "Read the Auxgens Privacy Policy for website visitors, enquiries, and cybersecurity, compliance, privacy, and secure application development engagements.",
+    "Read the Auxgens Privacy Policy for website visitors, enquiries, and AI, cybersecurity, compliance, privacy, and secure application development engagements.",
 };
 
 export default function PrivacyPolicyPage() {

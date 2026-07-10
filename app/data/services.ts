@@ -17,7 +17,24 @@ export type DetailedService = {
   offerings: Offering[];
 };
 
-export const detailedServices: DetailedService[] = [
+const detailedServiceOrder = [
+  "forward-deployed-engineering",
+  "soc-as-a-service",
+  "cybersecurity",
+  "vciso",
+  "grc",
+  "gdpr",
+  "ferpa",
+  "ccpa",
+  "app-dev",
+  "staff-aug",
+];
+
+const detailedServiceRank = new Map(
+  detailedServiceOrder.map((id, index) => [id, index]),
+);
+
+const detailedServicesData: DetailedService[] = [
   {
     id: "grc",
     eyebrow: "GRC Services",
@@ -368,50 +385,61 @@ export const detailedServices: DetailedService[] = [
   },
   {
     id: "forward-deployed-engineering",
-    eyebrow: "Embedded AI Engineering",
-    title: "Forward Deployed AI Engineering",
+    eyebrow: "AI as a Service",
+    title: "Forward Deployed AI Engineer",
     description:
-      "Forward Deployed AI Engineers work directly with client teams to identify where AI can improve the existing business, then design, customise, integrate, and deploy production-ready AI solutions inside current workflows, systems, and operating models. Auxgens bridges business context and AI engineering so pilots become measurable, secure, and scalable business capabilities.",
+      "Our Forward Deployed AI Engineers work directly with your business and technology teams to turn AI ideas into working systems. Auxgens identifies high-value workflows, connects approved data and tools, builds copilots, agents, and automations, then deploys them securely with governance, adoption, and measurable outcomes.",
     challenges: [
-      "Unclear AI use cases across existing business functions",
-      "Manual workflows that need automation without disrupting operations",
-      "Enterprise data, tools, and approvals spread across disconnected systems",
-      "Difficulty moving AI pilots into secure production environments",
-      "Need for AI outputs to follow business rules, compliance, and review paths",
-      "Limited internal capacity to integrate AI into day-to-day work",
+      "AI ideas stuck in pilot mode without clear ownership or ROI",
+      "Manual workflows that are too nuanced for off-the-shelf automation",
+      "Business data, approvals, and tools spread across disconnected systems",
+      "Need for copilots and agents that respect access, privacy, and compliance rules",
+      "Model outputs that require evaluation, logging, human review, and escalation paths",
+      "Limited internal time to design, integrate, and operate AI safely",
     ],
     offerings: [
       {
-        name: "AI Opportunity & Workflow Mapping",
+        name: "AI Strategy & Use-Case Discovery",
         items: [
-          "Embedded discovery with business and technology stakeholders",
-          "Identification of AI use cases across existing teams and processes",
-          "Workflow mapping to find automation, copilot, and agent opportunities",
-          "Data readiness and integration feasibility assessment",
-          "AI solution blueprints tied to current business systems",
-          "Success metrics linked to efficiency, quality, cost, or revenue impact",
+          "Forward Deployed AI Engineer embedded with business and technology teams",
+          "AI opportunity workshops across operations, sales, support, finance, HR, and security",
+          "Workflow mapping to prioritise automation, copilot, and agent opportunities",
+          "ROI scoring by efficiency, quality, cost reduction, revenue, and risk",
+          "Data readiness and system integration assessment",
+          "AI roadmap with pilot, production, and adoption milestones",
         ],
       },
       {
-        name: "AI Integration & Customisation",
+        name: "AI Copilots & Agents",
         items: [
-          "Custom AI copilots, assistants, and workflow automations",
-          "Integration with CRMs, ERPs, ticketing tools, data stores, and internal apps",
-          "Retrieval-augmented generation over approved business knowledge",
-          "AI agent workflows with human review and escalation paths",
-          "Secure API, data pipeline, and application integration",
+          "Custom AI copilots for internal teams and customer-facing workflows",
+          "AI agents for ticket triage, research, document handling, reporting, and approvals",
+          "Enterprise knowledge assistants using approved documents, policies, and data",
+          "Retrieval-augmented generation with source grounding and access control",
           "Prompt, model, and evaluation tuning for business-specific tasks",
+          "Human-in-the-loop review for sensitive or high-impact decisions",
         ],
       },
       {
-        name: "Production Deployment & Governance",
+        name: "AI Workflow Automation & Integration",
         items: [
-          "Pilot-to-production rollout inside existing operating environments",
-          "AI risk, access, logging, and approval controls",
-          "Evaluation harnesses for quality, safety, and business accuracy",
+          "Integration with CRM, ERP, ticketing, email, data warehouses, and internal apps",
+          "Secure APIs, data pipelines, and tool connectors for agent workflows",
+          "Automated summaries, classification, routing, and status updates",
+          "Back-office automation for repetitive operational processes",
+          "Model-agnostic architecture across commercial and open-source models",
+          "Role-based permissions, audit trails, and exception handling",
+        ],
+      },
+      {
+        name: "AI Governance, Adoption & Operations",
+        items: [
+          "AI risk controls for access, privacy, logging, and approval policies",
+          "Evaluation harnesses for accuracy, safety, latency, and business quality",
+          "Deployment runbooks, monitoring, and continuous improvement cycles",
           "User enablement, adoption tracking, and feedback loops",
-          "Operational handover with documentation and support models",
-          "Continuous optimisation against measurable business outcomes",
+          "Responsible AI guardrails aligned to business and compliance needs",
+          "Operational handover with documentation, training, and support models",
         ],
       },
     ],
@@ -473,7 +501,35 @@ export const detailedServices: DetailedService[] = [
   },
 ];
 
+export const detailedServices: DetailedService[] = [...detailedServicesData].sort(
+  (a, b) =>
+    (detailedServiceRank.get(a.id) ?? Number.MAX_SAFE_INTEGER) -
+    (detailedServiceRank.get(b.id) ?? Number.MAX_SAFE_INTEGER),
+);
+
 export const homepageServices: Service[] = [
+  {
+    title: "Forward Deployed AI Engineer",
+    items: [
+      "Embedded AI engineering",
+      "AI use-case discovery",
+      "Copilots, agents & RAG",
+      "Workflow automation",
+      "System integration & APIs",
+      "Governance and adoption tracking",
+    ],
+  },
+  {
+    title: "SOC as a Service",
+    items: [
+      "AI/ML threat detection",
+      "Automated alert triage",
+      "SOAR-style playbooks",
+      "Unified telemetry",
+      "Real-time dashboards",
+      "Compliance reporting",
+    ],
+  },
   {
     title: "Threat & Risk Intelligence",
     items: [
@@ -494,17 +550,6 @@ export const homepageServices: Service[] = [
       "Endpoint solutions",
       "Threat intelligence",
       "Network architecture",
-    ],
-  },
-  {
-    title: "SOC as a Service",
-    items: [
-      "AI/ML threat detection",
-      "Automated alert triage",
-      "SOAR-style playbooks",
-      "Unified telemetry",
-      "Real-time dashboards",
-      "Compliance reporting",
     ],
   },
   {
@@ -572,17 +617,6 @@ export const homepageServices: Service[] = [
       "Project planning & delivery",
       "PMO governance support",
       "Flexible engagement models",
-    ],
-  },
-  {
-    title: "Forward Deployed AI Engineering",
-    items: [
-      "AI use-case discovery",
-      "Business workflow automation",
-      "AI copilots and agents",
-      "Existing system integration",
-      "Secure production rollout",
-      "Adoption and outcome tracking",
     ],
   },
   {

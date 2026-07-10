@@ -13,7 +13,7 @@ export default function Services() {
             </div>
           </div>
           <p className="sec-note">
-            {homepageServices.length} service pillars covering every aspect of your security posture — from risk assessment to 24/7 threat response.
+            {homepageServices.length} service pillars covering every aspect of your security posture — from embedded AI engineering to 24/7 threat response and audit-ready governance.
           </p>
         </div>
         <div className="services-grid anim">

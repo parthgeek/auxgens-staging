@@ -24,16 +24,16 @@ const initialValues: FormValues = {
 };
 
 const services = [
-  "Governance Risk & Compliance",
-  "Virtual CISO",
-  "Cyber Security",
+  "Forward Deployed AI Engineer",
   "SOC as a Service",
+  "Cyber Security",
+  "Virtual CISO",
+  "Governance Risk & Compliance",
   "GDPR / Privacy",
   "FERPA",
+  "CCPA",
   "Application Development",
   "Staff Augmentation/Project Management",
-  "Forward Deployed AI Engineering",
-  "CCPA",
   "General enquiry",
 ];
 
@@ -151,7 +151,7 @@ export default function ContactForm() {
     >
       <div className="contact-form-head">
         <p className="eyebrow">Send an enquiry</p>
-        <h2>Tell us what needs protection.</h2>
+        <h2>Protect what matters.</h2>
         <p>
           Share the context you can. Auxgens will respond through the primary
           sales inbox within one business day.
