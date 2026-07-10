@@ -1,0 +1,185 @@
+{
+  "slug": "iso27001",
+  "framework": "ISO 27001:2022",
+  "shortName": "ISO 27001",
+  "description": "Review readiness for an information security management system built around risk management, governance, controls, audit, and continual improvement.",
+  "difficulty": "Advanced",
+  "estimatedTime": "15-18 min",
+  "estimatedMinutes": 18,
+  "icon": "certificate",
+  "answerOptions": ["Yes", "No", "Partially", "Not Applicable"],
+  "categories": [
+    "Context",
+    "Leadership",
+    "Planning",
+    "Support",
+    "Operation",
+    "Performance Evaluation",
+    "Improvement",
+    "Annex A Controls"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "Context",
+      "question": "Has the ISMS scope been documented with boundaries, locations, assets, technologies, and interested parties?",
+      "description": "The scope should explain what is included, what is excluded, and why exclusions are justified.",
+      "recommendation": "Document the ISMS scope and validate it against business processes, assets, third parties, and regulatory expectations.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 2,
+      "category": "Leadership",
+      "question": "Is an information security policy approved by leadership and communicated to relevant personnel?",
+      "description": "The policy should support business objectives and set the direction for the ISMS.",
+      "recommendation": "Obtain leadership approval for the security policy and publish it through onboarding, intranet, or policy tooling.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 3,
+      "category": "Leadership",
+      "question": "Are ISMS roles, responsibilities, and authorities assigned and understood?",
+      "description": "Include ISMS owner, risk owners, control owners, internal audit owner, and incident roles.",
+      "recommendation": "Create an ISMS responsibility matrix and review ownership during management review meetings.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 4,
+      "category": "Planning",
+      "question": "Is a repeatable information security risk assessment methodology defined and used?",
+      "description": "The method should define likelihood, impact, risk acceptance criteria, owners, and review frequency.",
+      "recommendation": "Formalize the risk methodology and apply it consistently across assets, suppliers, systems, and processes.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 5,
+      "category": "Planning",
+      "question": "Are risk treatment plans approved, tracked, and linked to selected controls?",
+      "description": "Treatment should address avoid, reduce, transfer, or accept decisions with accountable owners and target dates.",
+      "recommendation": "Maintain risk treatment plans with owners, due dates, control mapping, and evidence of acceptance.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 6,
+      "category": "Planning",
+      "question": "Is the Statement of Applicability maintained with justification for included and excluded Annex A controls?",
+      "description": "The SoA should reflect control applicability, implementation status, and risk treatment decisions.",
+      "recommendation": "Update the Statement of Applicability after each risk assessment and management review cycle.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 7,
+      "category": "Planning",
+      "question": "Are measurable information security objectives defined, monitored, and reported?",
+      "description": "Objectives can include risk reduction, training completion, vulnerability SLAs, incident response, and audit closure.",
+      "recommendation": "Define measurable ISMS objectives with targets, owners, data sources, and review cadence.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 8,
+      "category": "Support",
+      "question": "Are competence, awareness, and training requirements defined for people affecting the ISMS?",
+      "description": "Include employees, contractors, privileged users, control owners, and incident responders.",
+      "recommendation": "Build a role-based training plan and retain completion evidence for all relevant personnel.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 9,
+      "category": "Support",
+      "question": "Is documented information controlled for versioning, approvals, access, retention, and disposal?",
+      "description": "Policies, procedures, records, and audit evidence should be protected from unauthorized changes.",
+      "recommendation": "Use a controlled document repository with version history, approval workflow, and access restrictions.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 10,
+      "category": "Operation",
+      "question": "Is an asset inventory maintained with owners, classification, location, and lifecycle status?",
+      "description": "Assets should include hardware, software, cloud resources, data stores, SaaS platforms, and critical documents.",
+      "recommendation": "Create an asset inventory with owners and classification, then reconcile it with endpoint, cloud, and procurement data.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 11,
+      "category": "Annex A Controls",
+      "question": "Are identity and access management controls enforced for joiners, movers, leavers, and privileged accounts?",
+      "description": "Review least privilege, access approval, MFA, privileged access, and periodic access reviews.",
+      "recommendation": "Implement a documented access lifecycle with MFA, privileged account controls, and recurring certification.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 12,
+      "category": "Annex A Controls",
+      "question": "Are cryptographic controls defined for encryption, key management, and approved algorithms?",
+      "description": "The control should address data at rest, data in transit, secrets, certificates, rotation, and key access.",
+      "recommendation": "Publish a cryptographic standard and maintain evidence for key ownership, rotation, and access review.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 13,
+      "category": "Annex A Controls",
+      "question": "Are secure configuration, patching, malware protection, and vulnerability management operating on critical systems?",
+      "description": "Include servers, endpoints, cloud services, network devices, containers, and applications.",
+      "recommendation": "Define secure baselines, patch SLAs, vulnerability scanning, and exception handling for critical systems.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 14,
+      "category": "Annex A Controls",
+      "question": "Are logs collected, protected, reviewed, and used to detect information security events?",
+      "description": "Critical systems should send logs to a protected location with alerting and retention aligned to risk.",
+      "recommendation": "Centralize security logs, define alert use cases, protect log integrity, and review incidents regularly.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 15,
+      "category": "Annex A Controls",
+      "question": "Are supplier security risks assessed before onboarding and reviewed during the relationship?",
+      "description": "Consider due diligence, contractual controls, data access, monitoring, exit, and concentration risk.",
+      "recommendation": "Establish supplier risk tiers, security due diligence, contract clauses, and annual reviews for high-risk suppliers.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 16,
+      "category": "Annex A Controls",
+      "question": "Are physical, environmental, and cloud infrastructure safeguards aligned to asset criticality?",
+      "description": "Include office access, visitor controls, device protection, cloud account hardening, and administrative access.",
+      "recommendation": "Document physical and cloud infrastructure safeguards and verify them through periodic reviews.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 17,
+      "category": "Performance Evaluation",
+      "question": "Are internal audits and management reviews performed at planned intervals?",
+      "description": "Audit and review outputs should include ISMS performance, risk status, objective results, incidents, and improvement actions.",
+      "recommendation": "Schedule internal audits and management reviews, then track actions to completion with evidence.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 18,
+      "category": "Improvement",
+      "question": "Are nonconformities, corrective actions, and continual improvement items tracked to closure?",
+      "description": "Root cause analysis should prevent recurrence and improve the ISMS over time.",
+      "recommendation": "Maintain a corrective action register with root cause, owner, due date, verification, and closure evidence.",
+      "answer": null,
+      "comments": ""
+    }
+  ]
+}

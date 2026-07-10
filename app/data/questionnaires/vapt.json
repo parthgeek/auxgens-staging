@@ -1,0 +1,188 @@
+{
+  "slug": "vapt",
+  "framework": "VAPT",
+  "shortName": "VAPT",
+  "description": "Check whether vulnerability assessment and penetration testing practices cover scope, attack surface, web, API, cloud, mobile, reporting, and retesting.",
+  "difficulty": "Technical",
+  "estimatedTime": "14-18 min",
+  "estimatedMinutes": 18,
+  "icon": "target",
+  "answerOptions": ["Yes", "No", "Partially", "Not Applicable"],
+  "categories": [
+    "Scope",
+    "Asset Discovery",
+    "Vulnerability Assessment",
+    "Penetration Testing",
+    "Authentication",
+    "Authorization",
+    "Network Security",
+    "Cloud Security",
+    "API Security",
+    "Mobile Security",
+    "Reporting"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "Scope",
+      "question": "Is the VAPT scope formally approved with in-scope assets, exclusions, test windows, and rules of engagement?",
+      "description": "The scope should cover IPs, domains, applications, APIs, cloud accounts, mobile apps, and business constraints.",
+      "recommendation": "Create a signed rules-of-engagement document with scope, methods, contacts, test windows, and stop conditions.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 2,
+      "category": "Asset Discovery",
+      "question": "Has the external and internal attack surface been discovered and reconciled with the asset inventory?",
+      "description": "Include domains, subdomains, exposed services, cloud assets, third-party hosted systems, and shadow IT.",
+      "recommendation": "Run attack surface discovery and reconcile findings with CMDB, cloud inventory, and ownership data.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 3,
+      "category": "Scope",
+      "question": "Are test accounts, roles, data sets, and environment constraints prepared before testing starts?",
+      "description": "Good preparation enables authenticated testing without disrupting production or exposing real data unnecessarily.",
+      "recommendation": "Prepare role-based accounts, sample data, whitelisted source IPs, and escalation contacts before the assessment.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 4,
+      "category": "Penetration Testing",
+      "question": "Does the methodology align to recognized testing guidance such as OWASP WSTG, OWASP API Security, or PTES?",
+      "description": "The methodology should define manual validation, exploit limits, evidence capture, and reporting expectations.",
+      "recommendation": "Adopt a documented methodology mapped to OWASP WSTG/API risks and tailor it to the target technology stack.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 5,
+      "category": "Vulnerability Assessment",
+      "question": "Are both authenticated and unauthenticated vulnerability scans performed where technically feasible?",
+      "description": "Authenticated scans usually find missing patches, insecure configurations, and local weaknesses missed from outside.",
+      "recommendation": "Enable credentialed scans for servers, endpoints, cloud workloads, and applications where safe and approved.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 6,
+      "category": "Vulnerability Assessment",
+      "question": "Are vulnerabilities rated with business context, exploitability, asset criticality, and CVSS or equivalent scoring?",
+      "description": "Risk rating should avoid raw scanner severity when compensating controls or business exposure change priority.",
+      "recommendation": "Define a risk rating model combining CVSS, exposure, exploitability, data sensitivity, and business criticality.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 7,
+      "category": "Network Security",
+      "question": "Are network services, firewall exposure, segmentation, and administrative interfaces tested?",
+      "description": "Assess unnecessary services, weak protocols, exposed admin panels, lateral movement paths, and segmentation boundaries.",
+      "recommendation": "Review exposed services and segmentation rules, then remove unused protocols and restrict administrative access.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 8,
+      "category": "Vulnerability Assessment",
+      "question": "Are patch levels, insecure configurations, default credentials, and weak TLS settings checked?",
+      "description": "Configuration weaknesses are often more exploitable than missing patches and should be verified manually.",
+      "recommendation": "Baseline systems against secure configuration standards and remediate weak TLS, default credentials, and missing patches.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 9,
+      "category": "Penetration Testing",
+      "question": "Are web applications tested for OWASP Top 10 risks and business logic abuse cases?",
+      "description": "Include injection, XSS, SSRF, file upload, security misconfiguration, access control, and workflow bypass.",
+      "recommendation": "Run manual web application testing mapped to OWASP risks and include business logic scenarios from product owners.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 10,
+      "category": "Authentication",
+      "question": "Are authentication controls tested for MFA enforcement, lockout, password reset, enumeration, and session issuance?",
+      "description": "Authentication testing should include both user-facing flows and alternative channels such as APIs or admin panels.",
+      "recommendation": "Strengthen authentication by enforcing MFA, rate limits, secure reset flows, and consistent controls across channels.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 11,
+      "category": "Authorization",
+      "question": "Are authorization controls tested for privilege escalation, IDOR, tenant isolation, and role bypass?",
+      "description": "Use multiple roles and tenants to validate object-level, function-level, and workflow authorization.",
+      "recommendation": "Add authorization test cases for every sensitive object, function, tenant boundary, and administrative action.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 12,
+      "category": "Authentication",
+      "question": "Are session management controls tested for cookie attributes, timeout, logout, fixation, and hijacking resistance?",
+      "description": "Assess Secure, HttpOnly, SameSite, session rotation, idle timeout, absolute timeout, and invalidation after logout.",
+      "recommendation": "Harden session settings and verify token rotation, timeout, logout invalidation, and secure cookie attributes.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 13,
+      "category": "API Security",
+      "question": "Are APIs tested for broken object authorization, rate limiting, schema validation, mass assignment, and token handling?",
+      "description": "Include REST, GraphQL, internal APIs, partner APIs, and mobile backends where applicable.",
+      "recommendation": "Build API security tests for authorization, throttling, schema enforcement, sensitive data exposure, and token validation.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 14,
+      "category": "Cloud Security",
+      "question": "Are cloud IAM, storage exposure, network security groups, logging, secrets, and managed services reviewed?",
+      "description": "Cloud testing should validate identity privileges, public access, encryption, monitoring, and insecure defaults.",
+      "recommendation": "Run cloud configuration review and remediate excessive IAM rights, public storage, missing logging, and exposed secrets.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 15,
+      "category": "Mobile Security",
+      "question": "Are mobile applications tested for insecure storage, transport security, reverse engineering, and API abuse?",
+      "description": "Apply this where Android or iOS applications are in scope, including mobile-specific backend behavior.",
+      "recommendation": "Perform mobile testing with static analysis, dynamic testing, transport checks, and backend authorization validation.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 16,
+      "category": "Penetration Testing",
+      "question": "Are exploitable findings manually validated while avoiding unsafe impact to production systems?",
+      "description": "Validation should prove risk with controlled evidence and respect approved stop conditions.",
+      "recommendation": "Define exploit validation limits and require manual proof for high-risk findings without damaging systems or data.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 17,
+      "category": "Reporting",
+      "question": "Does the final report include executive summary, technical evidence, risk ratings, affected assets, and remediation guidance?",
+      "description": "Reports should support leadership decisions and engineering fixes without requiring separate interpretation.",
+      "recommendation": "Standardize report templates with business impact, proof, reproducible steps, affected assets, and prioritized remediation.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 18,
+      "category": "Reporting",
+      "question": "Is remediation tracked and retested to confirm vulnerabilities are closed?",
+      "description": "Retesting should verify fixes, update residual risk, and produce closure evidence for audits or customers.",
+      "recommendation": "Track findings through owners and due dates, then perform retesting and issue closure evidence.",
+      "answer": null,
+      "comments": ""
+    }
+  ]
+}

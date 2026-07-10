@@ -1,0 +1,186 @@
+{
+  "slug": "gdpr",
+  "framework": "GDPR",
+  "shortName": "GDPR",
+  "description": "Evaluate privacy governance, lawful processing, data subject rights, processor controls, security, transfers, retention, and breach readiness.",
+  "difficulty": "Intermediate",
+  "estimatedTime": "12-16 min",
+  "estimatedMinutes": 16,
+  "icon": "privacy",
+  "answerOptions": ["Yes", "No", "Partially", "Not Applicable"],
+  "categories": [
+    "Governance",
+    "Lawful Basis",
+    "Transparency",
+    "Data Subject Rights",
+    "Processors",
+    "Security",
+    "Transfers",
+    "Breach Management",
+    "Retention"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "Governance",
+      "question": "Is a record of processing activities maintained for personal data handled by the organization?",
+      "description": "The record should capture purposes, categories, recipients, transfers, retention, and security measures.",
+      "recommendation": "Create or refresh the processing inventory and assign owners for each business process using personal data.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 2,
+      "category": "Lawful Basis",
+      "question": "Is a lawful basis documented for each processing purpose before personal data is collected or used?",
+      "description": "Common bases include consent, contract, legal obligation, vital interests, public task, and legitimate interests.",
+      "recommendation": "Map every processing purpose to a lawful basis and retain assessments for legitimate interests where used.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 3,
+      "category": "Transparency",
+      "question": "Are privacy notices clear, current, and provided at the point where data is collected?",
+      "description": "Notices should explain identity, purposes, lawful basis, recipients, transfers, retention, rights, and contact details.",
+      "recommendation": "Update privacy notices and align them to actual processing, retention, sharing, and transfer practices.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 4,
+      "category": "Lawful Basis",
+      "question": "Where consent is used, is it specific, recorded, freely given, and easy to withdraw?",
+      "description": "Consent records should show who consented, when, what they were told, and how withdrawal is honored.",
+      "recommendation": "Implement consent logging and a withdrawal workflow that stops related processing promptly.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 5,
+      "category": "Governance",
+      "question": "Are data minimization, purpose limitation, and accuracy requirements built into business processes?",
+      "description": "Teams should collect only needed data, use it for defined purposes, and correct inaccurate records.",
+      "recommendation": "Add privacy checks to process design, form fields, integrations, and data quality reviews.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 6,
+      "category": "Data Subject Rights",
+      "question": "Can the organization fulfill access, rectification, erasure, restriction, portability, objection, and profiling requests?",
+      "description": "Rights handling should include identity verification, scope review, exemptions, response records, and deadlines.",
+      "recommendation": "Build a data subject request playbook with owners, verification steps, templates, and evidence retention.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 7,
+      "category": "Data Subject Rights",
+      "question": "Are data subject requests tracked to ensure responses are completed within required timelines?",
+      "description": "Most requests should be handled within one month unless a valid extension is documented.",
+      "recommendation": "Use a request tracker with due dates, extension decisions, fulfillment evidence, and management reporting.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 8,
+      "category": "Processors",
+      "question": "Are data processing agreements in place with processors that handle personal data?",
+      "description": "Agreements should cover processing instructions, confidentiality, security, subprocessors, assistance, deletion, and audit rights.",
+      "recommendation": "Review processor contracts and add GDPR Article 28 clauses for all vendors handling personal data.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 9,
+      "category": "Transfers",
+      "question": "Are international transfers documented with an approved transfer mechanism and risk review?",
+      "description": "Consider adequacy decisions, standard contractual clauses, transfer impact assessments, and supplementary measures.",
+      "recommendation": "Maintain a transfer register and document safeguards for each country, recipient, and data category.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 10,
+      "category": "Security",
+      "question": "Are appropriate technical and organizational measures implemented to protect personal data?",
+      "description": "Review access controls, encryption, pseudonymization, backup, logging, vulnerability management, and resilience.",
+      "recommendation": "Map security measures to personal data risk and close gaps in encryption, access, monitoring, and resilience.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 11,
+      "category": "Governance",
+      "question": "Is data protection by design and by default applied to new products, workflows, and vendors?",
+      "description": "Privacy should be assessed before launch, with default settings limiting collection, visibility, and retention.",
+      "recommendation": "Add privacy design checks to product, procurement, and change management processes.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 12,
+      "category": "Governance",
+      "question": "Are data protection impact assessments performed for high-risk processing?",
+      "description": "High-risk activities may include large-scale monitoring, special categories, profiling, or systematic automated decisions.",
+      "recommendation": "Define DPIA triggers and retain DPIA records with risk decisions, mitigations, and approvals.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 13,
+      "category": "Governance",
+      "question": "Has a DPO or privacy owner been appointed where required, with independence and clear responsibilities?",
+      "description": "If a formal DPO is not required, a privacy owner should still coordinate accountability.",
+      "recommendation": "Document DPO applicability, appoint a privacy owner, and publish contact and escalation details.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 14,
+      "category": "Security",
+      "question": "Are special categories of personal data subject to enhanced controls and documented conditions for processing?",
+      "description": "Special category data includes health, biometric, racial or ethnic origin, political opinions, religion, and similar data.",
+      "recommendation": "Identify special category data and document the processing condition, access limits, and enhanced safeguards.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 15,
+      "category": "Retention",
+      "question": "Are retention periods defined and personal data deleted or anonymized when no longer required?",
+      "description": "Retention should align to purposes, legal obligations, customer contracts, backups, and litigation holds.",
+      "recommendation": "Publish a retention schedule and automate deletion or anonymization for expired data where possible.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 16,
+      "category": "Breach Management",
+      "question": "Can personal data breaches be detected, assessed, and notified to the supervisory authority within 72 hours where required?",
+      "description": "The workflow should include risk assessment, facts known, affected data, mitigation, and notification decision records.",
+      "recommendation": "Create a breach response playbook with 72-hour assessment checkpoints and notification templates.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 17,
+      "category": "Breach Management",
+      "question": "Is there a process to notify affected individuals when a breach is likely to result in high risk?",
+      "description": "Communications should be plain language and include likely consequences, mitigation steps, and contact details.",
+      "recommendation": "Prepare data subject breach notification templates and define decision criteria for high-risk incidents.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 18,
+      "category": "Governance",
+      "question": "Do personnel with access to personal data receive privacy training and handling guidance?",
+      "description": "Training should include lawful use, secure handling, rights requests, incident reporting, and vendor sharing rules.",
+      "recommendation": "Deliver role-based privacy training and retain completion records for personnel handling personal data.",
+      "answer": null,
+      "comments": ""
+    }
+  ]
+}

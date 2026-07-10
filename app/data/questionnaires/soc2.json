@@ -1,0 +1,182 @@
+{
+  "slug": "soc2",
+  "framework": "SOC 2",
+  "shortName": "SOC 2",
+  "description": "Assess controls against the Trust Services Criteria across security, availability, processing integrity, confidentiality, and privacy.",
+  "difficulty": "Intermediate",
+  "estimatedTime": "12-15 min",
+  "estimatedMinutes": 15,
+  "icon": "shield",
+  "answerOptions": ["Yes", "No", "Partially", "Not Applicable"],
+  "categories": [
+    "Security",
+    "Availability",
+    "Processing Integrity",
+    "Confidentiality",
+    "Privacy"
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "category": "Security",
+      "question": "Is a board-approved information security policy maintained and reviewed at least annually?",
+      "description": "The policy should cover security objectives, ownership, acceptable use, access control, incident response, and evidence responsibilities.",
+      "recommendation": "Create or refresh the information security policy, assign an owner, and record annual approval evidence.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 2,
+      "category": "Security",
+      "question": "Are security roles, responsibilities, and reporting lines clearly assigned?",
+      "description": "Confirm that system owners, control owners, incident contacts, and executive oversight are documented.",
+      "recommendation": "Document security responsibilities in a RACI or operating model and review ownership during management meetings.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 3,
+      "category": "Security",
+      "question": "Is a formal risk assessment performed and updated when systems or threats materially change?",
+      "description": "SOC 2 auditors expect management to identify, analyze, and respond to risks affecting trust service commitments.",
+      "recommendation": "Run a documented risk assessment, rate key threats, define treatment plans, and retain approval evidence.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 4,
+      "category": "Security",
+      "question": "Is multi-factor authentication enforced for privileged, remote, and production access?",
+      "description": "Include administrators, cloud consoles, source repositories, VPN, and remote support access.",
+      "recommendation": "Enable MFA for privileged and remote access paths and monitor exceptions through a formal approval process.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 5,
+      "category": "Security",
+      "question": "Are user access requests, changes, periodic reviews, and terminations documented?",
+      "description": "Evidence should show approval before access, least privilege, recurring review, and prompt removal after termination.",
+      "recommendation": "Implement an access lifecycle workflow with manager approval, quarterly review, and same-day termination checks.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 6,
+      "category": "Security",
+      "question": "Do employees and contractors complete security awareness training at onboarding and annually?",
+      "description": "Training should cover phishing, acceptable use, data handling, incident reporting, and confidentiality obligations.",
+      "recommendation": "Launch tracked security awareness training and keep completion records for employees and contractors.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 7,
+      "category": "Security",
+      "question": "Are vulnerability scans performed regularly and remediated based on severity SLAs?",
+      "description": "Include infrastructure, cloud assets, endpoints, containers, and internet-facing applications where applicable.",
+      "recommendation": "Define vulnerability scanning frequency, severity SLAs, owners, and exception approvals for delayed remediation.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 8,
+      "category": "Security",
+      "question": "Is an incident response plan documented, tested, and updated after exercises or incidents?",
+      "description": "The plan should include escalation paths, severity levels, communication, containment, evidence preservation, and post-incident review.",
+      "recommendation": "Test the incident response plan at least annually and document lessons learned, decisions, and action owners.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 9,
+      "category": "Availability",
+      "question": "Are uptime, capacity, and critical service health monitored against defined availability commitments?",
+      "description": "Monitoring should include alerting thresholds, on-call ownership, and management review of incidents or trends.",
+      "recommendation": "Define availability commitments, monitor service health, and retain alert response and review evidence.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 10,
+      "category": "Availability",
+      "question": "Are backups performed, protected, and periodically restored to confirm recoverability?",
+      "description": "Auditors usually expect restore test evidence, backup scope, retention, encryption, and access control.",
+      "recommendation": "Schedule restore tests, document results, and verify backup encryption, retention, and restricted access.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 11,
+      "category": "Availability",
+      "question": "Are disaster recovery and business continuity procedures documented and tested?",
+      "description": "Procedures should align to recovery time objectives, recovery point objectives, critical dependencies, and customer commitments.",
+      "recommendation": "Document DR and continuity runbooks, test them annually, and track gaps through remediation.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 12,
+      "category": "Processing Integrity",
+      "question": "Are production changes approved, tested, and traceable to tickets or pull requests?",
+      "description": "Change evidence should show authorization, testing, segregation of duties, rollback planning, and deployment records.",
+      "recommendation": "Standardize change management with approvals, testing evidence, deployment logs, and emergency change review.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 13,
+      "category": "Processing Integrity",
+      "question": "Are controls in place to detect incomplete, inaccurate, duplicate, or unauthorized processing?",
+      "description": "Consider reconciliations, validation checks, exception queues, job monitoring, and data quality reviews.",
+      "recommendation": "Add processing validation controls and retain exception review evidence for critical data flows.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 14,
+      "category": "Confidentiality",
+      "question": "Is confidential information identified, classified, and handled according to policy?",
+      "description": "Classification should cover customer data, contracts, credentials, reports, source code, and other sensitive business information.",
+      "recommendation": "Maintain a data classification standard with handling rules for storage, sharing, retention, and disposal.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 15,
+      "category": "Confidentiality",
+      "question": "Is confidential data encrypted in transit and at rest with managed key ownership?",
+      "description": "Review TLS, database encryption, object storage, endpoint encryption, key rotation, and access to key material.",
+      "recommendation": "Enforce encryption for confidential data and document key ownership, rotation, backup, and access review.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 16,
+      "category": "Confidentiality",
+      "question": "Are third parties contractually required to protect confidential information?",
+      "description": "Contracts should include confidentiality, security obligations, breach notification, data return or deletion, and audit rights where appropriate.",
+      "recommendation": "Update vendor agreements with confidentiality and security clauses, then review high-risk vendors annually.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 17,
+      "category": "Privacy",
+      "question": "Are privacy notices, consent records, and customer privacy requests managed through a defined process?",
+      "description": "The process should cover access, correction, deletion, consent withdrawal, response timelines, and proof of fulfillment.",
+      "recommendation": "Create a privacy request workflow with owners, due dates, verification steps, and retained response evidence.",
+      "answer": null,
+      "comments": ""
+    },
+    {
+      "id": 18,
+      "category": "Privacy",
+      "question": "Are retention periods defined and is personal data deleted or anonymized when no longer needed?",
+      "description": "Retention should align to customer commitments, legal requirements, backup practices, and system disposal procedures.",
+      "recommendation": "Publish a retention schedule and implement deletion or anonymization controls for expired personal data.",
+      "answer": null,
+      "comments": ""
+    }
+  ]
+}
