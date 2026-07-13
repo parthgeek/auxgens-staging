@@ -1142,12 +1142,16 @@ strong { font-weight: 600; }
 }
 .svc-snav--top .svc-snav-list li {
   flex-shrink: 0;
+  width: var(--svc-item-width, 17.5rem);
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .svc-snav--top .svc-snav-link {
   display: flex; flex-direction: column; gap: .22rem;
   padding: 1rem .9rem;
-  min-width: 12.5rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   border-right: 1px solid rgba(255,255,255,.4);
   white-space: nowrap;
   transition: background .22s;
@@ -1297,7 +1301,6 @@ strong { font-weight: 600; }
   }
   .svc-snav--top .svc-snav-scroll-track { margin-inline: 2.75rem; }
   .svc-snav--top .svc-snav-link {
-    min-width: 11.75rem;
     padding-block: .86rem;
   }
   .svc-snav-scroll-button { width: 2.75rem; }

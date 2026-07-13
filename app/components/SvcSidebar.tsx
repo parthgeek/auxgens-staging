@@ -57,19 +57,36 @@ export default function SvcSidebar() {
     const nav = topNavRef.current;
     if (!nav || mode !== "top") return;
 
+    let itemWidth = 0;
+
     const syncScrollButtons = () => {
       const maxScrollLeft = nav.scrollWidth - nav.clientWidth;
       setCanScrollLeft(nav.scrollLeft > 2);
       setCanScrollRight(nav.scrollLeft < maxScrollLeft - 2);
     };
 
-    syncScrollButtons();
+    const syncNavLayout = () => {
+      const firstVisibleIndex = itemWidth
+        ? Math.round(nav.scrollLeft / itemWidth)
+        : 0;
+      const visibleItemCount = Math.max(1, Math.floor(nav.clientWidth / 280));
+
+      itemWidth = nav.clientWidth / visibleItemCount;
+      nav.style.setProperty("--svc-item-width", `${itemWidth}px`);
+      nav.scrollLeft = Math.min(
+        firstVisibleIndex * itemWidth,
+        nav.scrollWidth - nav.clientWidth,
+      );
+      syncScrollButtons();
+    };
+
+    syncNavLayout();
     nav.addEventListener("scroll", syncScrollButtons, { passive: true });
-    window.addEventListener("resize", syncScrollButtons);
+    window.addEventListener("resize", syncNavLayout);
 
     return () => {
       nav.removeEventListener("scroll", syncScrollButtons);
-      window.removeEventListener("resize", syncScrollButtons);
+      window.removeEventListener("resize", syncNavLayout);
     };
   }, [mode]);
 
@@ -78,7 +95,7 @@ export default function SvcSidebar() {
     if (!nav) return;
 
     nav.scrollBy({
-      left: direction * Math.max(nav.clientWidth * 0.72, 240),
+      left: direction * nav.clientWidth,
       behavior: "smooth",
     });
   };
