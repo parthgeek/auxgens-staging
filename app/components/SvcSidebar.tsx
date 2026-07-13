@@ -10,7 +10,10 @@ const SIDE_RAIL_SCROLL_Y = 420;
 export default function SvcSidebar() {
   const [mode, setMode] = useState<"top" | "side">("top");
   const [sideHidden, setSideHidden] = useState(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const lastY = useRef(0);
+  const topNavRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const sideRailQuery = window.matchMedia(
@@ -50,6 +53,36 @@ export default function SvcSidebar() {
     };
   }, []);
 
+  useEffect(() => {
+    const nav = topNavRef.current;
+    if (!nav || mode !== "top") return;
+
+    const syncScrollButtons = () => {
+      const maxScrollLeft = nav.scrollWidth - nav.clientWidth;
+      setCanScrollLeft(nav.scrollLeft > 2);
+      setCanScrollRight(nav.scrollLeft < maxScrollLeft - 2);
+    };
+
+    syncScrollButtons();
+    nav.addEventListener("scroll", syncScrollButtons, { passive: true });
+    window.addEventListener("resize", syncScrollButtons);
+
+    return () => {
+      nav.removeEventListener("scroll", syncScrollButtons);
+      window.removeEventListener("resize", syncScrollButtons);
+    };
+  }, [mode]);
+
+  const scrollTopNav = (direction: -1 | 1) => {
+    const nav = topNavRef.current;
+    if (!nav) return;
+
+    nav.scrollBy({
+      left: direction * Math.max(nav.clientWidth * 0.72, 240),
+      behavior: "smooth",
+    });
+  };
+
   const cls = [
     "svc-snav",
     mode === "side" ? "svc-snav--side" : "svc-snav--top",
@@ -75,7 +108,19 @@ export default function SvcSidebar() {
         </button>
       )}
 
-      <nav>
+      {mode === "top" && (
+        <button
+          type="button"
+          className="svc-snav-scroll-button svc-snav-scroll-button--left"
+          onClick={() => scrollTopNav(-1)}
+          disabled={!canScrollLeft}
+          aria-label="Scroll services left"
+        >
+          <PiCaretLeftDuotone aria-hidden="true" />
+        </button>
+      )}
+
+      <nav ref={topNavRef} className="svc-snav-scroll-track">
         <ul className="svc-snav-list">
           {detailedServices.map((s) => (
             <li key={s.id}>
@@ -87,6 +132,18 @@ export default function SvcSidebar() {
           ))}
         </ul>
       </nav>
+
+      {mode === "top" && (
+        <button
+          type="button"
+          className="svc-snav-scroll-button svc-snav-scroll-button--right"
+          onClick={() => scrollTopNav(1)}
+          disabled={!canScrollRight}
+          aria-label="Scroll services right"
+        >
+          <PiCaretRightDuotone aria-hidden="true" />
+        </button>
+      )}
     </aside>
   );
 }

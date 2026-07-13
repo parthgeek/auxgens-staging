@@ -2,18 +2,18 @@ export default function Hero() {
   const heroPrinciples = [
     {
       gifSrc: "/fingerprint.gif",
-      title: "Detect & Analyze",
-      body: "Threat hunting & real-time alerts",
+      title: "Monitor",
+      body: "AI-powered visibility & threat detection",
     },
     {
       gifSrc: "/shield.gif",
-      title: "Defend & Isolate",
-      body: "Active defense & containment",
+      title: "Protect",
+      body: "Adaptive defense & automated containment",
     },
     {
       gifSrc: "/loading.gif",
-      title: "Recover & Respond",
-      body: "Rapid response & business resilience",
+      title: "Recover",
+      body: "Rapid response & cyber resilience",
     },
   ];
 
@@ -37,7 +37,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-right">
-          <div className="hero-triad" aria-label="Cybersecurity detection and response framework">
+          <div className="hero-triad" aria-label="Cybersecurity monitoring, protection, and recovery framework">
             {heroPrinciples.map((principle) => (
               <div key={principle.title} className="hero-triad-item">
                 <div className="hero-triad-icon">
