@@ -20,7 +20,7 @@ export default function CTA() {
           <div className="cta-meta">
             <span>contact@auxgens.net</span>
             <span>Bengaluru, India</span>
-            <span>Cedar Park, Austin, TX 78613</span>
+            <span>Office 242, 1205 BMC Drive, Cedar Park, Austin, TX 78613</span>
           </div>
         </div>
       </div>
