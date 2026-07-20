@@ -5,6 +5,7 @@ type LogoLockupProps = {
   className: string;
   logoClassName: string;
   taglineClassName: string;
+  logoSrc?: string;
 };
 
 export default function LogoLockup({
@@ -12,11 +13,12 @@ export default function LogoLockup({
   className,
   logoClassName,
   taglineClassName,
+  logoSrc = "/logo_3d.gif",
 }: LogoLockupProps) {
   return (
     <a href={href} className={className} aria-label="Auxgens home">
       <Image
-        src="/logo_3d.gif"
+        src={logoSrc}
         alt="Auxgens"
         width={360}
         height={360}

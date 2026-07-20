@@ -1,27 +1,36 @@
 import Nav from "./components/Nav";
-import Announce from "./components/Announce";
-import Hero from "./components/Hero";
-import Ticker from "./components/Ticker";
-import SecurityScrollSections from "./components/SecurityScrollSections";
-import Stats from "./components/Stats";
-import About from "./components/About";
-import CTA from "./components/CTA";
+import Announce from "./components/landing/Announce";
+import Hero from "./components/landing/Hero";
+import Marquee from "./components/landing/Marquee";
+import TextMarquee from "./components/landing/TextMarquee";
+import Foundation from "./components/landing/Foundation";
+import Pillars from "./components/landing/Pillars";
+import Services from "./components/landing/Services";
+import Stats from "./components/landing/Stats";
+import About from "./components/landing/About";
+import CTA from "./components/landing/CTA";
 import Footer from "./components/Footer";
-import ScrollFade from "./components/ScrollFade";
+import SmoothScroll from "./components/landing/SmoothScroll";
+import { ScrollProgress } from "./components/landing/motion";
 
 export default function Page() {
   return (
-    <>
+    <SmoothScroll>
+      <ScrollProgress />
       <Nav />
       <Announce />
-      <Hero />
-      <Ticker />
-      <SecurityScrollSections />
-      <Stats />
-      <About />
-      <CTA />
+      <main>
+        <Hero />
+        <Marquee />
+        <Foundation />
+        <Pillars />
+        <TextMarquee />
+        <Services />
+        <Stats />
+        <About />
+        <CTA />
+      </main>
       <Footer />
-      <ScrollFade />
-    </>
+    </SmoothScroll>
   );
 }

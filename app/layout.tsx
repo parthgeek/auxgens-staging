@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
+import "./landing.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 const cormorant = Cormorant_Garamond({
