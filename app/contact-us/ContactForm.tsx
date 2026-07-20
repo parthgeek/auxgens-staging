@@ -151,7 +151,7 @@ export default function ContactForm() {
     >
       <div className="contact-form-head">
         <p className="eyebrow">Send an enquiry</p>
-        <h2>Protect what matters.</h2>
+        <h2>Tell us what needs protection.</h2>
         <p>
           Share the context you can. Auxgens will respond through the primary
           sales inbox within one business day.

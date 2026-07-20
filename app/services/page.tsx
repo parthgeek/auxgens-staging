@@ -75,12 +75,18 @@ const serviceInsights: Record<string, ServiceInsight> = {
       "Data inventories, request workflows, and processor oversight are kept visible so privacy obligations do not drift between teams.",
     steps: ["Map data use", "Handle requests", "Review processors"],
   },
+  "staff-augmentation": {
+    title: "Specialist capacity without hiring delays",
+    copy:
+      "Cybersecurity, compliance, development, and DevSecOps professionals can extend existing teams while keeping ownership and delivery cadence clear.",
+    steps: ["Define skills", "Deploy talent", "Maintain cadence"],
+  },
 };
 
 export const metadata: Metadata = {
   title: "Services | Auxgens",
   description:
-    "Explore Auxgens AI as a Service, cybersecurity, security operations, governance, compliance, privacy, application development, and staff augmentation services.",
+    "Explore Auxgens AI engineering, cybersecurity, compliance, data protection, application development, and staff augmentation services — including GRC, Virtual CISO, SOC as a Service, GDPR, FERPA, and CCPA.",
 };
 
 export default function ServicesPage() {
@@ -121,8 +127,9 @@ export default function ServicesPage() {
               <p className="hero-tagline">Securing Your Digital Future.</p>
               <p className="hero-desc">
                 From Forward Deployed AI Engineers to 24/7 security operations,
-                governance, and data privacy compliance — Auxgens helps teams
-                turn risk, automation, and protection goals into working
+                governance, data privacy compliance, secure application
+                development, and specialist team augmentation — Auxgens helps
+                teams turn risk, automation, and protection goals into working
                 outcomes.
               </p>
               <div className="hero-btns">
