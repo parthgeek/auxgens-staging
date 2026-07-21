@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import Announce from "../components/Announce";
-import CTA from "../components/CTA";
-import Footer from "../components/Footer";
+import { Fragment } from "react";
 import Nav from "../components/Nav";
-import ScrollFade from "../components/ScrollFade";
+import Announce from "../components/landing/Announce";
+import Footer from "../components/Footer";
+import SmoothScroll from "../components/landing/SmoothScroll";
+import { ScrollProgress } from "../components/landing/motion";
+import CTA from "../components/landing/CTA";
+import PageHero from "../components/pages/PageHero";
+import LegalDoc, { type LegalSection } from "../components/pages/LegalDoc";
 
-const sections = [
+const sections: LegalSection[] = [
   {
     title: "Using This Website",
     body: [
@@ -84,56 +88,25 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <>
+    <SmoothScroll>
+      <ScrollProgress />
       <Nav />
       <Announce />
-      <main className="legal-page">
-        <section className="legal-hero">
-          <div className="wrap legal-hero-grid">
-            <div>
-              <p className="eyebrow">Legal</p>
-              <h1>Terms of Service</h1>
-              <p className="legal-intro">
-                The baseline terms for using the Auxgens website and discussing
-                potential AI, security, compliance, privacy, and development work.
-              </p>
-              <p className="legal-updated">Last updated: June 2026</p>
-            </div>
-           
-          </div>
-        </section>
-
-        <section className="legal-content">
-          <div className="wrap legal-layout">
-            <aside className="legal-toc" aria-label="Terms sections">
-              <p>On this page</p>
-              {sections.map((section) => (
-                <a key={section.title} href={`#${section.title.toLowerCase().replaceAll(" ", "-")}`}>
-                  {section.title}
-                </a>
-              ))}
-            </aside>
-            <div className="legal-doc">
-              {sections.map((section) => (
-                <section
-                  key={section.title}
-                  id={section.title.toLowerCase().replaceAll(" ", "-")}
-                  className="legal-section anim"
-                >
-                  <h2>{section.title}</h2>
-                  {section.body.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </section>
-              ))}
-            </div>
-          </div>
-        </section>
-
+      <main>
+        <PageHero
+          eyebrow="Legal"
+          lines={[
+            <Fragment key="a">Terms of</Fragment>,
+            <Fragment key="b">
+              <em>Service.</em>
+            </Fragment>,
+          ]}
+          lead="The baseline terms for using the Auxgens website and discussing potential AI, security, compliance, privacy, and development work."
+        />
+        <LegalDoc sections={sections} updated="June 2026" />
         <CTA />
       </main>
       <Footer />
-      <ScrollFade />
-    </>
+    </SmoothScroll>
   );
 }

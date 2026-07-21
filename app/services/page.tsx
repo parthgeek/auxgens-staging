@@ -1,87 +1,12 @@
 import type { Metadata } from "next";
-import Announce from "../components/Announce";
-import CTA from "../components/CTA";
-import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import ScrollFade from "../components/ScrollFade";
-import Stats from "../components/Stats";
-import SvcSidebar from "../components/SvcSidebar";
-import { detailedServices } from "../data/services";
-
-type ServiceInsight = {
-  title: string;
-  copy: string;
-  steps: string[];
-};
-
-const serviceInsights: Record<string, ServiceInsight> = {
-  grc: {
-    title: "Assessment to audit-ready operations",
-    copy:
-      "A practical operating rhythm that maps controls, prioritises gaps, and keeps governance evidence ready for leadership and auditors.",
-    steps: ["Map controls", "Prioritise risk", "Track evidence"],
-  },
-  vciso: {
-    title: "Security leadership without the full-time overhead",
-    copy:
-      "Executive security direction, policy ownership, and incident decision support shaped around the organisation's current maturity.",
-    steps: ["Set cadence", "Own policy", "Guide response"],
-  },
-  cybersecurity: {
-    title: "Detection, response, and reporting in one loop",
-    copy:
-      "Threat monitoring, investigation, and compliance reporting stay connected so security teams can act faster and explain decisions clearly.",
-    steps: ["Detect events", "Investigate risk", "Report posture"],
-  },
-  "soc-as-a-service": {
-    title: "Continuous monitoring with accountable escalation",
-    copy:
-      "Managed SOC coverage keeps alert triage, investigation, and response coordination moving through defined runbooks and reporting cadences.",
-    steps: ["Monitor signals", "Escalate incidents", "Review posture"],
-  },
-  gdpr: {
-    title: "Privacy evidence that can stand up to review",
-    copy:
-      "Personal data discovery, process alignment, and breach readiness are organised into a maintained compliance programme.",
-    steps: ["Discover data", "Align process", "Maintain records"],
-  },
-  ferpa: {
-    title: "Student record protection made operational",
-    copy:
-      "Education data flows, access controls, vendor risk, and staff handling practices are translated into a maintainable FERPA programme.",
-    steps: ["Map records", "Control access", "Maintain evidence"],
-  },
-  "app-dev": {
-    title: "Security built into delivery",
-    copy:
-      "Application teams get secure patterns, review gates, and testing practices that reduce exposure before code reaches production.",
-    steps: ["Design controls", "Test releases", "Harden APIs"],
-  },
-  "staff-aug": {
-    title: "The right people, delivering on plan",
-    copy:
-      "Vetted specialists integrate with your teams while dedicated project management keeps scope, schedule, and budget visible from kickoff to closure.",
-    steps: ["Match talent", "Plan delivery", "Track outcomes"],
-  },
-  "forward-deployed-engineering": {
-    title: "AI embedded into real business workflows",
-    copy:
-      "A Forward Deployed AI Engineer works inside the client context, turns priority workflows into copilots, agents, and automations, and measures adoption after launch.",
-    steps: ["Find use cases", "Build in workflow", "Measure adoption"],
-  },
-  ccpa: {
-    title: "Consumer rights handled with clear ownership",
-    copy:
-      "Data inventories, request workflows, and processor oversight are kept visible so privacy obligations do not drift between teams.",
-    steps: ["Map data use", "Handle requests", "Review processors"],
-  },
-  "staff-augmentation": {
-    title: "Specialist capacity without hiring delays",
-    copy:
-      "Cybersecurity, compliance, development, and DevSecOps professionals can extend existing teams while keeping ownership and delivery cadence clear.",
-    steps: ["Define skills", "Deploy talent", "Maintain cadence"],
-  },
-};
+import Announce from "../components/landing/Announce";
+import Footer from "../components/Footer";
+import SmoothScroll from "../components/landing/SmoothScroll";
+import { ScrollProgress } from "../components/landing/motion";
+import Stats from "../components/landing/Stats";
+import CTA from "../components/landing/CTA";
+import ServicesContent from "./ServicesContent";
 
 export const metadata: Metadata = {
   title: "Services | Auxgens",
@@ -91,145 +16,16 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <>
+    <SmoothScroll>
+      <ScrollProgress />
       <Nav />
       <Announce />
       <main>
-        {/* ── HERO ── */}
-        <section className="hero service-hero">
-          <div className="wrap hero-grid">
-            <div>
-              <div className="hero-badge">
-                <div className="badge-dot"></div>
-                <span className="eyebrow">Auxgens services</span>
-              </div>
-              <h1>
-                Protection at<br />every <em>layer.</em>
-              </h1>
-              <div className="hero-metrics">
-                <div className="metric">
-                  <strong>{detailedServices.length}</strong>
-                  <span>Service pillars</span>
-                </div>
-                <div className="metric-sep"></div>
-                <div className="metric">
-                  <strong>24/7</strong>
-                  <span>SOC coverage</span>
-                </div>
-                <div className="metric-sep"></div>
-                <div className="metric">
-                  <strong>Global</strong>
-                  <span>Delivery Model</span>
-                </div>
-              </div>
-            </div>
-            <div className="hero-right">
-              <p className="hero-tagline">Securing Your Digital Future.</p>
-              <p className="hero-desc">
-                From Forward Deployed AI Engineers to 24/7 security operations,
-                governance, data privacy compliance, secure application
-                development, and specialist team augmentation — Auxgens helps
-                teams turn risk, automation, and protection goals into working
-                outcomes.
-              </p>
-              <div className="hero-btns">
-                <a href="#forward-deployed-engineering" className="btn-lime">
-                  Explore Services
-                </a>
-                
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── SERVICE SIDEBAR ── */}
-        <SvcSidebar />
-
-        {/* ── SERVICE SECTIONS ── */}
-        {detailedServices.map((service, idx) => {
-          const insight = serviceInsights[service.id];
-          const shouldSpanInsight = service.offerings.length % 2 === 0;
-
-          return (
-            <section
-              key={service.id}
-              id={service.id}
-              className={`svc-section section${idx % 2 === 1 ? " section-alt" : ""}`}
-            >
-              <div className="wrap">
-                {/* Header */}
-                <div className="svc-header anim">
-                  <p className="eyebrow" style={{ marginBottom: ".7rem" }}>
-                    {service.eyebrow}
-                  </p>
-                  <h2 className="svc-title">{service.title}</h2>
-                  <p className="svc-desc">{service.description}</p>
-                </div>
-
-                {/* Body: challenges + offerings */}
-                <div className="svc-body anim">
-                  {service.challenges.length > 0 && (
-                    <div className="svc-challenges">
-                      <p className="svc-col-label">Key Challenges</p>
-                      <ul className="svc-challenges-list">
-                        {service.challenges.map((c) => (
-                          <li key={c}>
-                            <span className="svc-challenge-dot" />
-                            {c}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  <div className="svc-offerings">
-                    <p className="svc-col-label">Our Services</p>
-                    <div className="svc-offerings-grid">
-                      {service.offerings.map((offering) => (
-                        <div key={offering.name} className="svc-offering-group">
-                          <h4 className="svc-offering-name">{offering.name}</h4>
-                          <ul className="svc-offering-list">
-                            {offering.items.map((item) => (
-                              <li key={item}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-
-                      {insight && (
-                        <div
-                          className={`svc-offering-group svc-insight-card${
-                            shouldSpanInsight ? " svc-insight-wide" : ""
-                          }`}
-                        >
-                          <div>
-                            <p className="svc-insight-label">Engagement Focus</p>
-                            <h4 className="svc-offering-name">{insight.title}</h4>
-                            <p className="svc-insight-copy">{insight.copy}</p>
-                          </div>
-                          <div className="svc-insight-steps">
-                            {insight.steps.map((step, stepIdx) => (
-                              <div key={step} className="svc-insight-step">
-                                <span>{String(stepIdx + 1).padStart(2, "0")}</span>
-                                <strong>{step}</strong>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        })}
-
+        <ServicesContent />
         <Stats />
         <CTA />
       </main>
       <Footer />
-      <ScrollFade />
-    </>
+    </SmoothScroll>
   );
 }

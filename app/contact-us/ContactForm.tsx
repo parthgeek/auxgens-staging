@@ -144,13 +144,13 @@ export default function ContactForm() {
 
   return (
     <form
-      className="contact-form anim d1"
+      className="lx-form"
       id="contact-form"
       onSubmit={handleSubmit}
       noValidate
     >
-      <div className="contact-form-head">
-        <p className="eyebrow">Send an enquiry</p>
+      <div className="lx-form-head">
+        <p className="lx-eyebrow">Send an enquiry</p>
         <h2>Tell us what needs protection.</h2>
         <p>
           Share the context you can. Auxgens will respond through the primary
@@ -158,8 +158,8 @@ export default function ContactForm() {
         </p>
       </div>
 
-      <div className="contact-form-grid">
-        <div className="field-block">
+      <div className="lx-form-grid">
+        <div className="lx-field">
           <label htmlFor="name">Full name *</label>
           <input
             id="name"
@@ -171,11 +171,11 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.name)}
             aria-describedby="name-help name-error"
           />
-          <span id="name-help" className="field-help">Who should our team contact?</span>
-          {errors.name && <span id="name-error" className="field-error">{errors.name}</span>}
+          <span id="name-help" className="lx-field-help">Who should our team contact?</span>
+          {errors.name && <span id="name-error" className="lx-field-error">{errors.name}</span>}
         </div>
 
-        <div className="field-block">
+        <div className="lx-field">
           <label htmlFor="email">Work email *</label>
           <input
             id="email"
@@ -187,11 +187,11 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.email)}
             aria-describedby="email-help email-error"
           />
-          <span id="email-help" className="field-help">Use the address where we can reply.</span>
-          {errors.email && <span id="email-error" className="field-error">{errors.email}</span>}
+          <span id="email-help" className="lx-field-help">Use the address where we can reply.</span>
+          {errors.email && <span id="email-error" className="lx-field-error">{errors.email}</span>}
         </div>
 
-        <div className="field-block">
+        <div className="lx-field">
           <label htmlFor="company">Company</label>
           <input
             id="company"
@@ -202,10 +202,10 @@ export default function ContactForm() {
             onChange={handleChange}
             aria-describedby="company-help"
           />
-          <span id="company-help" className="field-help">Optional, but useful for routing.</span>
+          <span id="company-help" className="lx-field-help">Optional, but useful for routing.</span>
         </div>
 
-        <div className="field-block">
+        <div className="lx-field">
           <label htmlFor="service">Service area *</label>
           <select
             id="service"
@@ -220,11 +220,11 @@ export default function ContactForm() {
               <option key={service} value={service}>{service}</option>
             ))}
           </select>
-          <span id="service-help" className="field-help">Pick the closest match.</span>
-          {errors.service && <span id="service-error" className="field-error">{errors.service}</span>}
+          <span id="service-help" className="lx-field-help">Pick the closest match.</span>
+          {errors.service && <span id="service-error" className="lx-field-error">{errors.service}</span>}
         </div>
 
-        <div className="field-block">
+        <div className="lx-field">
           <label htmlFor="region">Region</label>
           <select
             id="region"
@@ -238,10 +238,10 @@ export default function ContactForm() {
               <option key={region} value={region}>{region}</option>
             ))}
           </select>
-          <span id="region-help" className="field-help">Where will the engagement be based?</span>
+          <span id="region-help" className="lx-field-help">Where will the engagement be based?</span>
         </div>
 
-        <div className="field-block field-block-wide">
+        <div className="lx-field lx-field-wide">
           <label htmlFor="message">Message *</label>
           <textarea
             id="message"
@@ -252,17 +252,17 @@ export default function ContactForm() {
             aria-invalid={Boolean(errors.message)}
             aria-describedby="message-help message-error"
           />
-          <span id="message-help" className="field-help">Include timelines, systems, frameworks, or urgent concerns.</span>
-          {errors.message && <span id="message-error" className="field-error">{errors.message}</span>}
+          <span id="message-help" className="lx-field-help">Include timelines, systems, frameworks, or urgent concerns.</span>
+          {errors.message && <span id="message-error" className="lx-field-error">{errors.message}</span>}
         </div>
       </div>
 
-      <div className="contact-form-actions">
-        <button className="contact-submit" type="submit" disabled={status === "loading"}>
+      <div className="lx-form-actions">
+        <button className="lx-form-submit" type="submit" disabled={status === "loading"}>
           <PiPaperPlaneTiltDuotone aria-hidden="true" focusable="false" />
           <span>{status === "loading" ? "Sending..." : "Send enquiry"}</span>
         </button>
-        <p className={`contact-form-status contact-form-status-${status}`} aria-live="polite">
+        <p className={`lx-form-status lx-form-status-${status}`} aria-live="polite">
           {statusMessage}
         </p>
       </div>
