@@ -19,6 +19,7 @@ import {
   PiUsersThreeLight,
 } from "react-icons/pi";
 import PageHero from "../components/pages/PageHero";
+import PractitionerDossierVisual from "../components/pages/PractitionerDossierVisual";
 import SectionHead from "../components/landing/SectionHead";
 import { Reveal, Stagger, staggerItem } from "../components/landing/motion";
 
@@ -79,6 +80,7 @@ export default function AboutContent() {
         ]}
         lead="A managed cybersecurity partner operating across Asia, EMEA, and the United States — senior talent, vendor-independent advice, and engagements measured by outcomes."
         meta={["Est. 2018", "Asia · EMEA · United States", "25+ years combined field experience"]}
+        visual={<PractitionerDossierVisual />}
       />
 
       {/* ── story ── */}

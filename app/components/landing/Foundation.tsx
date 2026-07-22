@@ -36,10 +36,16 @@ const triad = [
   },
 ];
 
-function TriadCard({ item }: { item: (typeof triad)[number] }) {
+function TriadCard({
+  item,
+  cardRef,
+}: {
+  item: (typeof triad)[number];
+  cardRef?: React.Ref<HTMLElement>;
+}) {
   const Icon = item.icon;
   return (
-    <article className="lx-cia-card">
+    <article className="lx-cia-card" ref={cardRef}>
       <span className="lx-cia-num lx-serif" aria-hidden="true">
         {item.index}
       </span>
@@ -99,14 +105,45 @@ export default function Foundation() {
     return () => mq.removeEventListener("change", update);
   }, [reduce]);
 
-  const { scrollYProgress } = useScroll({ target: ref });
-  const smooth = useSpring(scrollYProgress, {
-    stiffness: 70,
-    damping: 30,
-    mass: 0.6,
+  const trackRef = useRef<HTMLDivElement>(null);
+  const lastCardRef = useRef<HTMLElement>(null);
+  const [travel, setTravel] = useState(0);
+
+  /* Travel far enough that the final card lands in the middle of the viewport
+     before the section unpins. */
+  useEffect(() => {
+    if (staticMode) return;
+    const measure = () => {
+      const last = lastCardRef.current;
+      if (!last) return;
+
+      /* offsetLeft is relative to the track and is unaffected by its transform.
+         This makes the final position exact: Availability's centre lands on
+         the viewport centre, regardless of screen or card width. */
+      const lastCardCentre = last.offsetLeft + last.offsetWidth / 2;
+      setTravel(Math.max(0, lastCardCentre - window.innerWidth / 2));
+    };
+
+    measure();
+    const resizeObserver = new ResizeObserver(measure);
+    if (trackRef.current) resizeObserver.observe(trackRef.current);
+    if (lastCardRef.current) resizeObserver.observe(lastCardRef.current);
+    window.addEventListener("resize", measure);
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [staticMode]);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    /* The horizontal journey begins only when this section pins and finishes
+       before it unpins. The final 12% holds Availability in the centre. */
+    offset: ["start start", "end end"],
   });
-  const x = useTransform(smooth, [0, 1], ["0%", "-35%"]);
-  const progressScale = useSpring(scrollYProgress, {
+  const x = useTransform(scrollYProgress, [0, 0.88, 1], [0, -travel, -travel]);
+  const galleryProgress = useTransform(scrollYProgress, [0, 0.88], [0, 1]);
+  const progressScale = useSpring(galleryProgress, {
     stiffness: 90,
     damping: 28,
   });
@@ -129,10 +166,14 @@ export default function Foundation() {
   return (
     <section className="lx-cia" id="foundation" ref={ref}>
       <div className="lx-cia-sticky">
-        <motion.div className="lx-cia-track" style={{ x }}>
+        <motion.div className="lx-cia-track" style={{ x }} ref={trackRef}>
           <IntroPanel />
-          {triad.map((t) => (
-            <TriadCard item={t} key={t.title} />
+          {triad.map((t, i) => (
+            <TriadCard
+              item={t}
+              key={t.title}
+              cardRef={i === triad.length - 1 ? lastCardRef : undefined}
+            />
           ))}
         </motion.div>
         <div className="lx-cia-progress" aria-hidden="true">

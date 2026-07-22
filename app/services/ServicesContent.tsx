@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import PageHero from "../components/pages/PageHero";
-import { EASE, Reveal, Stagger, staggerItem } from "../components/landing/motion";
+import SecureSDLCVisual from "../components/pages/SecureSDLCVisual";
+import { EASE, Stagger, staggerItem } from "../components/landing/motion";
 import { detailedServices } from "../data/services";
 
 type ServiceInsight = { title: string; copy: string; steps: string[] };
@@ -71,10 +72,47 @@ const serviceInsights: Record<string, ServiceInsight> = {
   },
 };
 
-function ServiceNav() {
-  const [active, setActive] = useState(detailedServices[0]?.id ?? "");
+function ServiceNav({
+  active,
+  onSelect,
+}: {
+  active: string;
+  onSelect: (id: string) => void;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const link = trackRef.current?.querySelector<HTMLElement>(
+      `[data-id="${active}"]`
+    );
+    link?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+  }, [active]);
+
+  return (
+    <div className="lx-svc-nav">
+      <div className="lx-svc-nav-track" role="tablist" ref={trackRef}>
+        {detailedServices.map((s) => (
+          <button
+            key={s.id}
+            type="button"
+            role="tab"
+            aria-selected={active === s.id}
+            data-id={s.id}
+            onClick={() => onSelect(s.id)}
+            className={`lx-svc-nav-link${active === s.id ? " is-active" : ""}`}
+          >
+            {s.title}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function ServicesContent() {
+  const [active, setActive] = useState(detailedServices[0]?.id ?? "");
+
+  /* Highlight the pill for whichever service is currently in view. */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -83,7 +121,7 @@ function ServiceNav() {
           .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
         if (visible) setActive(visible.target.id);
       },
-      { rootMargin: "-40% 0px -55% 0px" }
+      { rootMargin: "-35% 0px -55% 0px" }
     );
     detailedServices.forEach((s) => {
       const el = document.getElementById(s.id);
@@ -92,32 +130,12 @@ function ServiceNav() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const link = trackRef.current?.querySelector<HTMLAnchorElement>(
-      `[data-id="${active}"]`
-    );
-    link?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
-  }, [active]);
+  const select = (id: string) => {
+    setActive(id);
+    history.replaceState(null, "", `#${id}`);
+    document.getElementById(id)?.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
 
-  return (
-    <div className="lx-svc-nav">
-      <div className="lx-svc-nav-track" ref={trackRef}>
-        {detailedServices.map((s) => (
-          <a
-            key={s.id}
-            href={`#${s.id}`}
-            data-id={s.id}
-            className={`lx-svc-nav-link${active === s.id ? " is-active" : ""}`}
-          >
-            {s.title}
-          </a>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-export default function ServicesContent() {
   return (
     <>
       <PageHero
@@ -131,41 +149,49 @@ export default function ServicesContent() {
         lead="From Forward Deployed AI Engineers to 24/7 security operations, governance, data privacy compliance, secure application development, and specialist team augmentation — Auxgens turns risk, automation, and protection goals into working outcomes."
         meta={[`${detailedServices.length} service pillars`, "24/7 SOC coverage", "Global delivery model"]}
         wide
+        visual={<SecureSDLCVisual />}
       />
 
-      <ServiceNav />
+      <ServiceNav active={active} onSelect={select} />
 
       {detailedServices.map((service, idx) => {
         const insight = serviceInsights[service.id];
         return (
-          <section key={service.id} id={service.id} className="lx-svc">
+          <section className="lx-svc" id={service.id} key={service.id}>
             <div className="lx-wrap">
-              <Reveal className="lx-svc-head" y={22}>
-                <p className="lx-svc-index">
-                  {String(idx + 1).padStart(2, "0")} · {service.eyebrow}
-                </p>
-                <h2 className="lx-svc-title">{service.title}</h2>
-                <p className="lx-svc-desc">{service.description}</p>
-              </Reveal>
+              <motion.div
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-8% 0px" }}
+                transition={{ duration: 0.5, ease: EASE }}
+              >
+                <div className="lx-svc-top">
+                  <div className="lx-svc-head">
+                    <p className="lx-svc-index">
+                      {String(idx + 1).padStart(2, "0")} · {service.eyebrow}
+                    </p>
+                    <h2 className="lx-svc-title">{service.title}</h2>
+                    <p className="lx-svc-desc">{service.description}</p>
+                  </div>
 
-              <div className="lx-svc-body">
-                {service.challenges.length > 0 && (
-                  <Reveal className="lx-svc-challenges" y={24}>
-                    <p className="lx-svc-col-label">Key challenges</p>
-                    <ul>
-                      {service.challenges.map((c) => (
-                        <li key={c}>
-                          <span className="lx-svc-challenge-dot" aria-hidden="true" />
-                          {c}
-                        </li>
-                      ))}
-                    </ul>
-                  </Reveal>
-                )}
+                  {service.challenges.length > 0 && (
+                    <aside className="lx-svc-challenges">
+                      <p className="lx-svc-col-label">Key challenges</p>
+                      <ul>
+                        {service.challenges.map((c) => (
+                          <li key={c}>
+                            <span className="lx-svc-challenge-dot" aria-hidden="true" />
+                            {c}
+                          </li>
+                        ))}
+                      </ul>
+                    </aside>
+                  )}
+                </div>
 
                 <div className="lx-svc-offerings">
                   <p className="lx-svc-col-label">What we deliver</p>
-                  <Stagger className="lx-svc-offerings-grid" gap={0.07}>
+                  <Stagger className="lx-svc-offerings-grid" gap={0.05}>
                     {service.offerings.map((offering) => (
                       <motion.div
                         className="lx-svc-offering"
@@ -180,33 +206,27 @@ export default function ServicesContent() {
                         </ul>
                       </motion.div>
                     ))}
-
-                    {insight && (
-                      <motion.div
-                        className="lx-svc-insight"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-10% 0px" }}
-                        transition={{ duration: 0.8, ease: EASE }}
-                      >
-                        <div>
-                          <p className="lx-svc-insight-label">Engagement focus</p>
-                          <h4>{insight.title}</h4>
-                          <p>{insight.copy}</p>
-                        </div>
-                        <div className="lx-svc-insight-steps">
-                          {insight.steps.map((step, stepIdx) => (
-                            <div key={step} className="lx-svc-insight-step">
-                              <span>{String(stepIdx + 1).padStart(2, "0")}</span>
-                              <strong>{step}</strong>
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
                   </Stagger>
                 </div>
-              </div>
+
+                {insight && (
+                  <div className="lx-svc-insight">
+                    <div>
+                      <p className="lx-svc-insight-label">Engagement focus</p>
+                      <h4>{insight.title}</h4>
+                      <p>{insight.copy}</p>
+                    </div>
+                    <div className="lx-svc-insight-steps">
+                      {insight.steps.map((step, stepIdx) => (
+                        <div key={step} className="lx-svc-insight-step">
+                          <span>{String(stepIdx + 1).padStart(2, "0")}</span>
+                          <strong>{step}</strong>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </motion.div>
             </div>
           </section>
         );

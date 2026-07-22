@@ -3,13 +3,14 @@
 import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import {
-  PiArrowRightLight,
   PiArrowsClockwiseLight,
   PiPulseLight,
   PiSealCheckLight,
   PiShieldCheckLight,
 } from "react-icons/pi";
-import { EASE, Magnetic, MaskLines, Reveal, Stagger, staggerItem } from "./motion";
+import { complianceStandards } from "../../data/complianceStandards";
+import { EASE, MaskLines, Reveal, Stagger, staggerItem } from "./motion";
+import SlideToContact from "./SlideToContact";
 
 const principles = [
   {
@@ -121,14 +122,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal delay={0.62} y={18} className="lx-hero-btns" trigger="mount">
-            <Magnetic>
-              <a href="/contact-us" className="lx-btn">
-                Connect with us
-                <span className="lx-btn-chip" aria-hidden="true">
-                  <PiArrowRightLight />
-                </span>
-              </a>
-            </Magnetic>
+            <SlideToContact label="Slide to connect" />
             <a href="#services" className="lx-link">
               Our services
             </a>
@@ -151,7 +145,7 @@ export default function Hero() {
           <motion.div
             className="lx-float-card lx-float-triad"
             initial={reduce ? false : { opacity: 0, y: 34, rotate: -4 }}
-            animate={{ opacity: 1, y: 0, rotate: -2 }}
+            animate={{ opacity: 1, y: 0, rotate: -1.4 }}
             transition={{ duration: 1.1, delay: 0.75, ease: EASE }}
             whileHover={{ rotate: 0, y: -6 }}
           >
@@ -174,26 +168,24 @@ export default function Hero() {
           <motion.div
             className="lx-float-card lx-float-note"
             initial={reduce ? false : { opacity: 0, y: 30, rotate: 4 }}
-            animate={{ opacity: 1, y: 0, rotate: 2.5 }}
+            animate={{ opacity: 1, y: 0, rotate: 1.6 }}
             transition={{ duration: 1.1, delay: 0.95, ease: EASE }}
             whileHover={{ rotate: 0, y: -5 }}
           >
             <span className="lx-float-note-icon" aria-hidden="true">
               <PiSealCheckLight />
             </span>
-            <p>
-              ISO 27001 · SOC 2 · GDPR
+            <div className="lx-float-note-body">
+              <strong>Compliance we deliver against</strong>
+              <ul className="lx-float-chips">
+                {complianceStandards.map((c) => (
+                  <li key={c.title}>{c.title}</li>
+                ))}
+              </ul>
               <span>Compliance-first delivery, audit-ready evidence.</span>
-            </p>
+            </div>
           </motion.div>
 
-          <motion.span
-            className="lx-pin"
-            aria-hidden="true"
-            initial={reduce ? false : { scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.5, ease: EASE }}
-          />
         </motion.div>
       </div>
 

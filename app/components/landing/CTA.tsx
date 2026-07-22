@@ -1,7 +1,7 @@
 "use client";
 
-import { PiArrowRightLight } from "react-icons/pi";
-import { Magnetic, MaskLines, Parallax, Reveal } from "./motion";
+import { MaskLines, Parallax, Reveal } from "./motion";
+import SlideToContact from "./SlideToContact";
 
 export default function CTA() {
   return (
@@ -29,14 +29,12 @@ export default function CTA() {
             </p>
           </Reveal>
           <Reveal delay={0.32} y={20} className="lx-cta-btns">
-            <Magnetic>
-              <a href="/contact-us#contact-form" className="lx-btn lx-btn-light">
-                Send enquiry
-                <span className="lx-btn-chip" aria-hidden="true">
-                  <PiArrowRightLight />
-                </span>
-              </a>
-            </Magnetic>
+            <SlideToContact
+              href="/contact-us#contact-form"
+              label="Slide to enquire"
+              doneLabel="Opening form…"
+              light
+            />
             <a href="mailto:contact@auxgens.net" className="lx-link lx-link-light">
               Email us now
             </a>

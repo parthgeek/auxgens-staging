@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import SmoothScroll from "../components/landing/SmoothScroll";
 import { ScrollProgress } from "../components/landing/motion";
 import PageHero from "../components/pages/PageHero";
+import ContactConversationVisual from "../components/pages/ContactConversationVisual";
 import ContactDetails from "./ContactDetails";
 
 export const metadata: Metadata = {
@@ -30,6 +31,8 @@ export default function ContactUsPage() {
             </Fragment>,
           ]}
           lead="Tell us what needs protection. Auxgens responds through the primary sales inbox within one business day — across Asia, EMEA, and the United States."
+          meta={["1 business day", "Asia · EMEA · United States", "Human-led response"]}
+          visual={<ContactConversationVisual />}
         />
         <ContactDetails />
       </main>

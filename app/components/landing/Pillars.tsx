@@ -49,21 +49,20 @@ export default function Pillars() {
               <motion.article
                 className="lx-pillar-row"
                 key={p.title}
-                initial={reduce ? false : { opacity: 0, x: i % 2 === 0 ? -56 : 56 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-14% 0px" }}
-                transition={{ duration: 1, ease: EASE }}
+                initial={reduce ? false : { opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-12% 0px" }}
+                transition={{ duration: 0.9, delay: i * 0.12, ease: EASE }}
               >
                 <span className="lx-pillar-index lx-serif" aria-hidden="true">
                   {p.index}
                 </span>
-                <div className="lx-pillar-title">
-                  <span className="lx-card-icon" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <h3 className="lx-serif">{p.title}</h3>
-                </div>
+                <span className="lx-pillar-icon" aria-hidden="true">
+                  <Icon />
+                </span>
+                <h3 className="lx-serif">{p.title}</h3>
                 <p className="lx-pillar-body">{p.body}</p>
+                <span className="lx-pillar-rule" aria-hidden="true" />
               </motion.article>
             );
           })}

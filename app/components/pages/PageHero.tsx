@@ -9,46 +9,54 @@ export default function PageHero({
   lead,
   meta,
   wide = false,
+  visual,
 }: {
   eyebrow: string;
   lines: ReactNode[];
   lead?: ReactNode;
   meta?: string[];
   wide?: boolean;
+  visual?: ReactNode;
 }) {
   return (
-    <section className="lx-page-hero">
+    <section className={`lx-page-hero${visual ? " lx-page-hero-has-visual" : ""}`}>
       <div className="lx-page-hero-rings" aria-hidden="true" />
       <div className="lx-page-hero-dots" aria-hidden="true" />
       <div className="lx-wrap">
-        <div className={`lx-page-hero-inner${wide ? " lx-page-hero-wide" : ""}`}>
-          <Reveal className="lx-page-hero-badge" y={14} trigger="mount">
-            <span className="lx-dot" aria-hidden="true" />
-            <span className="lx-eyebrow">{eyebrow}</span>
-          </Reveal>
-
-          <h1 className="lx-display lx-page-hero-title">
-            <MaskLines lines={lines} delay={0.08} />
-          </h1>
-
-          {lead ? (
-            <Reveal delay={0.4} y={20} trigger="mount">
-              <p className="lx-page-hero-lead">{lead}</p>
+        <div className={`lx-page-hero-layout${visual ? " has-visual" : ""}`}>
+          <div className={`lx-page-hero-inner${wide ? " lx-page-hero-wide" : ""}`}>
+            <Reveal className="lx-page-hero-badge" y={14} trigger="mount">
+              <span className="lx-dot" aria-hidden="true" />
+              <span className="lx-eyebrow">{eyebrow}</span>
             </Reveal>
-          ) : null}
 
-          {meta && meta.length > 0 ? (
-            <Reveal delay={0.55} y={16} trigger="mount">
-              <div className="lx-page-hero-meta">
-                {meta.map((m, i) => (
-                  <span key={m} className="lx-page-hero-meta-item">
-                    {i > 0 && <span className="lx-page-hero-meta-sep" aria-hidden="true" />}
-                    {m}
-                  </span>
-                ))}
-              </div>
-            </Reveal>
-          ) : null}
+            <h1 className="lx-display lx-page-hero-title">
+              <MaskLines lines={lines} delay={0.08} />
+            </h1>
+
+            {lead ? (
+              <Reveal delay={0.4} y={20} trigger="mount">
+                <p className="lx-page-hero-lead">{lead}</p>
+              </Reveal>
+            ) : null}
+
+            {meta && meta.length > 0 ? (
+              <Reveal delay={0.55} y={16} trigger="mount">
+                <div className="lx-page-hero-meta">
+                  {meta.map((m, i) => (
+                    <span key={m} className="lx-page-hero-meta-item">
+                      {i > 0 && (
+                        <span className="lx-page-hero-meta-sep" aria-hidden="true" />
+                      )}
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </Reveal>
+            ) : null}
+          </div>
+
+          {visual ? <div className="lx-page-hero-visual">{visual}</div> : null}
         </div>
       </div>
     </section>
