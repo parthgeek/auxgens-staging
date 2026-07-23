@@ -50,7 +50,6 @@ function SecureSDLCVisual() {
       </ol>
 
       <div className="lx-sdlc-core">
-        <span className="lx-sdlc-scan" aria-hidden="true" />
         <span className="lx-sdlc-shield" aria-hidden="true">
           <svg viewBox="0 0 48 48">
             <path d="M24 5 39 11v10c0 10.2-5.7 17.7-15 22-9.3-4.3-15-11.8-15-22V11L24 5Z" />
@@ -62,11 +61,6 @@ function SecureSDLCVisual() {
         </span>
         <strong>Secure SDLC</strong>
         <p>Policy gates at every stage</p>
-        <div className="lx-sdlc-controls" aria-label="Security controls">
-          <span>SAST</span>
-          <span>DAST</span>
-          <span>SCA</span>
-        </div>
       </div>
 
       <figcaption>
