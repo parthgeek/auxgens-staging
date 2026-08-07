@@ -680,28 +680,6 @@ export const homepageServices: Service[] = [
       "DPO-as-a-Service",
     ],
   },
-  {
-    title: "Application Development",
-    items: [
-      "Secure web application development",
-      "Mobile app development",
-      "API & backend hardening",
-      "Authentication & access control",
-      "Secure SDLC implementation",
-      "DevSecOps integration",
-    ],
-  },
-  {
-    title: "Staff Augmentation/Project Management",
-    items: [
-      "Cybersecurity specialists",
-      "GRC and compliance analysts",
-      "Application developers",
-      "DevSecOps engineers",
-      "SOC operations support",
-      "Flexible resource models",
-    ],
-  },
 ];
 
 export const servicePageServices: Service[] = [
