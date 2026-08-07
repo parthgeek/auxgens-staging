@@ -2590,8 +2590,7 @@ strong { font-weight: 600; }
 
 /* ── FOOTER ── */
 footer {
-  background:
-    linear-gradient(180deg, rgba(247,251,255,.94), rgba(246,250,243,.98));
+  background: #fff;
   border-top: 1px solid var(--rule);
   padding: 4rem 0 2rem; position: relative;
 }
