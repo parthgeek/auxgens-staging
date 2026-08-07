@@ -1,4 +1,5 @@
 import { detailedServices } from "../data/services";
+import LogoLockup from "./LogoLockup";
 
 type FooterLink = {
   label: string;
@@ -37,19 +38,12 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div className="foot-brand">
-            <a href="/" className="foot-logo foot-brand-block" aria-label="Auxgens home">
-              <img
-                src="/auxgens-logo-transparent.png"
-                alt=""
-                className="foot-logo-img"
-                width={64}
-                height={64}
-              />
-              <span className="foot-wordmark">AUXGENS</span>
-              <span className="foot-tagline-text">
-                Securing today for a better tomorrow
-              </span>
-            </a>
+            <LogoLockup
+              href="/"
+              className="foot-logo"
+              logoClassName="foot-logo-img"
+              taglineClassName="foot-logo-tagline"
+            />
             <p>
               Managed cyber &amp; information security across Asia, EMEA, and United States of America — protecting what matters most to your business.
             </p>

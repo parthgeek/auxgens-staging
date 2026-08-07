@@ -1188,33 +1188,6 @@
   padding: .3rem 0;
 }
 
-/* footer brand */
-.foot-brand-block {
-  display: flex !important;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: .35rem;
-}
-.foot-brand-block .foot-logo-img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-}
-.foot-wordmark {
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: .08em;
-  color: var(--lx-forest);
-  line-height: 1;
-}
-.foot-tagline-text {
-  font-size: .68rem;
-  font-weight: 600;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--lx-lime);
-}
-
 /* ── responsive ── */
 @media (max-width: 1024px) {
   .lx-stack-row ul { min-width: 100%; }
