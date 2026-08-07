@@ -507,130 +507,95 @@ export const detailedServices: DetailedService[] = [...detailedServicesData].sor
     (detailedServiceRank.get(b.id) ?? Number.MAX_SAFE_INTEGER),
 );
 
-export const homepageServices: Service[] = [
-  {
-    title: "Forward Deployed AI Engineer",
-    items: [
-      "Embedded AI engineering",
-      "AI use-case discovery",
-      "Copilots, agents & RAG",
-      "Workflow automation",
-      "System integration & APIs",
-      "Governance and adoption tracking",
-    ],
-  },
-  {
-    title: "SOC as a Service",
-    items: [
-      "AI/ML threat detection",
-      "Automated alert triage",
-      "SOAR-style playbooks",
-      "Unified telemetry",
-      "Real-time dashboards",
-      "Compliance reporting",
-    ],
-  },
-  {
-    title: "Threat & Risk Intelligence",
-    items: [
-      "Cyber risk analytics",
-      "Vulnerability management",
-      "Security assessments",
-      "Threat modelling",
-      "Architecture reviews",
-      "Forensic analytics",
-    ],
-  },
-  {
-    title: "Infrastructure Security",
-    items: [
-      "SIEM & monitoring",
-      "Log management",
-      "Incident response",
-      "Endpoint solutions",
-      "Threat intelligence",
-      "Network architecture",
-    ],
-  },
-  {
-    title: "Governance Risk & Compliance",
-    items: [
-      "ISO 27001 implementation",
-      "GDPR & privacy compliance",
-      "FERPA compliance",
-      "PCI-DSS & SOX audits",
-      "Cloud security assessment",
-      "BCP/DR consulting",
-      "CISO-as-a-Service",
-    ],
-  },
-  {
-    title: "FERPA Compliance",
-    items: [
-      "Student data mapping",
-      "Access control reviews",
-      "Disclosure workflows",
-      "Vendor risk oversight",
-      "Policy documentation",
-      "Awareness training",
-    ],
-  },
-  {
-    title: "Data Protection",
-    items: [
-      "Data classification",
-      "Encryption strategies",
-      "Data loss prevention",
-      "Privacy-by-design",
-      "Application security",
-      "Payment security",
-    ],
-  },
-  {
-    title: "Security Culture",
-    items: [
-      "Security awareness training",
-      "Staff programmes",
-      "Developer training",
-      "Phishing simulations",
-      "Compliance education",
-      "Leadership workshops",
-    ],
-  },
-  {
-    title: "Application Development",
-    items: [
-      "Secure web application development",
-      "Mobile app development",
-      "Secure SDLC & DevSecOps",
-      "API & backend hardening",
-      "Authentication & access control",
-      "OWASP Top 10 remediation",
-    ],
-  },
-  {
-    title: "Staff Augmentation/Project Management",
-    items: [
-      "Skilled security professionals on demand",
-      "Short & long-term staffing",
-      "Dedicated project managers",
-      "Project planning & delivery",
-      "PMO governance support",
-      "Flexible engagement models",
-    ],
-  },
-  {
-    title: "Documentation & Support",
-    items: [
-      "Security policies",
-      "Procedures & guidelines",
-      "SOP templates",
-      "Standards documentation",
-      "Audit readiness",
-      "DPO-as-a-Service",
-    ],
-  },
-];
+const homepageServiceItems: Record<string, string[]> = {
+  "forward-deployed-engineering": [
+    "Embedded AI engineering",
+    "AI use-case discovery",
+    "Copilots, agents & RAG",
+    "Workflow automation",
+    "System integration & APIs",
+    "Governance and adoption tracking",
+  ],
+  "soc-as-a-service": [
+    "AI/ML threat detection",
+    "Automated alert triage",
+    "SOAR-style playbooks",
+    "Unified telemetry",
+    "Real-time dashboards",
+    "Compliance reporting",
+  ],
+  cybersecurity: [
+    "24/7 threat detection and monitoring",
+    "Security incident response",
+    "Threat intelligence and hunting",
+    "Security orchestration and automation",
+    "Data privacy protection",
+    "Compliance management",
+  ],
+  vciso: [
+    "On-demand security leadership",
+    "Cybersecurity strategy and roadmaps",
+    "Risk and compliance oversight",
+    "Policy and programme development",
+    "Incident response guidance",
+    "Leadership and stakeholder reporting",
+  ],
+  grc: [
+    "ISO 27001 implementation",
+    "Managed GRC",
+    "Risk and gap assessments",
+    "Cloud security assessment",
+    "BCP/DR consulting",
+    "Third-party assessments",
+  ],
+  gdpr: [
+    "GDPR gap analysis",
+    "PII discovery and data mapping",
+    "Privacy impact assessments",
+    "Policy and procedure alignment",
+    "Data rights and breach management",
+    "DPO-as-a-Service",
+  ],
+  ferpa: [
+    "Student data mapping",
+    "Access control reviews",
+    "Disclosure workflows",
+    "Vendor risk oversight",
+    "Policy documentation",
+    "Awareness training",
+  ],
+  ccpa: [
+    "CCPA gap assessment",
+    "Personal information mapping",
+    "Consumer rights workflows",
+    "Policy and control remediation",
+    "Third-party processor reviews",
+    "Ongoing audits and training",
+  ],
+  "app-dev": [
+    "Secure web application development",
+    "Mobile app development",
+    "Secure SDLC & DevSecOps",
+    "API & backend hardening",
+    "Authentication & access control",
+    "OWASP Top 10 remediation",
+  ],
+  "staff-aug": [
+    "Skilled security professionals on demand",
+    "Short & long-term staffing",
+    "Dedicated project managers",
+    "Project planning & delivery",
+    "PMO governance support",
+    "Flexible engagement models",
+  ],
+};
+
+export const homepageServices: Service[] = detailedServices.map(
+  ({ id, title }) => ({
+    title,
+    items: homepageServiceItems[id],
+  }),
+);
 
 export const servicePageServices: Service[] = [
   ...homepageServices,
