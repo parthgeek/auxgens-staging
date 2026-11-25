@@ -1,6 +1,6 @@
 import Nav from "./components/Nav";
 import Announce from "./components/landing/Announce";
-import Hero from "./components/landing/Hero";
+import Hero from "./components/hero/HeroShield";
 import Marquee from "./components/landing/Marquee";
 import TextMarquee from "./components/landing/TextMarquee";
 import Foundation from "./components/landing/Foundation";
