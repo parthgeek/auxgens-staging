@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Cormorant_Garamond, Geist_Mono, Inter, Instrument_Serif, Outfit } from "next/font/google";
 import "./globals.css";
 import "./landing.css";
 import "./pages.css";
 import "./assistant.css";
+import "./hero-kit.css";
 import Assistant from "./components/Assistant";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -22,6 +23,26 @@ const outfit = Outfit({
   display: "swap",
 });
 
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const instrument = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Auxgens — Securing Your Digital Future",
   description:
@@ -37,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${outfit.variable} ${inter.variable} ${instrument.variable} ${geistMono.variable}`}>
       <body>
         {children}
         <ScrollToTop />

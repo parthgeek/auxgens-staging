@@ -1,0 +1,52 @@
+/*
+  Tailwind v4 for the new hero work.
+  - No preflight: the existing site keeps its own reset (globals.css).
+  - Utilities are imported unlayered on purpose. globals.css has an
+    unlayered `* { margin:0; padding:0 }` which would otherwise beat
+    layered utilities like `px-4`.
+*/
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css";
+
+@source "../app";
+@source "../lib";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-paper: #fafaf8;
+  --color-paper-2: #f3f4ef;
+  --color-ink: #0c140e;
+  --color-ink-2: #3d3d3b;
+  --color-mute: #6b7168;
+  --color-hair: #e6e7e2;
+  --color-lime: #72c135;
+  --color-lime-deep: #4f9a1b;
+  --color-forest: #1b4d22;
+  --color-night: #050b08;
+  --color-night-2: #0b1510;
+  --color-threat: #ff5a4e;
+  --color-amber: #f5b544;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes hk-ping {
+  0% { transform: scale(1); opacity: .65; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+@keyframes hk-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes hk-spin {
+  to { transform: rotate(360deg); }
+}
+.hk-ping { animation: hk-ping 1.8s cubic-bezier(0, 0, .2, 1) infinite; }
+.hk-marquee { animation: hk-marquee 38s linear infinite; }
+.hk-spin-slow { animation: hk-spin 40s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .hk-ping, .hk-marquee, .hk-spin-slow { animation: none; }
+}
